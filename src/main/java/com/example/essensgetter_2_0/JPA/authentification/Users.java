@@ -1,5 +1,5 @@
 package com.example.essensgetter_2_0.JPA.authentification;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 public class Users {

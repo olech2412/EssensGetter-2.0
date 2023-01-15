@@ -1,6 +1,6 @@
 package com.example.essensgetter_2_0.JPA;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDate;
