@@ -15,6 +15,12 @@ public class MailUser {
     private Long id;
     @Column(name = "email", nullable = false, unique = true)
     private String email;
+
+    @OneToOne
+    private ActivationCode activationCode;
+
+    @OneToOne
+    private DeactivationCode deactivationCode;
     private String firstname;
     private String lastname;
     private boolean enabled;

@@ -7,4 +7,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MailUserRepository extends CrudRepository<MailUser, Long> {
 
+    /**
+     * Finds all enabled users
+     * @param enabled
+     * @return
+     */
+    Iterable<MailUser> findUsersByEnabled(Boolean enabled);
+
 }

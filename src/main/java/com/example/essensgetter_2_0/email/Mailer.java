@@ -1,100 +1,75 @@
 package com.example.essensgetter_2_0.email;
 
+import com.example.essensgetter_2_0.JPA.MailUser;
+import com.example.essensgetter_2_0.JPA.Meal;
+import com.example.essensgetter_2_0.JPA.authentification.Users;
+import lombok.extern.log4j.Log4j2;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Properties;
 
+@Log4j2
 public class Mailer {
 
     /**
-     * Sends an email to the given address with the given subject and content.
-     * For Activation
-     * @param firstName
-     * @param emailTarget
-     * @param activationCode
-     * @param deactivationCode
+     * Sends an email to the given email address with the current menu
      * @throws MessagingException
      */
-    public void sendActivationEmail(String firstName, String emailTarget, String activationCode, String deactivationCode) throws MessagingException, IOException {
+    public void sendSpeiseplan(Iterable<MailUser> emailTargets, Iterable<Meal> menu) throws MessagingException, IOException {
         Properties prop = new Properties();
         prop.put("mail.smtp.auth", false);
         prop.put("mail.smtp.host", "localhost");
         prop.put("mail.smtp.port", "25");
 
-        Message message = new MimeMessage(Session.getInstance(prop));
-        message.setFrom(new InternetAddress("noreply_essensgetter@olech2412.de"));
-        message.setRecipients(
-                Message.RecipientType.TO, InternetAddress.parse(emailTarget));
-        message.setSubject("Aktivierung deines Essensgetter-Newsletter-Accounts");
+        for (MailUser emailTarget: emailTargets) {
+            String deactivateUrl = "https://egr.olech2412.de/deactivate?code=" + emailTarget.getDeactivationCode();
+            Message message = new MimeMessage(Session.getInstance(prop));
+            message.setFrom(new InternetAddress("noreply_essensgetter@olech2412.de"));
+            message.setRecipients(
+                    Message.RecipientType.TO, InternetAddress.parse(emailTarget.getEmail()));
+            message.setSubject("Speiseplan " +
+                    LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " - " +
+                    "Schönauer Straße");
+            String msg = String.format(createEmail(menu), emailTarget.getFirstname(), deactivateUrl);
+            MimeBodyPart mimeBodyPart = new MimeBodyPart();
+            mimeBodyPart.setContent(msg, "text/html; charset=utf-8");
+            Multipart multipart = new MimeMultipart();
+            multipart.addBodyPart(mimeBodyPart);
+            message.setContent(multipart);
+            Transport.send(message);
+            log.debug("Email sent to " + emailTarget.getEmail());
+        }
 
-        String msg = getActivationText(firstName, activationCode, deactivationCode);
-
-        MimeBodyPart mimeBodyPart = new MimeBodyPart();
-        mimeBodyPart.setContent(msg, "text/html; charset=utf-8");
-
-        Multipart multipart = new MimeMultipart();
-        multipart.addBodyPart(mimeBodyPart);
-
-        message.setContent(multipart);
-
-        Transport.send(message);
     }
 
-    /**
-     * Sends an email to the given address with the given subject and content.
-     * For Deactivation
-     * @param firstName
-     * @param emailTarget
-     * @throws MessagingException
-     */
-    public void sendDeactivationEmail(String firstName, String emailTarget) throws MessagingException {
-        Properties prop = new Properties();
-        prop.put("mail.smtp.auth", false);
-        prop.put("mail.smtp.host", "localhost");
-        prop.put("mail.smtp.port", "25");
+    private String createEmail(Iterable<Meal> menu) {
+        StringBuilder menuText = new StringBuilder();
 
-        Message message = new MimeMessage(Session.getInstance(prop));
-        message.setFrom(new InternetAddress("noreply_essensgetter@olech2412.de"));
-        message.setRecipients(
-                Message.RecipientType.TO, InternetAddress.parse(emailTarget));
-        message.setSubject("Deaktivierung deines Essensgetter-Newsletter-Accounts");
+        for(Meal meal : menu) {
+            menuText.append(String.format("<h5 class=\"text-teal-700\">%s</h5>", meal.getCategory()));
+            menuText.append(String.format("<p class=\"text-gray-700\">%s (%s) - %s</p>", meal.getName(), meal.getDescription(), meal.getPrice()));
+        }
 
-        String msg = getDeactivationText(firstName);
-
-        MimeBodyPart mimeBodyPart = new MimeBodyPart();
-        mimeBodyPart.setContent(msg, "text/html; charset=utf-8");
-
-        Multipart multipart = new MimeMultipart();
-        multipart.addBodyPart(mimeBodyPart);
-
-        message.setContent(multipart);
-
-        Transport.send(message);
-    }
-
-    private String getActivationText(String firstName, String activationCode, String deactivationCode) {
-        String activateUrl = "https://egr.olech2412.de/activate?code=" + activationCode;
-        String deactivateUrl = "https://egr.olech2412.de/deactivate?code=" + deactivationCode;
-        String msg =
+        String header =
                 "<body class=\"bg-light\">" +
                     "<div class=\"container\">" +
                         "<div class=\"card my-10\">" +
                             "<div class=\"card-body\">" +
                                 "<h1 class=\"h3 mb-2\">Aktivierung deines EssensGetter-Newsletter-Accounts</h1>" +
-                                "<h5 class=\"text-teal-700\">Du bist nur noch einen Klick entfernt :0</h5>" +
                                 "<hr>" +
                                 "<div class=\"space-y-3\">" +
                                     "<p class=\"text-gray-700\"> Moin, %s</p>" +
-                                    "<p class=\"text-gray-700\"> diese Email wurde angegeben, um den Essensgetter-Newsletter zu erhalten. </p>" +
-                                    "<p class=\"text-gray-700\"> Wenn du das nicht warst, kannst du diese Email ignorieren oder durch klick auf \"Ich war das nicht\" deine Daten bei mir löschen. </p>" +
+                                    "<p class=\"text-gray-700\"> nachfolgend findest du den aktuellen Speiseplan für die Kantine: \"Schönauer Straße\". </p>";
+        String footer =
+                                    "<p class=\"text-gray-700\"> Wenn du nicht weißt wieso du diese Email bekommst oder den Newsletter nicht länger erhalten willst, klicke einfach auf \"Ciao EssensGetter\" und ich lösche alle deine Daten.</p>" +
                                     "<a class=\"btn btn-danger\" href=\"%s\" target=\"_blank\">Ich war das nicht</a>" +
-                                    "<p class=\"text-gray-700\"> Falls doch, klicke auf \"Aktivieren\" um dich freizuschalten. </p>" +
-                                    "<a class=\"btn btn-primary\" href=\"%s\" target=\"_blank\">Aktivieren</a>" +
-                                    "<p class=\"text-gray-700\"> Mit besten Grüßen, </p>" +
+                                    "<p class=\"text-gray-700\"> Guten Appetit wünscht dir, </p>" +
                                     "<p class=\"text-gray-700\"> dein EssensGetter </p>" +
                                 "</div>" +
                                 "<hr>" +
@@ -103,31 +78,11 @@ public class Mailer {
                     "</div>" +
                 "</body>";
 
-        return String.format(msg, firstName, deactivateUrl, activateUrl);
-    }
+        StringBuilder msg = new StringBuilder();
+        msg.append(header);
+        msg.append(menuText);
+        msg.append(footer);
 
-    private String getDeactivationText(String firstName) {
-        String msg =
-                    "<body class=\"bg-light\">" +
-                        "<div class=\"container\">" +
-                            "<div class=\"card my-10\">" +
-                                "<div class=\"card-body\">" +
-                                    "<h1 class=\"h3 mb-2\">Deaktivierung deines EssensGetter-Newsletter-Accounts</h1>" +
-                                        "<hr>" +
-                                            "<div class=\"space-y-3\">" +
-                                                "<p class=\"text-gray-700\"> Moin, %s</p>" +
-                                                "<p class=\"text-gray-700\"> schade das du uns verlässt. Deine persönlichen Daten wurden gelöscht. </p>" +
-                                                "<p class=\"text-gray-700\"> Falls du zurückkehren möchtest, kannst du dich jederzeit erneut registrieren. </p>" +
-                                                "<a class=\"btn btn-primary\" href=\"https://egr.olech2412.de/login\" target=\"_blank\">Erneut registrieren</a>" +
-                                                "<p class=\"text-gray-700\"> Mit besten Grüßen, </p>" +
-                                                "<p class=\"text-gray-700\"> dein EssensGetter </p>" +
-                                            "</div>" +
-                                        "<hr>" +
-                                "</div>" +
-                            "</div>" +
-                        "</div>" +
-                    "</body>";
-
-        return String.format(msg, firstName);
+        return msg.toString();
     }
 }

@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="- fixed DatabaseConnection&#10;- Bean wurde nicht richtig aufgerufen">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/email/Mailer.java" afterDir="false" />
+    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="- Mailer Klasse aus EGR übernommen">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MailUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/MailUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/MailUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/MailUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/MailUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MealService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/UsersService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/email/Mailer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/email/Mailer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="com.haulmont.jpb.NewInterface" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -68,6 +75,7 @@
       <recent name="C:\Workspace\Coding\IntelliJ\EssensGetter 2.0\src\main\java\com\example\essensgetter_2_0" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.essensgetter_2_0.email" />
       <recent name="com.example.essensgetter_2_0.JPA.repository" />
       <recent name="com.example.essensgetter_2_0.JPA" />
       <recent name="com.example.essensgetter_2_0.JPA.authentification" />
@@ -94,7 +102,7 @@
       <workItem from="1673593435313" duration="10789000" />
       <workItem from="1673785109895" duration="89000" />
       <workItem from="1673788113802" duration="6119000" />
-      <workItem from="1673808708219" duration="1992000" />
+      <workItem from="1673808708219" duration="5561000" />
     </task>
     <task id="LOCAL-00001" summary="First Steps">
       <created>1673598271828</created>
@@ -110,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673810305222</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- Mailer Klasse aus EGR übernommen">
+      <created>1673810718271</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673810718271</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +145,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Steps" />
     <MESSAGE value="- fixed DatabaseConnection&#10;- Bean wurde nicht richtig aufgerufen" />
-    <option name="LAST_COMMIT_MESSAGE" value="- fixed DatabaseConnection&#10;- Bean wurde nicht richtig aufgerufen" />
+    <MESSAGE value="- Mailer Klasse aus EGR übernommen" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Mailer Klasse aus EGR übernommen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
