@@ -23,7 +23,7 @@ public class DataCaller {
      * @throws IOException
      */
     public Object callData() throws IOException {
-        String todayCall= url.formatted(LocalDate.now().toString());
+        String todayCall= url.replaceFirst("%s", LocalDate.now().toString());
         URL url = new URL(todayCall);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");

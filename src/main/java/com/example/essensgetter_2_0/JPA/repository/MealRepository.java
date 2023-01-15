@@ -2,10 +2,11 @@ package com.example.essensgetter_2_0.JPA.repository;
 
 import com.example.essensgetter_2_0.JPA.Meal;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.RepositoryDefinition;
+import org.springframework.stereotype.Repository;
 
-@RepositoryDefinition(domainClass = Meal.class, idClass = Long.class)
+@Repository
 public interface MealRepository extends CrudRepository<Meal, Long> {
 
+    Meal findByName(String name);
 
 }
