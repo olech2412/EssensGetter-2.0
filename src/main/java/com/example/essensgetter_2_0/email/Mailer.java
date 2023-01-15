@@ -28,7 +28,7 @@ public class Mailer {
         prop.put("mail.smtp.port", "25");
 
         for (MailUser emailTarget: emailTargets) {
-            String deactivateUrl = "https://egr.olech2412.de/deactivate?code=" + emailTarget.getDeactivationCode();
+            String deactivateUrl = "https://egr.olech2412.de/deactivate?code=" + emailTarget.getDeactivationCode().getCode();
             Message message = new MimeMessage(Session.getInstance(prop));
             message.setFrom(new InternetAddress("noreply_essensgetter@olech2412.de"));
             message.setRecipients(

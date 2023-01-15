@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="- Mailer Klasse aus EGR übernommen">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MailUserService.java" afterDir="false" />
+    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="- first try sending speiseplan">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/DeactivationCodeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/MailUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/MailUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/Meal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/MailUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/MailUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MealService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/UsersService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/email/Mailer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/email/Mailer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +73,8 @@
       <recent name="C:\Workspace\Coding\IntelliJ\EssensGetter 2.0\src\main\java\com\example\essensgetter_2_0" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.essensgetter_2_0.email" />
       <recent name="com.example.essensgetter_2_0.JPA.repository" />
+      <recent name="com.example.essensgetter_2_0.email" />
       <recent name="com.example.essensgetter_2_0.JPA" />
       <recent name="com.example.essensgetter_2_0.JPA.authentification" />
     </key>
@@ -102,7 +100,7 @@
       <workItem from="1673593435313" duration="10789000" />
       <workItem from="1673785109895" duration="89000" />
       <workItem from="1673788113802" duration="6119000" />
-      <workItem from="1673808708219" duration="5561000" />
+      <workItem from="1673808708219" duration="9302000" />
     </task>
     <task id="LOCAL-00001" summary="First Steps">
       <created>1673598271828</created>
@@ -125,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673810718271</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="- first try sending speiseplan">
+      <created>1673814294249</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673814294249</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +151,8 @@
     <MESSAGE value="First Steps" />
     <MESSAGE value="- fixed DatabaseConnection&#10;- Bean wurde nicht richtig aufgerufen" />
     <MESSAGE value="- Mailer Klasse aus EGR übernommen" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Mailer Klasse aus EGR übernommen" />
+    <MESSAGE value="- first try sending speiseplan" />
+    <option name="LAST_COMMIT_MESSAGE" value="- first try sending speiseplan" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

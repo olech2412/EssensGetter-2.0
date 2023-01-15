@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "meals")
 public class Meal {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
