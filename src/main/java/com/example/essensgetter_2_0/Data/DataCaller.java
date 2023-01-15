@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Log4j2
 public class DataCaller {
 
-    private final String url = "https://openmensa.org/api/v2/canteens/69/days/2023-01-13/meals"; // URL to the API 69 is the ID of the canteen
+    private final String url = "https://openmensa.org/api/v2/canteens/69/days/%s/meals"; // URL to the API 69 is the ID of the canteen
 
     public DataCaller() {
     }

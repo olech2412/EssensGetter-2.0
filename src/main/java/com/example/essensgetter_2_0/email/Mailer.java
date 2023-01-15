@@ -61,7 +61,7 @@ public class Mailer {
                     "<div class=\"container\">" +
                         "<div class=\"card my-10\">" +
                             "<div class=\"card-body\">" +
-                                "<h1 class=\"h3 mb-2\">Aktivierung deines EssensGetter-Newsletter-Accounts</h1>" +
+                                "<h1 class=\"h3 mb-2\">Geschmackvolle Neuigkeiten - Dein Speiseplan für heute</h1>" +
                                 "<hr>" +
                                 "<div class=\"space-y-3\">" +
                                     "<p class=\"text-gray-700\"> Moin, %s</p>" +
