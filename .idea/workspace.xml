@@ -4,28 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="First Steps">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataCaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataCaller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataFormatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/ActivationCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/ActivationCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/DeactivationCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/DeactivationCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/MailUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/MailUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/Meal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/authentification/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/authentification/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/ActivationCodeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/ActivationCodeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/MailUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/MailUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/MealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/MealRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/UsersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MealService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/essensgetter_2_0/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="- fixed DatabaseConnection&#10;- Bean wurde nicht richtig aufgerufen">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/email/Mailer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +94,7 @@
       <workItem from="1673593435313" duration="10789000" />
       <workItem from="1673785109895" duration="89000" />
       <workItem from="1673788113802" duration="6119000" />
-      <workItem from="1673808708219" duration="1538000" />
+      <workItem from="1673808708219" duration="1992000" />
     </task>
     <task id="LOCAL-00001" summary="First Steps">
       <created>1673598271828</created>
@@ -123,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673598271828</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="- fixed DatabaseConnection&#10;- Bean wurde nicht richtig aufgerufen">
+      <created>1673810305222</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673810305222</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +129,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Steps" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Steps" />
+    <MESSAGE value="- fixed DatabaseConnection&#10;- Bean wurde nicht richtig aufgerufen" />
+    <option name="LAST_COMMIT_MESSAGE" value="- fixed DatabaseConnection&#10;- Bean wurde nicht richtig aufgerufen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
