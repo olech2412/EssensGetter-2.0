@@ -18,7 +18,7 @@ EssensGetter 2.0 ist ein Programmierprojekt, das auf SpringBoot, Java, MariaDB, 
 Das Programm läuft im Hintergrund und kommuniziert automatisch mit der OpenMensa API, um die Daten zu erhalten und in der Datenbank zu speichern. Autorisierte Nutzer erhalten automatisch eine E-Mail mit den aktualisierten Speiseplänen.
 
 ## Das Konzept
-![EssensGetter Softwarearchitektur](https://github.com/olech2412/EssensGetter-2.0/blob/master/EssensGetter%20SoftwareArchitektur.drawio.svg)
+![EssensGetter Softwarearchitektur](https://github.com/olech2412/EssensGetter-2.0/blob/master/EssensGetter%20SoftwareArchitektur.drawio.png)
 
 ## Hinweis
 
