@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="works">
+    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="fix Newsletter Header">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataCaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataCaller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataFormatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/authentification/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/authentification/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +96,7 @@
       <workItem from="1673593435313" duration="10789000" />
       <workItem from="1673785109895" duration="89000" />
       <workItem from="1673788113802" duration="6119000" />
-      <workItem from="1673808708219" duration="10675000" />
+      <workItem from="1673808708219" duration="14095000" />
     </task>
     <task id="LOCAL-00001" summary="First Steps">
       <created>1673598271828</created>
@@ -136,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673818048817</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix Newsletter Header">
+      <created>1673820138233</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673820138233</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,7 +163,8 @@
     <MESSAGE value="- Mailer Klasse aus EGR übernommen" />
     <MESSAGE value="- first try sending speiseplan" />
     <MESSAGE value="works" />
-    <option name="LAST_COMMIT_MESSAGE" value="works" />
+    <MESSAGE value="fix Newsletter Header" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix Newsletter Header" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
