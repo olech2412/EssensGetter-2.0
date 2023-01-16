@@ -20,6 +20,9 @@ Das Programm läuft im Hintergrund und kommuniziert automatisch mit der OpenMens
 ## Das Konzept
 ![EssensGetter Softwarearchitektur](https://github.com/olech2412/EssensGetter-2.0/blob/master/EssensGetter%20SoftwareArchitektur.drawio.png)
 
+## OpenMensa
+OpenMensa ist ein Projekt, das es ermöglicht, Speisepläne von Mensa- oder Kantinenbetreibern in einem offenen Format zur Verfügung zu stellen, damit diese von Dritten verwendet werden können. Es bietet eine API und eine Datenbank, die es Entwicklern ermöglicht, Speisepläne von Mensa- oder Kantinenbetreibern in ihre Anwendungen zu integrieren. https://openmensa.org/
+
 ## Hinweis
 
 Bitte beachten Sie, dass dies ein privates Studentenprojekt ist und das Programm nicht für die Öffentlichkeit zur Verfügung steht. Der Betrieb des Programms kann nicht garantiert werden und das Programm darf nicht zu kommerziellen Zwecken genutzt werden.
