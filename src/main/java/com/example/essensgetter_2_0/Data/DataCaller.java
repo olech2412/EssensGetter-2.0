@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Log4j2
 public class DataCaller {
 
-    private final String url = "https://openmensa.org/api/v2/canteens/69/days/%s/meals"; // URL to the API 69 is the ID of the canteen
+    private final String url = "https://openmensa.org/api/v2/canteens/69/meals"; // URL to the API 69 is the ID of the canteen
 
     public DataCaller() {
     }
@@ -23,8 +23,7 @@ public class DataCaller {
      * @throws IOException
      */
     public Object callData() throws IOException {
-        String todayCall= url.replaceFirst("%s", LocalDate.now().toString());
-        URL url = new URL(todayCall);
+        URL url = new URL(this.url);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
         con.setDoOutput(true);
@@ -32,7 +31,7 @@ public class DataCaller {
         con.setConnectTimeout(10000); // Timeout for connecting and reading 10 seconds
         con.setReadTimeout(10000);
 
-        JSONArray jsonObject = null;
+        JSONArray jsonArray = null;
 
         if(con.getResponseCode() == 200){
             log.info("Connection to API successful");
@@ -44,12 +43,12 @@ public class DataCaller {
                 content.append(inputLine);
             }
             in.close();
-            jsonObject = new JSONArray(content.toString());
+            jsonArray = new JSONArray(content.toString());
         }else{
             log.error("Connection to API failed with response code: " + con.getResponseCode());
         }
 
-        return jsonObject;
+        return jsonArray;
     }
 
 }

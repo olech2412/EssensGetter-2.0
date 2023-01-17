@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="fix Newsletter Header">
+    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="First Steps">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataCaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataCaller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataFormatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/Meal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/MealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/MealRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MealService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,14 +22,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="com.haulmont.jpb.NewInterface" />
         <option value="Interface" />
+        <option value="com.haulmont.jpb.NewInterface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -45,32 +58,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "OverrideImplement.generate.javadoc": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Workspace/Coding/IntelliJ/gs-accessing-data-jpa",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.38390803",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "spring.configuration.checksum": "e5f61b5be024cd48a13b9e5e4c37bf56"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Workspace/Coding/IntelliJ/gs-accessing-data-jpa&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.38390803&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;e5f61b5be024cd48a13b9e5e4c37bf56&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Workspace\Coding\IntelliJ\EssensGetter 2.0\src\main\java\com\example\essensgetter_2_0" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.essensgetter_2_0.JPA.repository" />
-      <recent name="com.example.essensgetter_2_0.email" />
       <recent name="com.example.essensgetter_2_0.JPA" />
       <recent name="com.example.essensgetter_2_0.JPA.authentification" />
     </key>
@@ -96,7 +108,7 @@
       <workItem from="1673593435313" duration="10789000" />
       <workItem from="1673785109895" duration="89000" />
       <workItem from="1673788113802" duration="6119000" />
-      <workItem from="1673808708219" duration="14095000" />
+      <workItem from="1673808708219" duration="1538000" />
     </task>
     <task id="LOCAL-00001" summary="First Steps">
       <created>1673598271828</created>
@@ -105,42 +117,7 @@
       <option name="project" value="LOCAL" />
       <updated>1673598271828</updated>
     </task>
-    <task id="LOCAL-00002" summary="- fixed DatabaseConnection&#10;- Bean wurde nicht richtig aufgerufen">
-      <created>1673810305222</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1673810305222</updated>
-    </task>
-    <task id="LOCAL-00003" summary="- Mailer Klasse aus EGR übernommen">
-      <created>1673810718271</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1673810718271</updated>
-    </task>
-    <task id="LOCAL-00004" summary="- first try sending speiseplan">
-      <created>1673814294249</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1673814294249</updated>
-    </task>
-    <task id="LOCAL-00005" summary="works">
-      <created>1673818048817</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1673818048817</updated>
-    </task>
-    <task id="LOCAL-00006" summary="fix Newsletter Header">
-      <created>1673820138233</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1673820138233</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,25 +136,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Steps" />
-    <MESSAGE value="- fixed DatabaseConnection&#10;- Bean wurde nicht richtig aufgerufen" />
-    <MESSAGE value="- Mailer Klasse aus EGR übernommen" />
-    <MESSAGE value="- first try sending speiseplan" />
-    <MESSAGE value="works" />
-    <MESSAGE value="fix Newsletter Header" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix Newsletter Header" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Steps" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataFormatter.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataFormatter.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

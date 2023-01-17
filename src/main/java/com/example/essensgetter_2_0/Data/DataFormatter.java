@@ -33,22 +33,20 @@ public class DataFormatter {
      */
     private void formatData(JSONArray jsonArray) {
         for (int i = 0; i < jsonArray.length(); i++) {
-            Meal dataMeal = new Meal();
-            JSONObject meal = jsonArray.getJSONObject(i);
-            String name = meal.getString("name");
-            String description = formatNotes(meal.getJSONArray("notes"));
-            String price = formatPrices(meal.getJSONObject("prices"));
-            String category = meal.getString("category");
-
-            dataMeal.setName(name);
-            dataMeal.setDescription(description);
-            dataMeal.setPrice(price);
-            dataMeal.setCategory(category);
-            dataMeal.setCreationDate(LocalDate.now());
-            dataMeal.setResponseCode(200);
-
-            log.info(dataMeal.toString());
-            mealList.add(dataMeal);
+            JSONObject menu = jsonArray.getJSONObject(i);
+            JSONArray meals = menu.getJSONArray("meals");
+            for (int t = 0; t < meals.length(); t++) {
+                Meal dataMeal = new Meal();
+                JSONObject meal = meals.getJSONObject(t);
+                dataMeal.setName(meal.getString("name"));
+                dataMeal.setPrice(formatPrices(meal.getJSONObject("prices")));
+                dataMeal.setCategory(meal.getString("category"));
+                dataMeal.setDescription(formatNotes(meal.getJSONArray("notes")));
+                dataMeal.setServingDate(LocalDate.parse(menu.getString("date")));
+                dataMeal.setResponseCode(200);
+                mealList.add(dataMeal);
+                log.info("Meal added to list: " + dataMeal);
+            }
         }
     }
 
