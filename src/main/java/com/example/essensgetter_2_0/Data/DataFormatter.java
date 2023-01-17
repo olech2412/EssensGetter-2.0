@@ -1,16 +1,11 @@
 package com.example.essensgetter_2_0.Data;
 
 import com.example.essensgetter_2_0.JPA.Meal;
-import com.example.essensgetter_2_0.JPA.repository.MealRepository;
 import com.example.essensgetter_2_0.JPA.service.MealService;
 import lombok.extern.log4j.Log4j2;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
