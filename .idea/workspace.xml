@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="First Steps">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/email/StaticEmailText.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataCaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataCaller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataFormatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/Meal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/MealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/MealRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MealService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/email/Mailer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/email/Mailer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,6 +78,7 @@
       <recent name="C:\Workspace\Coding\IntelliJ\EssensGetter 2.0\src\main\java\com\example\essensgetter_2_0" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.essensgetter_2_0.email" />
       <recent name="com.example.essensgetter_2_0.JPA.repository" />
       <recent name="com.example.essensgetter_2_0.JPA" />
       <recent name="com.example.essensgetter_2_0.JPA.authentification" />
