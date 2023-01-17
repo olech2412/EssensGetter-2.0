@@ -68,6 +68,7 @@ public class MealService{
      */
     public void saveAllMeals(Iterable<Meal> meals){
         mealRepository.saveAll(meals);
+        log.info("Saved all meals to the database");
     }
 
 }
