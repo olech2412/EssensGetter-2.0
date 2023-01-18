@@ -24,6 +24,11 @@ Das Programm läuft im Hintergrund und kommuniziert automatisch mit der OpenMens
 ## OpenMensa
 OpenMensa ist ein Projekt, das es ermöglicht, Speisepläne von Mensa- oder Kantinenbetreibern in einem offenen Format zur Verfügung zu stellen, damit diese von Dritten verwendet werden können. Es bietet eine API und eine Datenbank, die es Entwicklern ermöglicht, Speisepläne von Mensa- oder Kantinenbetreibern in ihre Anwendungen zu integrieren. https://openmensa.org/
 
+## Zugehöriges Grafana Dashboard
+Als kleines Nebenprojekt versuche ich interessante Statistiken aus den gesammelten Daten zu ziehen. Dafür habe ich mir folgendes Grafana Dashboard aufgesetzt, welches verschiedene Abfragen an die Datenbank schickt wodurch sich einerseits das Softwarekonstrukt gut überwachen lässt (API Zugriffe, Anzahl ausstehender Aktivierungen usw.) aber es entstehen auch Möglichkeiten Rückschlüsse auf das Essensangebot ziehen.
+![Screenshot 2023-01-18 145523](https://user-images.githubusercontent.com/76694468/213191027-28390bcf-e5a5-4ed3-b321-e19dc6508378.png)
+
+
 ## Hinweis
 
 Bitte beachten Sie, dass dies ein privates Studentenprojekt ist und das Programm nicht für die Öffentlichkeit zur Verfügung steht. Der Betrieb des Programms kann nicht garantiert werden und das Programm darf nicht zu kommerziellen Zwecken genutzt werden.
