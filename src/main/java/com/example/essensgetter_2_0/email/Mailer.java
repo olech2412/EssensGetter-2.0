@@ -104,7 +104,7 @@ public class Mailer {
         welcome.add("Grüetzi");
         welcome.add("Grüßli Müsli");
         welcome.add("Hallihallohallöle");
-        welcome.add("Hallochen");
+        welcome.add("Hallöchen");
         welcome.add("Hallöchen Popöchen");
         welcome.add("Hallöle");
         welcome.add("Heroin-spaziert");
@@ -154,8 +154,6 @@ public class Mailer {
         greetings.add("Bis denne Antenne, ");
         greetings.add("Au revoir, ");
         greetings.add("Arrivederci, ");
-        greetings.add("Adiós, ");
-        greetings.add("Até logo, ");
         greetings.add("До свидания, ");
         greetings.add("안녕히 가세요, ");
         greetings.add("再见, ");
