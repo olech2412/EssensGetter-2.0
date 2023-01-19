@@ -26,8 +26,9 @@ public class Meal {
     private LocalDate servingDate;
 
     private Integer responseCode;
-
-    private Double rating;
+    private Double rating = 0.0;
+    private Integer votes = 0;
+    private Integer starsTotal = 0;
 
     public Meal() {
     }
@@ -38,11 +39,10 @@ public class Meal {
         this.price = price;
         this.category = category;
         this.servingDate = servingDate;
-        this.rating = rating;
     }
 
     @Override
     public String toString() {
-        return "Meal: " + "name=" + name + ", description=" + description + ", price=" + price + ", category=" + category + ", servingDate=" + servingDate + ", rating=" + rating;
+        return "Meal: " + "name=" + name + ", description=" + description + ", price=" + price + ", category=" + category + ", servingDate=" + servingDate + ", rating=" + rating + ", votes=" + votes + ", starsTotal=" + starsTotal + ", votes=" + votes;
     }
 }
