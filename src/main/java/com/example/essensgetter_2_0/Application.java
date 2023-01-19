@@ -57,6 +57,15 @@ public class Application {
             }
         }
 
+        List<Meal> meals = dataFormatter.mealList; //TODO: proof if this is working
+        for (Meal meal : meals) {
+            if (!mealService.findAllByServingDateBeforeAndName(LocalDate.now(), meal.getName()).isEmpty()) { // if the meal is served today
+                List<Meal> meals1 = mealService.findAllByServingDateBeforeAndName(LocalDate.now(), meal.getName()); //TODO: this is not working
+                System.out.println(meals1);
+            }
+
+        }
+
 
         Mailer mailer = new Mailer();
         mailer.sendSpeiseplan(mailUserService.findAllUsersThatAreEnabled(), mealService.findAllMealsByServingDate(LocalDate.now()));
