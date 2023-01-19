@@ -59,7 +59,22 @@ public class DataFormatter {
         BigDecimal priceEmployees = (BigDecimal) prices.get("employees"); // Price for employees
         BigDecimal priceOthers = (BigDecimal) prices.get("others"); // Price for others
 
-        return priceStudents + "€/ " + priceEmployees + "€/ " + priceOthers + "€";
+        String priceUnformatted = priceStudents + "€/ " + priceEmployees + "€/ " + priceOthers + "€"; // Can be "2.5€/ 3.59€/ 4.5€" should be "2.50€/ 3.59€/ 4.50€"
+
+        String[] priceArr = priceUnformatted.split("/"); // Splits the String at "/"
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < priceArr.length; i++) { // Iterates through the array
+            double price = Double.parseDouble(priceArr[i].replaceAll("€", "")); // Removes "€" and parses the String to a double
+            sb.append(String.format("%.2f", price)); // Formats the double to 2 decimal places
+            if (i < priceArr.length - 1) { // Checks if the current index is the last index
+                sb.append("€/ "); // Adds "€/ " to the StringBuilder
+            } else {
+                sb.append("€"); // Adds "€" to the StringBuilder
+            }
+        }
+        return sb.toString().replace(".", ","); // Removes the spaces
+
+
     }
 
     /**
