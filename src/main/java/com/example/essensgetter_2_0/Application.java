@@ -57,11 +57,12 @@ public class Application {
             }
         }
 
-        List<Meal> meals = dataFormatter.mealList; //TODO: proof if this is working
+        List<Meal> meals = dataFormatter.mealList;
         for (Meal meal : meals) {
-            if (!mealService.findAllByServingDateBeforeAndName(LocalDate.now(), meal.getName()).isEmpty()) { // if the meal is served today
-                List<Meal> meals1 = mealService.findAllByServingDateBeforeAndName(LocalDate.now(), meal.getName()); //TODO: this is not working
-                System.out.println(meals1);
+            if (!mealService.findAllByNameAndServingDateBeforeOrderByServingDateAsc(meal.getName(), LocalDate.now()).isEmpty()) { // if the meal is served today
+                Meal meals1 = mealService.findAllByNameAndServingDateBeforeOrderByServingDateAsc(meal.getName(), LocalDate.now()).get(0); // get last the meal from the database
+                meal.setRating(meals1.getRating()); // set the rating of the meal to the rating of the last meal
+                mealService.saveMeal(meal); // save the meal to the database
             }
 
         }

@@ -15,6 +15,6 @@ public interface MealRepository extends CrudRepository<Meal, Long> {
 
     List<Meal> findAllByServingDate(LocalDate date);
 
-    List<Meal> findAllByServingDateBeforeAndName(LocalDate date, String name);
+    List<Meal> findAllByNameAndServingDateBeforeOrderByServingDateAsc(String name, LocalDate date);
 
 }

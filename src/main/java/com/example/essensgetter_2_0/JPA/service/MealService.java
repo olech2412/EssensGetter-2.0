@@ -82,8 +82,8 @@ public class MealService{
         return mealRepository.findAllByServingDate(date);
     }
 
-    public List<Meal> findAllByServingDateBeforeAndName(LocalDate date, String name){
-        return mealRepository.findAllByServingDateBeforeAndName(date, name);
+    public List<Meal> findAllByNameAndServingDateBeforeOrderByServingDateAsc(String name, LocalDate date){
+        return mealRepository.findAllByNameAndServingDateBeforeOrderByServingDateAsc(name, date);
     }
 
 }
