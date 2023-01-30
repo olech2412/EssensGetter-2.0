@@ -14,7 +14,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 import javax.mail.MessagingException;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.List;
 
 @SpringBootApplication
 @Log4j2

@@ -5,12 +5,14 @@ import com.example.essensgetter_2_0.JPA.repository.MealRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Service
 @Log4j2
+@Transactional
 public class MealService{
 
     @Autowired
