@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="Added Spring JPA Repositories">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" afterDir="false" />
+    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="Added Spring banner.txt">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/services/mensen/Cafeteria_DittrichringService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/services/mensen/Mensa_AcademicaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/services/mensen/Mensa_PeterssteinwegService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/services/mensen/Mensa_Schoenauer_StrService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/services/mensen/Mensa_TierklinikService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/services/mensen/Mensa_am_ElsterbeckenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/services/mensen/Mensa_am_MedizincampusService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/services/mensen/Mensa_am_ParkService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/services/mensen/Menseria_am_Botanischen_GartenService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MailUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/services/MailUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,10 +28,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="com.haulmont.jpb.NewInterface" />
         <option value="com.haulmont.jpb.JpaEntity" />
-        <option value="Class" />
         <option value="com.haulmont.jpb.JpaRepository" />
+        <option value="com.haulmont.jpb.NewInterface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -128,7 +138,7 @@
       <workItem from="1675072608537" duration="1116000" />
       <workItem from="1675081273037" duration="1266000" />
       <workItem from="1675149651485" duration="3742000" />
-      <workItem from="1675267602932" duration="10315000" />
+      <workItem from="1675267602932" duration="11378000" />
     </task>
     <task id="LOCAL-00001" summary="First Steps">
       <created>1673598271828</created>
@@ -186,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675280695635</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added Spring banner.txt">
+      <created>1675281322125</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1675281322125</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +228,8 @@
     <MESSAGE value="Transactional implementiert" />
     <MESSAGE value="Anpassung Datenmodell" />
     <MESSAGE value="Added Spring JPA Repositories" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Spring JPA Repositories" />
+    <MESSAGE value="Added Spring banner.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Spring banner.txt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -222,7 +240,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java</url>
-          <line>23</line>
+          <line>19</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

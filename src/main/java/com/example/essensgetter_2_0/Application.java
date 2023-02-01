@@ -2,9 +2,6 @@ package com.example.essensgetter_2_0;
 
 import com.example.essensgetter_2_0.Data.DataCaller;
 import com.example.essensgetter_2_0.Data.DataFormatter;
-import com.example.essensgetter_2_0.JPA.meals.Meal;
-import com.example.essensgetter_2_0.JPA.service.MailUserService;
-import com.example.essensgetter_2_0.email.Mailer;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +9,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
-import java.time.LocalDate;
 
 @SpringBootApplication
 @Log4j2

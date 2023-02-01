@@ -1,4 +1,4 @@
-package com.example.essensgetter_2_0.JPA.service;
+package com.example.essensgetter_2_0.JPA.services;
 
 import com.example.essensgetter_2_0.JPA.MailUser;
 import com.example.essensgetter_2_0.JPA.repository.MailUserRepository;
