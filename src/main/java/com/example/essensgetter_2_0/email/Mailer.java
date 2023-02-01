@@ -1,7 +1,7 @@
 package com.example.essensgetter_2_0.email;
 
-import com.example.essensgetter_2_0.JPA.MailUser;
-import com.example.essensgetter_2_0.JPA.meals.Meal;
+import com.example.essensgetter_2_0.JPA.entities.MailUser;
+import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
 import lombok.extern.log4j.Log4j2;
 
 import javax.mail.*;

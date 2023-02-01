@@ -1,10 +1,10 @@
 package com.example.essensgetter_2_0.Data;
 
-import com.example.essensgetter_2_0.JPA.meals.Meal;
+import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
 import lombok.extern.log4j.Log4j2;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;

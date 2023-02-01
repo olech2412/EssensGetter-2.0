@@ -1,4 +1,4 @@
-package com.example.essensgetter_2_0.JPA;
+package com.example.essensgetter_2_0.JPA.entities;
 
 import javax.persistence.*;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.example.essensgetter_2_0.JPA.authentification;
+package com.example.essensgetter_2_0.JPA.entities.authentification;
 import javax.persistence.*;
 
 @Entity

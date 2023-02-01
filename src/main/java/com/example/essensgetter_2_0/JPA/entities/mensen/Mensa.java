@@ -1,4 +1,4 @@
-package com.example.essensgetter_2_0.JPA.mensen;
+package com.example.essensgetter_2_0.JPA.entities.mensen;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

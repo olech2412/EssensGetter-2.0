@@ -1,4 +1,4 @@
-package com.example.essensgetter_2_0.JPA.meals;
+package com.example.essensgetter_2_0.JPA.entities.meals;
 
 import javax.persistence.*;
 import lombok.EqualsAndHashCode;

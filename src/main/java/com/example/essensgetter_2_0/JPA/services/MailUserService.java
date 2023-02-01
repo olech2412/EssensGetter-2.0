@@ -1,6 +1,6 @@
 package com.example.essensgetter_2_0.JPA.services;
 
-import com.example.essensgetter_2_0.JPA.MailUser;
+import com.example.essensgetter_2_0.JPA.entities.MailUser;
 import com.example.essensgetter_2_0.JPA.repository.MailUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

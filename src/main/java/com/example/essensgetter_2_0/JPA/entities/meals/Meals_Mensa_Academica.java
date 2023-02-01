@@ -1,7 +1,6 @@
-package com.example.essensgetter_2_0.JPA.meals;
+package com.example.essensgetter_2_0.JPA.entities.meals;
 
-import com.example.essensgetter_2_0.JPA.mensen.Cafeteria_Dittrichring;
-import com.example.essensgetter_2_0.JPA.mensen.Mensa_Academica;
+import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa_Academica;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
