@@ -1,7 +1,6 @@
-package com.example.essensgetter_2_0.JPA;
+package com.example.essensgetter_2_0.JPA.meals;
 
 import javax.persistence.*;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,17 +8,16 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-@Entity
 @EqualsAndHashCode
-@Table(name = "meals")
-public class Meal {
+@MappedSuperclass
+public abstract class Meal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @EqualsAndHashCode.Exclude
     @Column(name = "id", nullable = false)
-    private Long id;
-    private String name;
+    protected Long id;
+    protected String name;
     private String description;
     private String price;
     private String category;

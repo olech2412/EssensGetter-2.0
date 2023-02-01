@@ -2,9 +2,8 @@ package com.example.essensgetter_2_0;
 
 import com.example.essensgetter_2_0.Data.DataCaller;
 import com.example.essensgetter_2_0.Data.DataFormatter;
-import com.example.essensgetter_2_0.JPA.Meal;
+import com.example.essensgetter_2_0.JPA.meals.Meal;
 import com.example.essensgetter_2_0.JPA.service.MailUserService;
-import com.example.essensgetter_2_0.JPA.service.MealService;
 import com.example.essensgetter_2_0.email.Mailer;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.SpringApplication;
@@ -24,7 +23,7 @@ public class Application {
 
         DataCaller dataCaller = new DataCaller();
         DataFormatter dataFormatter = new DataFormatter(dataCaller.callData());
-
+        /**
         MealService mealService = configurableApplicationContext.getBean(MealService.class); // get bean from spring context
         MailUserService mailUserService = configurableApplicationContext.getBean(MailUserService.class); // get bean from context
 
@@ -59,6 +58,7 @@ public class Application {
 
         Mailer mailer = new Mailer();
         mailer.sendSpeiseplan(mailUserService.findAllUsersThatAreEnabled(), mealService.findAllMealsByServingDate(LocalDate.now()));
+         */
     }
 
 

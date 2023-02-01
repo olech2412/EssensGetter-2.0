@@ -4,11 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="Prognose funktioniert">
+    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="Transactional implementiert">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/meals/Meals_Cafeteria_Dittrichring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/meals/Meals_Mensa_Academica.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/meals/Meals_Mensa_Peterssteinweg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/meals/Meals_Mensa_Tierklinik.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/meals/Meals_Mensa_am_Elsterbecken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/meals/Meals_Mensa_am_Medizincampus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/meals/Meals_Mensa_am_Park.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/meals/Meals_Menseria_am_Botanischen_Garten.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/meals/Meals_Schoenauer_Str.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/mensen/Cafeteria_Dittrichring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/mensen/Mensa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/mensen/Mensa_Academica.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/mensen/Mensa_Peterssteinweg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/mensen/Mensa_Schoenauer_Str.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/mensen/Mensa_Tierklinik.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/mensen/Mensa_am_Elsterbecken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/mensen/Mensa_am_Medizincampus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/mensen/Mensa_am_Park.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/mensen/Menseria_am_Botanischen_Garten.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/Meals_Schoenauer_StrRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MailUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MailUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MealService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Data/DataFormatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/meals/Meal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/MealRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/service/MealService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/email/Mailer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/email/Mailer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +45,8 @@
       <list>
         <option value="Interface" />
         <option value="com.haulmont.jpb.NewInterface" />
+        <option value="com.haulmont.jpb.JpaRepository" />
+        <option value="com.haulmont.jpb.JpaEntity" />
         <option value="Class" />
       </list>
     </option>
@@ -28,7 +54,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/bewertungsprognose-14" />
+        <entry key="$PROJECT_DIR$" value="2-transactional-für-datenbankzugriffe" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,25 +86,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Workspace/Coding/IntelliJ/gs-accessing-data-jpa&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.38390803&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;e5f61b5be024cd48a13b9e5e4c37bf56&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "OverrideImplement.generate.javadoc": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Workspace/Coding/IntelliJ/gs-accessing-data-jpa",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.38390803",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "e5f61b5be024cd48a13b9e5e4c37bf56"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Workspace\Coding\IntelliJ\EssensGetter 2.0\src\main\java\com\example\essensgetter_2_0" />
@@ -119,7 +151,10 @@
       <workItem from="1674118953932" duration="429000" />
       <workItem from="1674156973807" duration="880000" />
       <workItem from="1674457356434" duration="14000" />
-      <workItem from="1675072608537" duration="1020000" />
+      <workItem from="1675072608537" duration="1116000" />
+      <workItem from="1675081273037" duration="1266000" />
+      <workItem from="1675149651485" duration="3742000" />
+      <workItem from="1675267602932" duration="7669000" />
     </task>
     <task id="LOCAL-00001" summary="First Steps">
       <created>1673598271828</created>
@@ -156,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674119362616</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Transactional implementiert">
+      <created>1675073942208</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675073942208</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +220,25 @@
     <MESSAGE value="Random Nachrichten implementiert" />
     <MESSAGE value="Message fix" />
     <MESSAGE value="Anpassung Datenmodell für Ratingfunktion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Anpassung Datenmodell für Ratingfunktion" />
+    <MESSAGE value="Transactional implementiert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Transactional implementiert" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.hibernate.AnnotationException" package="org.hibernate" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/Application.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/EssensGetter_2_0$Application.ic" NAME="Application Coverage Results" MODIFIED="1675270088506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
