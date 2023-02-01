@@ -4,26 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="Anpassung Datenmodell">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/meals/Meals_Cafeteria_DittrichringRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/meals/Meals_Mensa_AcademicaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/meals/Meals_Mensa_PeterssteinwegRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/meals/Meals_Mensa_TierklinikRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/meals/Meals_Mensa_am_ElsterbeckenRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/meals/Meals_Mensa_am_MedizincampusRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/meals/Meals_Mensa_am_ParkRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/meals/Meals_Menseria_am_Botanischen_GartenRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/mensen/Cafeteria_DittrichringRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/mensen/Mensa_AcademicaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/mensen/Mensa_PeterssteinwegRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/mensen/Mensa_Schoenauer_StrRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/mensen/Mensa_TierklinikRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/mensen/Mensa_am_ElsterbeckenRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/mensen/Mensa_am_MedizincampusRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/mensen/Mensa_am_ParkRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/mensen/Menseria_am_Botanischen_GartenRepository.java" afterDir="false" />
+    <list default="true" id="b2b8e785-9572-4709-8d94-477ed38b5dd1" name="Changes" comment="Added Spring JPA Repositories">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/Meals_Schoenauer_StrRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/essensgetter_2_0/JPA/repository/meals/Meals_Schoenauer_StrRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +128,7 @@
       <workItem from="1675072608537" duration="1116000" />
       <workItem from="1675081273037" duration="1266000" />
       <workItem from="1675149651485" duration="3742000" />
-      <workItem from="1675267602932" duration="9703000" />
+      <workItem from="1675267602932" duration="10315000" />
     </task>
     <task id="LOCAL-00001" summary="First Steps">
       <created>1673598271828</created>
@@ -196,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675278751145</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added Spring JPA Repositories">
+      <created>1675280695635</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1675280695635</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +210,8 @@
     <MESSAGE value="Anpassung Datenmodell für Ratingfunktion" />
     <MESSAGE value="Transactional implementiert" />
     <MESSAGE value="Anpassung Datenmodell" />
-    <option name="LAST_COMMIT_MESSAGE" value="Anpassung Datenmodell" />
+    <MESSAGE value="Added Spring JPA Repositories" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Spring JPA Repositories" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
