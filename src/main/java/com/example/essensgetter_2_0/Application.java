@@ -2,6 +2,9 @@ package com.example.essensgetter_2_0;
 
 import com.example.essensgetter_2_0.Data.DataCaller;
 import com.example.essensgetter_2_0.Data.DataFormatter;
+import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Cafeteria_Dittrichring;
+import com.example.essensgetter_2_0.JPA.services.meals.*;
+import com.example.essensgetter_2_0.JPA.services.mensen.*;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,12 +20,43 @@ public class Application {
     public static void main(String[] args) throws IOException, MessagingException {
         ConfigurableApplicationContext configurableApplicationContext= SpringApplication.run(Application.class, args);
 
+        /**
+         * Get all Spring components
+         */
+        Meals_Mensa_Schoenauer_StrService meals_mensa_schoenauer_strService = configurableApplicationContext.getBean(Meals_Mensa_Schoenauer_StrService.class);
+        Meals_Cafeteria_DittrichringService meals_cafeteria_dittrichringService = configurableApplicationContext.getBean(Meals_Cafeteria_DittrichringService.class);
+        Meals_Mensa_AcademicaService meals_mensa_academicaService = configurableApplicationContext.getBean(Meals_Mensa_AcademicaService.class);
+        Meals_Mensa_am_ElsterbeckenService meals_mensa_am_elsterbeckenService = configurableApplicationContext.getBean(Meals_Mensa_am_ElsterbeckenService.class);
+        Meals_Mensa_am_MedizincampusService meals_mensa_am_medizincampusService = configurableApplicationContext.getBean(Meals_Mensa_am_MedizincampusService.class);
+        Meals_Mensa_am_ParkService meals_mensa_am_parkService = configurableApplicationContext.getBean(Meals_Mensa_am_ParkService.class);
+        Meals_Mensa_PeterssteinwegService meals_mensa_peterssteinwegService = configurableApplicationContext.getBean(Meals_Mensa_PeterssteinwegService.class);
+        Meals_Mensa_TierklinikService meals_mensa_tierklinikService = configurableApplicationContext.getBean(Meals_Mensa_TierklinikService.class);
+        Meals_Menseria_am_Botanischen_GartenServices meals_menseria_am_botanischen_gartenServices = configurableApplicationContext.getBean(Meals_Menseria_am_Botanischen_GartenServices.class);
+
+        Mensa_Schoenauer_StrService mensa_schoenauer_strService = configurableApplicationContext.getBean(Mensa_Schoenauer_StrService.class);
+        Cafeteria_DittrichringService cafeteria_dittrichringService = configurableApplicationContext.getBean(Cafeteria_DittrichringService.class);
+        Mensa_AcademicaService mensa_academicaService = configurableApplicationContext.getBean(Mensa_AcademicaService.class);
+        Mensa_am_ElsterbeckenService mensa_am_elsterbeckenService = configurableApplicationContext.getBean(Mensa_am_ElsterbeckenService.class);
+        Mensa_am_MedizincampusService mensa_am_medizincampusService = configurableApplicationContext.getBean(Mensa_am_MedizincampusService.class);
+        Mensa_am_ParkService mensa_am_parkService = configurableApplicationContext.getBean(Mensa_am_ParkService.class);
+        Mensa_PeterssteinwegService mensa_peterssteinwegService = configurableApplicationContext.getBean(Mensa_PeterssteinwegService.class);
+        Mensa_TierklinikService mensa_tierklinikService = configurableApplicationContext.getBean(Mensa_TierklinikService.class);
+        Menseria_am_Botanischen_GartenService menseria_am_botanischen_gartenService = configurableApplicationContext.getBean(Menseria_am_Botanischen_GartenService.class);
+
+
+
+
+
+
+
+
+
         DataCaller dataCaller = new DataCaller();
         DataFormatter dataFormatter = new DataFormatter(dataCaller.callData());
-        /**
-        MealService mealService = configurableApplicationContext.getBean(MealService.class); // get bean from spring context
-        MailUserService mailUserService = configurableApplicationContext.getBean(MailUserService.class); // get bean from context
 
+
+
+        /**
         for(Meal meal : dataFormatter.mealList){
             if(!mealService.findAllMealsByServingDateGreaterThanEqual(LocalDate.now()).contains(meal)){ // if the meal is not in the database
                 if(mealService.findAllMealsByServingDate(meal.getServingDate()).isEmpty()) { // if there are no meals in the database with the same serving date
