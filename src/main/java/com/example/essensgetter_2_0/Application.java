@@ -3,6 +3,7 @@ package com.example.essensgetter_2_0;
 import com.example.essensgetter_2_0.Data.DataCaller;
 import com.example.essensgetter_2_0.Data.DataFormatter;
 import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Cafeteria_Dittrichring;
+import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
 import com.example.essensgetter_2_0.JPA.services.meals.*;
 import com.example.essensgetter_2_0.JPA.services.mensen.*;
 import lombok.extern.log4j.Log4j2;
@@ -12,6 +13,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootApplication
 @Log4j2
@@ -43,10 +46,21 @@ public class Application {
         Mensa_TierklinikService mensa_tierklinikService = configurableApplicationContext.getBean(Mensa_TierklinikService.class);
         Menseria_am_Botanischen_GartenService menseria_am_botanischen_gartenService = configurableApplicationContext.getBean(Menseria_am_Botanischen_GartenService.class);
 
+        List<Mensa_Service> mensa_serviceList = new ArrayList<>(); // cunt all MensaServices into a list
+        mensa_serviceList.add(mensa_schoenauer_strService);
+        mensa_serviceList.add(cafeteria_dittrichringService);
+        mensa_serviceList.add(mensa_academicaService);
+        mensa_serviceList.add(mensa_am_elsterbeckenService);
+        mensa_serviceList.add(mensa_am_medizincampusService);
+        mensa_serviceList.add(mensa_am_parkService);
+        mensa_serviceList.add(mensa_peterssteinwegService);
+        mensa_serviceList.add(mensa_tierklinikService);
+        mensa_serviceList.add(menseria_am_botanischen_gartenService);
 
 
-
-
+        for (Mensa_Service mensa_service: mensa_serviceList) {
+            mensa_service.findAll().forEach(Mensa::getApiUrl);
+        }
 
 
 

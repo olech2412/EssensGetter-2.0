@@ -1,9 +1,17 @@
 package com.example.essensgetter_2_0.JPA.services;
 
+import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public abstract class Abstract_Service {
+public abstract class Abstract_Service<T> {
+
+    /**
+     * Make sure all subclasses implement this method
+     * @return Iterable of all entities
+     */
+    public abstract Iterable findAll();
+
 }
