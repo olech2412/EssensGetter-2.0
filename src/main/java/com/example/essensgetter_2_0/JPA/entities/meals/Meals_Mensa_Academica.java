@@ -3,7 +3,11 @@ package com.example.essensgetter_2_0.JPA.entities.meals;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa_Academica;
 import lombok.Getter;
 import lombok.Setter;
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Getter
 @Setter

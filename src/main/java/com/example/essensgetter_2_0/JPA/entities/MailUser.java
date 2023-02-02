@@ -1,11 +1,9 @@
 package com.example.essensgetter_2_0.JPA.entities;
 
-import javax.persistence.*;
-
-import com.example.essensgetter_2_0.JPA.entities.ActivationCode;
-import com.example.essensgetter_2_0.JPA.entities.DeactivationCode;
 import lombok.Getter;
 import lombok.Setter;
+
+import javax.persistence.*;
 
 @Getter
 @Setter

@@ -5,6 +5,8 @@ import com.example.essensgetter_2_0.JPA.repository.mensen.Menseria_am_Botanische
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class Menseria_am_Botanischen_GartenService extends Mensa_Service {
 
@@ -12,11 +14,20 @@ public class Menseria_am_Botanischen_GartenService extends Mensa_Service {
     Menseria_am_Botanischen_GartenRepository menseria_am_botanischen_gartenRepository;
 
     /**
-     * @return
+     * @return Menseria am Botanischen Garten as Iterable
      */
     @Override
     public Iterable<Menseria_am_Botanischen_Garten> findAll() {
         return menseria_am_botanischen_gartenRepository.findAll();
+    }
+
+    /**
+     * @return Menseria am Botanischen Garten
+     */
+    @Override
+    public Menseria_am_Botanischen_Garten getMensa() {
+        List<Menseria_am_Botanischen_Garten> menseria_am_botanischen_gartenList = (List<Menseria_am_Botanischen_Garten>) menseria_am_botanischen_gartenRepository.findAll();
+        return menseria_am_botanischen_gartenList.get(0);
     }
 }
 

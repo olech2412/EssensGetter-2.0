@@ -1,6 +1,5 @@
 package com.example.essensgetter_2_0.JPA.services;
 
-import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

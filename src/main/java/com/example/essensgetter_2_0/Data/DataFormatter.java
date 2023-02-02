@@ -1,11 +1,13 @@
 package com.example.essensgetter_2_0.Data;
 
+import com.example.essensgetter_2_0.JPA.entities.meals.Generic_Meal;
 import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
 import lombok.extern.log4j.Log4j2;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,8 +36,7 @@ public class DataFormatter {
             JSONObject menu = jsonArray.getJSONObject(i);
             JSONArray meals = menu.getJSONArray("meals");
             for (int t = 0; t < meals.length(); t++) {
-                /**
-                Meal dataMeal = new Meal();
+                Meal dataMeal = new Generic_Meal();
                 JSONObject meal = meals.getJSONObject(t);
                 dataMeal.setName(meal.getString("name"));
                 dataMeal.setPrice(formatPrices(meal.getJSONObject("prices")));
@@ -43,8 +44,8 @@ public class DataFormatter {
                 dataMeal.setDescription(formatNotes(meal.getJSONArray("notes")));
                 dataMeal.setServingDate(LocalDate.parse(menu.getString("date")));
                 dataMeal.setResponseCode(200);
-                mealList.add(dataMeal);*/
-                log.info("Meal added to list: " /**+ dataMeal*/);
+                mealList.add(dataMeal);
+                log.info("Meal added to list: " + dataMeal);
             }
         }
     }

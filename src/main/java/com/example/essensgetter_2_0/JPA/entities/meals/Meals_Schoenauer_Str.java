@@ -3,10 +3,14 @@ package com.example.essensgetter_2_0.JPA.entities.meals;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa_Schoenauer_Str;
 import lombok.Getter;
 import lombok.Setter;
-import javax.persistence.*;
 
-@Getter
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 @Setter
+@Getter
 @Entity
 @Table(name = "meals_schoenauer_str")
 public class Meals_Schoenauer_Str extends Meal {

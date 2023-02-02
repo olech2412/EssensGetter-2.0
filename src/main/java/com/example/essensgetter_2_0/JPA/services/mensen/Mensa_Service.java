@@ -15,4 +15,6 @@ public abstract class Mensa_Service extends Abstract_Service<Mensa>  {
     @Override
     public abstract Iterable<? extends Mensa> findAll();
 
+    public abstract Mensa getMensa();
+
 }

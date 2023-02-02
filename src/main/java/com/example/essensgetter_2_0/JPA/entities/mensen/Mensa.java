@@ -3,6 +3,7 @@ package com.example.essensgetter_2_0.JPA.entities.mensen;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+
 import javax.persistence.*;
 
 @Getter

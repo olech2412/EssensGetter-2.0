@@ -5,6 +5,8 @@ import com.example.essensgetter_2_0.JPA.repository.mensen.Mensa_AcademicaReposit
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class Mensa_AcademicaService extends Mensa_Service{
 
@@ -12,10 +14,19 @@ public class Mensa_AcademicaService extends Mensa_Service{
     Mensa_AcademicaRepository mensa_academicaRepository;
 
     /**
-     * @return Mensa Academica
+     * @return Mensa Academica as Iterable
      */
     @Override
     public Iterable<Mensa_Academica> findAll() {
         return mensa_academicaRepository.findAll();
+    }
+
+    /**
+     * @return Mensa Academica
+     */
+    @Override
+    public Mensa_Academica getMensa() {
+        List<Mensa_Academica> mensa_academicaList = (List<Mensa_Academica>) mensa_academicaRepository.findAll();
+        return mensa_academicaList.get(0);
     }
 }

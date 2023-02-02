@@ -2,8 +2,7 @@ package com.example.essensgetter_2_0;
 
 import com.example.essensgetter_2_0.Data.DataCaller;
 import com.example.essensgetter_2_0.Data.DataFormatter;
-import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Cafeteria_Dittrichring;
-import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
+import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
 import com.example.essensgetter_2_0.JPA.services.meals.*;
 import com.example.essensgetter_2_0.JPA.services.mensen.*;
 import lombok.extern.log4j.Log4j2;
@@ -13,7 +12,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @SpringBootApplication
@@ -46,7 +47,21 @@ public class Application {
         Mensa_TierklinikService mensa_tierklinikService = configurableApplicationContext.getBean(Mensa_TierklinikService.class);
         Menseria_am_Botanischen_GartenService menseria_am_botanischen_gartenService = configurableApplicationContext.getBean(Menseria_am_Botanischen_GartenService.class);
 
-        List<Mensa_Service> mensa_serviceList = new ArrayList<>(); // cunt all MensaServices into a list
+        /**
+         * Create a HashMap with all MensaServices and MealsServices
+         */
+        HashMap<Mensa_Service, Meals_Mensa_Service> mensa_meals_serviceHashMap = new HashMap<>();
+        mensa_meals_serviceHashMap.put(mensa_schoenauer_strService, meals_mensa_schoenauer_strService);
+        mensa_meals_serviceHashMap.put(cafeteria_dittrichringService, meals_cafeteria_dittrichringService);
+        mensa_meals_serviceHashMap.put(mensa_academicaService, meals_mensa_academicaService);
+        mensa_meals_serviceHashMap.put(mensa_am_elsterbeckenService, meals_mensa_am_elsterbeckenService);
+        mensa_meals_serviceHashMap.put(mensa_am_medizincampusService, meals_mensa_am_medizincampusService);
+        mensa_meals_serviceHashMap.put(mensa_am_parkService, meals_mensa_am_parkService);
+        mensa_meals_serviceHashMap.put(mensa_peterssteinwegService, meals_mensa_peterssteinwegService);
+        mensa_meals_serviceHashMap.put(mensa_tierklinikService, meals_mensa_tierklinikService);
+        mensa_meals_serviceHashMap.put(menseria_am_botanischen_gartenService, meals_menseria_am_botanischen_gartenServices);
+
+        List<Mensa_Service> mensa_serviceList = new ArrayList<>(); // count all MensaServices into a list
         mensa_serviceList.add(mensa_schoenauer_strService);
         mensa_serviceList.add(cafeteria_dittrichringService);
         mensa_serviceList.add(mensa_academicaService);
@@ -59,38 +74,39 @@ public class Application {
 
 
         for (Mensa_Service mensa_service: mensa_serviceList) {
-            mensa_service.findAll().forEach(Mensa::getApiUrl);
+            DataCaller dataCaller = new DataCaller(mensa_service.getMensa().getApiUrl());
+            DataFormatter dataFormatter = new DataFormatter(dataCaller.callData());
+            checkTheData(dataFormatter.mealList, mensa_service, mensa_meals_serviceHashMap);
         }
 
-
-
-
-        DataCaller dataCaller = new DataCaller();
-        DataFormatter dataFormatter = new DataFormatter(dataCaller.callData());
-
-
-
         /**
-        for(Meal meal : dataFormatter.mealList){
-            if(!mealService.findAllMealsByServingDateGreaterThanEqual(LocalDate.now()).contains(meal)){ // if the meal is not in the database
-                if(mealService.findAllMealsByServingDate(meal.getServingDate()).isEmpty()) { // if there are no meals in the database with the same serving date
-                    for (Meal meal1:dataFormatter.mealList) { // add all meals with the same serving date to the database
+        Mailer mailer = new Mailer();
+        mailer.sendSpeiseplan(mailUserService.findAllUsersThatAreEnabled(), mealService.findAllMealsByServingDate(LocalDate.now()));*/
+
+    }
+
+    private static void checkTheData(List<Meal> data, Mensa_Service mensa_service, HashMap<Mensa_Service, Meals_Mensa_Service> mensa_meals_serviceHashMap) {
+        Meals_Mensa_Service meals_mensa_service = mensa_meals_serviceHashMap.get(mensa_service);
+        for(Meal meal : data){
+            if(!meals_mensa_service.findAllMealsByServingDateGreaterThanEqual(LocalDate.now()).contains(meal)){ // if the meal is not in the database
+                if(meals_mensa_service.findAllMealsByServingDate(meal.getServingDate()).isEmpty()) { // if there are no meals in the database with the same serving date
+                    for (Meal meal1:data) { // add all meals with the same serving date to the database
                         if(meal1.getServingDate().equals(meal.getServingDate())){
-                            mealService.saveMeal(meal1);
+                            meals_mensa_service.save(meal1, mensa_service.getMensa());
                         }
                     }
                 }else {
-                    for (Meal meals : mealService.findAllMealsByServingDateGreaterThanEqual(LocalDate.now())) {
+                    for (Meal meals : meals_mensa_service.findAllMealsByServingDateGreaterThanEqual(LocalDate.now())) {
                         if(meals.getServingDate().equals(meal.getServingDate())){ // if a change in the menu is detected
-                            mealService.deleteMeal(meals); // delete all meals from this day (because the menu has changed)
+                            meals_mensa_service.delete(meals); // delete all meals from this day (because the menu has changed)
                             //At this point, we dont know if the meal replaces another meal or if it is a new meal.
                             //So we delete all meals with the same serving date and save the new ones
                             log.info("Meal deleted because a change was detected: " + meals);
                         }
                     }
-                    for (Meal meal1:dataFormatter.mealList) { // save all meals from this day (the new ones)
+                    for (Meal meal1:data) { // save all meals from this day (the new ones)
                         if (meal1.getServingDate().equals(meal.getServingDate())) {
-                            mealService.saveMeal(meal1); // save meal to database
+                            //meals_mensa_service.save(meal1); // save meal to database
                             // Now we have all new meals in the database
                         }
                     }
@@ -98,11 +114,6 @@ public class Application {
 
             }
         }
-
-
-        Mailer mailer = new Mailer();
-        mailer.sendSpeiseplan(mailUserService.findAllUsersThatAreEnabled(), mealService.findAllMealsByServingDate(LocalDate.now()));
-         */
     }
 
 
