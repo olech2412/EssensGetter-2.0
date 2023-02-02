@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -27,9 +28,6 @@ public class MailUser {
     private String firstname;
     private String lastname;
     private boolean enabled;
-
-    @ManyToMany
-    private List<Mensa> subscribedMensen;
 
     public MailUser() {
     }

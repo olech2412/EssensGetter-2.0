@@ -3,8 +3,10 @@ package com.example.essensgetter_2_0;
 import com.example.essensgetter_2_0.Data.DataCaller;
 import com.example.essensgetter_2_0.Data.DataFormatter;
 import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
+import com.example.essensgetter_2_0.JPA.services.MailUserService;
 import com.example.essensgetter_2_0.JPA.services.meals.*;
 import com.example.essensgetter_2_0.JPA.services.mensen.*;
+import com.example.essensgetter_2_0.email.Mailer;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -47,6 +49,8 @@ public class Application {
         Mensa_TierklinikService mensa_tierklinikService = configurableApplicationContext.getBean(Mensa_TierklinikService.class);
         Menseria_am_Botanischen_GartenService menseria_am_botanischen_gartenService = configurableApplicationContext.getBean(Menseria_am_Botanischen_GartenService.class);
 
+        MailUserService mailUserService = configurableApplicationContext.getBean(MailUserService.class);
+
         /**
          * Create a HashMap with all MensaServices and MealsServices
          */
@@ -79,9 +83,9 @@ public class Application {
             checkTheData(dataFormatter.mealList, mensa_service, mensa_meals_serviceHashMap);
         }
 
-        /**
+
          Mailer mailer = new Mailer();
-         mailer.sendSpeiseplan(mailUserService.findAllUsersThatAreEnabled(), mealService.findAllMealsByServingDate(LocalDate.now()));*/
+         mailer.sendSpeiseplan(mailUserService.findAllUsersThatAreEnabled(), meals_mensa_schoenauer_strService.findAllMealsByServingDate(LocalDate.now()));
 
     }
 

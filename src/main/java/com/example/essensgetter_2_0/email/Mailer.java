@@ -2,6 +2,7 @@ package com.example.essensgetter_2_0.email;
 
 import com.example.essensgetter_2_0.JPA.entities.MailUser;
 import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
+import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Schoenauer_Str;
 import lombok.extern.log4j.Log4j2;
 
 import javax.mail.*;
@@ -23,7 +24,7 @@ public class Mailer {
      *
      * @throws MessagingException
      */
-    public void sendSpeiseplan(Iterable<MailUser> emailTargets, Iterable<Meal> menu) throws MessagingException, IOException {
+    public void sendSpeiseplan(Iterable<MailUser> emailTargets, List<Meals_Schoenauer_Str> menu) throws MessagingException, IOException {
         Properties prop = new Properties();
         prop.put("mail.smtp.auth", false);
         prop.put("mail.smtp.host", "localhost");
@@ -52,7 +53,7 @@ public class Mailer {
 
     }
 
-    private String createEmail(Iterable<Meal> menu, String firstName, String deactivateUrl) {
+    private String createEmail(List<Meals_Schoenauer_Str> menu, String firstName, String deactivateUrl) {
         StringBuilder menuText = new StringBuilder();
 
         for (Meal meal : menu) {
