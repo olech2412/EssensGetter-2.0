@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class Mensa_PeterssteinwegService extends Mensa_Service{
+public class Mensa_PeterssteinwegService extends Mensa_Service {
 
     @Autowired
     Mensa_PeterssteinwegRepository mensa_peterssteinwegRepository;

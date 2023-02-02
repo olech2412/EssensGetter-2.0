@@ -23,7 +23,7 @@ public class DataFormatter {
     public DataFormatter(Object jsonArray) {
         try {
             formatData((JSONArray) jsonArray);
-        }catch (ClassCastException classCastException){
+        } catch (ClassCastException classCastException) {
             log.error("Error while casting data: " + classCastException);
         }
     }
@@ -52,6 +52,7 @@ public class DataFormatter {
 
     /**
      * Formats the prices from the API to a String
+     *
      * @return String
      */
     private String formatPrices(JSONObject prices) {
@@ -79,13 +80,14 @@ public class DataFormatter {
 
     /**
      * Formats the notes from the API to a String
+     *
      * @return String
      */
     private String formatNotes(JSONArray notes) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < notes.length(); i++) {
             stringBuilder.append(notes.getString(i));
-            if(i+1 < notes.length()){
+            if (i + 1 < notes.length()) {
                 stringBuilder.append(", ");
             }
         }

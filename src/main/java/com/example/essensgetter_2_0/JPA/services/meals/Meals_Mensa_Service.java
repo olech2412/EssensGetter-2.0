@@ -3,7 +3,6 @@ package com.example.essensgetter_2_0.JPA.services.meals;
 
 import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
-import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa_Schoenauer_Str;
 import com.example.essensgetter_2_0.JPA.services.Abstract_Service;
 import org.springframework.stereotype.Service;
 

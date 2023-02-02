@@ -19,7 +19,7 @@ public class Meals_Menseria_am_Botanischen_Garten extends Meal {
     @JoinColumn(name = "menseria_am_botanischen_garten_id", nullable = false)
     private Menseria_am_Botanischen_Garten menseria_am_botanischen_garten;
 
-    public Meals_Menseria_am_Botanischen_Garten(){
+    public Meals_Menseria_am_Botanischen_Garten() {
 
     }
 

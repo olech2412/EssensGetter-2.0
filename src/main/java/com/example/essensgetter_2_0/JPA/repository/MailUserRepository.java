@@ -15,8 +15,10 @@ public interface MailUserRepository extends CrudRepository<MailUser, Long> {
     MailUser findByActivationCode_Code(String code);
 
     MailUser findByDeactivationCode_Code(String code);
+
     /**
      * Finds all enabled users
+     *
      * @param enabled
      * @return
      */

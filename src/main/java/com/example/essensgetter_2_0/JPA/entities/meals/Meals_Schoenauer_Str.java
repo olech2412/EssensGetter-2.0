@@ -19,7 +19,7 @@ public class Meals_Schoenauer_Str extends Meal {
     @JoinColumn(name = "mensa_schoenauer_str_id", nullable = false)
     private Mensa_Schoenauer_Str mensa_schoenauer_str;
 
-    public Meals_Schoenauer_Str(){
+    public Meals_Schoenauer_Str() {
 
     }
 

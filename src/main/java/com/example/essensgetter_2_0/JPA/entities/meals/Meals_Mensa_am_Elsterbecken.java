@@ -19,7 +19,7 @@ public class Meals_Mensa_am_Elsterbecken extends Meal {
     @JoinColumn(name = "mensa_am_elsterbecken_id", nullable = false)
     private Mensa_am_Elsterbecken mensa_am_elsterbecken;
 
-    public Meals_Mensa_am_Elsterbecken(){
+    public Meals_Mensa_am_Elsterbecken() {
 
     }
 

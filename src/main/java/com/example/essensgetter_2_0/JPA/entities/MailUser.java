@@ -1,9 +1,11 @@
 package com.example.essensgetter_2_0.JPA.entities;
 
+import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,6 +27,9 @@ public class MailUser {
     private String firstname;
     private String lastname;
     private boolean enabled;
+
+    @ManyToMany
+    private List<Mensa> subscribedMensen;
 
     public MailUser() {
     }

@@ -2,10 +2,8 @@ package com.example.essensgetter_2_0.JPA.services.meals;
 
 import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
 import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Cafeteria_Dittrichring;
-import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Schoenauer_Str;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Cafeteria_Dittrichring;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
-import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa_Schoenauer_Str;
 import com.example.essensgetter_2_0.JPA.repository.meals.Meals_Cafeteria_DittrichringRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

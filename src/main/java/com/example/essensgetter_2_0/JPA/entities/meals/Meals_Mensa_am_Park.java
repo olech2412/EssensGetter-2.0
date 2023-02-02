@@ -19,7 +19,7 @@ public class Meals_Mensa_am_Park extends Meal {
     @JoinColumn(name = "mensa_am_park_id", nullable = false)
     private Mensa_am_Park mensa_am_park;
 
-    public Meals_Mensa_am_Park(){
+    public Meals_Mensa_am_Park() {
 
     }
 

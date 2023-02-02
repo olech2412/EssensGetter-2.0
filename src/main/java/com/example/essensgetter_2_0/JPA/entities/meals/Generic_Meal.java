@@ -5,7 +5,7 @@ package com.example.essensgetter_2_0.JPA.entities.meals;
  * Used to format meals generically
  * without any parameters
  */
-public class Generic_Meal extends Meal{
+public class Generic_Meal extends Meal {
 
     public Generic_Meal() {
     }

@@ -20,6 +20,7 @@ public class DataCaller {
 
     /**
      * Calls the API and returns the data as a JSONObject
+     *
      * @return jsonObject
      * @throws IOException
      */

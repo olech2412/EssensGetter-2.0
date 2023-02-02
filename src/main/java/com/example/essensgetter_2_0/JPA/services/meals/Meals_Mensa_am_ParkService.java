@@ -2,9 +2,7 @@ package com.example.essensgetter_2_0.JPA.services.meals;
 
 import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
 import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Mensa_am_Park;
-import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Schoenauer_Str;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
-import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa_Schoenauer_Str;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa_am_Park;
 import com.example.essensgetter_2_0.JPA.repository.meals.Meals_Mensa_am_ParkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
-public class Meals_Mensa_am_ParkService extends Meals_Mensa_Service{
+public class Meals_Mensa_am_ParkService extends Meals_Mensa_Service {
 
     @Autowired
     Meals_Mensa_am_ParkRepository meals_mensa_am_parkRepository;

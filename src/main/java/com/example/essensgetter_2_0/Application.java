@@ -22,7 +22,7 @@ import java.util.List;
 public class Application {
 
     public static void main(String[] args) throws IOException, MessagingException {
-        ConfigurableApplicationContext configurableApplicationContext= SpringApplication.run(Application.class, args);
+        ConfigurableApplicationContext configurableApplicationContext = SpringApplication.run(Application.class, args);
 
         /**
          * Get all Spring components
@@ -73,38 +73,38 @@ public class Application {
         mensa_serviceList.add(menseria_am_botanischen_gartenService);
 
 
-        for (Mensa_Service mensa_service: mensa_serviceList) {
+        for (Mensa_Service mensa_service : mensa_serviceList) {
             DataCaller dataCaller = new DataCaller(mensa_service.getMensa().getApiUrl());
             DataFormatter dataFormatter = new DataFormatter(dataCaller.callData());
             checkTheData(dataFormatter.mealList, mensa_service, mensa_meals_serviceHashMap);
         }
 
         /**
-        Mailer mailer = new Mailer();
-        mailer.sendSpeiseplan(mailUserService.findAllUsersThatAreEnabled(), mealService.findAllMealsByServingDate(LocalDate.now()));*/
+         Mailer mailer = new Mailer();
+         mailer.sendSpeiseplan(mailUserService.findAllUsersThatAreEnabled(), mealService.findAllMealsByServingDate(LocalDate.now()));*/
 
     }
 
     private static void checkTheData(List<Meal> data, Mensa_Service mensa_service, HashMap<Mensa_Service, Meals_Mensa_Service> mensa_meals_serviceHashMap) {
         Meals_Mensa_Service meals_mensa_service = mensa_meals_serviceHashMap.get(mensa_service);
-        for(Meal meal : data){
-            if(!meals_mensa_service.findAllMealsByServingDateGreaterThanEqual(LocalDate.now()).contains(meal)){ // if the meal is not in the database
-                if(meals_mensa_service.findAllMealsByServingDate(meal.getServingDate()).isEmpty()) { // if there are no meals in the database with the same serving date
-                    for (Meal meal1:data) { // add all meals with the same serving date to the database
-                        if(meal1.getServingDate().equals(meal.getServingDate())){
+        for (Meal meal : data) {
+            if (!meals_mensa_service.findAllMealsByServingDateGreaterThanEqual(LocalDate.now()).contains(meal)) { // if the meal is not in the database
+                if (meals_mensa_service.findAllMealsByServingDate(meal.getServingDate()).isEmpty()) { // if there are no meals in the database with the same serving date
+                    for (Meal meal1 : data) { // add all meals with the same serving date to the database
+                        if (meal1.getServingDate().equals(meal.getServingDate())) {
                             meals_mensa_service.save(meal1, mensa_service.getMensa());
                         }
                     }
-                }else {
+                } else {
                     for (Meal meals : meals_mensa_service.findAllMealsByServingDateGreaterThanEqual(LocalDate.now())) {
-                        if(meals.getServingDate().equals(meal.getServingDate())){ // if a change in the menu is detected
+                        if (meals.getServingDate().equals(meal.getServingDate())) { // if a change in the menu is detected
                             meals_mensa_service.delete(meals); // delete all meals from this day (because the menu has changed)
                             //At this point, we dont know if the meal replaces another meal or if it is a new meal.
                             //So we delete all meals with the same serving date and save the new ones
                             log.info("Meal deleted because a change was detected: " + meals);
                         }
                     }
-                    for (Meal meal1:data) { // save all meals from this day (the new ones)
+                    for (Meal meal1 : data) { // save all meals from this day (the new ones)
                         if (meal1.getServingDate().equals(meal.getServingDate())) {
                             //meals_mensa_service.save(meal1); // save meal to database
                             // Now we have all new meals in the database

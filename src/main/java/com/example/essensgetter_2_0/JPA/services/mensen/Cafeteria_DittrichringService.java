@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class Cafeteria_DittrichringService extends Mensa_Service{
+public class Cafeteria_DittrichringService extends Mensa_Service {
 
     @Autowired
     Cafeteria_DittrichringRepository cafeteria_dittrichringRepository;

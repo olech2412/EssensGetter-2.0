@@ -20,6 +20,7 @@ public class Mailer {
 
     /**
      * Sends an email to the given email address with the current menu
+     *
      * @throws MessagingException
      */
     public void sendSpeiseplan(Iterable<MailUser> emailTargets, Iterable<Meal> menu) throws MessagingException, IOException {
@@ -28,7 +29,7 @@ public class Mailer {
         prop.put("mail.smtp.host", "localhost");
         prop.put("mail.smtp.port", "25");
 
-        for (MailUser emailTarget: emailTargets) {
+        for (MailUser emailTarget : emailTargets) {
             String deactivateUrl = "https://egr.olech2412.de/deactivate?code=" + emailTarget.getDeactivationCode().getCode();
             Message message = new MimeMessage(Session.getInstance(prop));
             message.setFrom(new InternetAddress("noreply_essensgetter@olech2412.de"));
@@ -51,13 +52,13 @@ public class Mailer {
 
     }
 
-    private String createEmail(Iterable<Meal> menu , String firstName, String deactivateUrl) {
+    private String createEmail(Iterable<Meal> menu, String firstName, String deactivateUrl) {
         StringBuilder menuText = new StringBuilder();
 
-        for(Meal meal : menu) {
+        for (Meal meal : menu) {
             String menuString = StaticEmailText.foodText;
             menuString = menuString.replaceFirst("%s", meal.getCategory());
-            menuString = menuString.replaceFirst("%s", meal.getName() + " (" + meal.getDescription() +" )" + " - " + meal.getPrice());
+            menuString = menuString.replaceFirst("%s", meal.getName() + " (" + meal.getDescription() + " )" + " - " + meal.getPrice());
             menuText.append(menuString);
         }
 

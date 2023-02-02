@@ -20,15 +20,7 @@ public abstract class Mensa {
 
     private String apiUrl;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Mensa(){
+    public Mensa() {
 
     }
 
@@ -36,5 +28,13 @@ public abstract class Mensa {
         this.id = id;
         this.name = name;
         this.apiUrl = apiUrl;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
