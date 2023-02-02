@@ -76,12 +76,11 @@ public class Mailer {
         footer = footer.replaceFirst("%s", getRandomGreetingsText());
         footer = footer.replaceFirst("%s", deactivateUrl);
 
-        StringBuilder msg = new StringBuilder();
-        msg.append(header);
-        msg.append(menuText);
-        msg.append(footer);
+        String msg = header +
+                menuText +
+                footer;
 
-        return msg.toString();
+        return msg;
     }
 
     private String getRandomFunnyWelcomeText() {

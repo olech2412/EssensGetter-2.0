@@ -1,12 +1,10 @@
 package com.example.essensgetter_2_0.JPA.entities;
 
-import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Cafeteria_Dittrichring;
 import com.example.essensgetter_2_0.JPA.entities.mensen.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Getter
 @Setter

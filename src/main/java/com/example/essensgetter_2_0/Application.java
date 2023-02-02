@@ -77,18 +77,6 @@ public class Application {
         mensa_serviceList.add(mensa_tierklinikService);
         mensa_serviceList.add(menseria_am_botanischen_gartenService);
 
-        MailUser mailUser = new MailUser();
-        mailUser.setEmail("olechristoph2412@gmail.com");
-        mailUser.setFirstname("Ole");
-        mailUser.setLastname("Christoph");
-        mailUser.setCafeteria_dittrichring(cafeteria_dittrichringService.getMensa());
-        mailUser.setEnabled(true);
-
-        mailUserService.saveMailUser(mailUser);
-        log.info("MailUser saved");
-        mailUserService.deleteMailUser(mailUser);
-
-
         for (Mensa_Service mensa_service : mensa_serviceList) {
             DataCaller dataCaller = new DataCaller(mensa_service.getMensa().getApiUrl());
             DataFormatter dataFormatter = new DataFormatter(dataCaller.callData());
@@ -96,8 +84,8 @@ public class Application {
         }
 
 
-         Mailer mailer = new Mailer();
-         mailer.sendSpeiseplan(mailUserService.findAllUsersThatAreEnabled(), meals_mensa_schoenauer_strService.findAllMealsByServingDate(LocalDate.now()));
+        Mailer mailer = new Mailer();
+        mailer.sendSpeiseplan(mailUserService.findAllUsersThatAreEnabled(), meals_mensa_schoenauer_strService.findAllMealsByServingDate(LocalDate.now()));
 
     }
 
