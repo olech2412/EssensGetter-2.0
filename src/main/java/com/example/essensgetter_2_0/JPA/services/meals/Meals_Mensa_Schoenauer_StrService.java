@@ -74,10 +74,31 @@ public class Meals_Mensa_Schoenauer_StrService extends Meals_Mensa_Service {
 
     /**
      * @param meal
+     * @param mensa
      */
     @Override
-    public void delete(Meal meal) {
-        meals_schoenauer_strRepository.delete((Meals_Schoenauer_Str) meal);
+    public void delete(Meal meal, Mensa mensa) {
+        Meals_Schoenauer_Str meals_schoenauer_str = new Meals_Schoenauer_Str();
+        meals_schoenauer_str.setId(meal.getId());
+        meals_schoenauer_str.setName(meal.getName());
+        meals_schoenauer_str.setCategory(meal.getCategory());
+        meals_schoenauer_str.setPrice(meal.getPrice());
+        meals_schoenauer_str.setServingDate(meal.getServingDate());
+        meals_schoenauer_str.setDescription(meal.getDescription());
+        meals_schoenauer_str.setRating(meal.getRating());
+        meals_schoenauer_str.setVotes(meal.getVotes());
+        meals_schoenauer_str.setStarsTotal(meal.getStarsTotal());
+        meals_schoenauer_str.setResponseCode(meal.getResponseCode());
+
+        Mensa_Schoenauer_Str mensa_schoenauer_str = new Mensa_Schoenauer_Str();
+        mensa_schoenauer_str.setId(mensa.getId());
+        mensa_schoenauer_str.setName(mensa.getName());
+        mensa_schoenauer_str.setApiUrl(mensa.getApiUrl());
+
+        meals_schoenauer_str.setMensa_schoenauer_str(mensa_schoenauer_str);
+
+        meals_schoenauer_strRepository.delete(meals_schoenauer_str);
+        log.warn("Meal deleted: " + meal.getName() + " from " + mensa.getName());
     }
 }
 

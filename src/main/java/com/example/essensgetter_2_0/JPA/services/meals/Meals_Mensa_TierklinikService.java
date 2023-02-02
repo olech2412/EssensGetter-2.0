@@ -5,6 +5,7 @@ import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Mensa_Tierklinik;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa_Tierklinik;
 import com.example.essensgetter_2_0.JPA.repository.meals.Meals_Mensa_TierklinikRepository;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
+@Log4j2
 public class Meals_Mensa_TierklinikService extends Meals_Mensa_Service {
 
     @Autowired
@@ -73,10 +75,31 @@ public class Meals_Mensa_TierklinikService extends Meals_Mensa_Service {
 
     /**
      * @param meal
+     * @param mensa
      */
     @Override
-    public void delete(Meal meal) {
-        meals_mensa_tierklinikRepository.delete((Meals_Mensa_Tierklinik) meal);
+    public void delete(Meal meal, Mensa mensa) {
+        Meals_Mensa_Tierklinik meals_mensa_tierklinik = new Meals_Mensa_Tierklinik();
+        meals_mensa_tierklinik.setId(meal.getId());
+        meals_mensa_tierklinik.setName(meal.getName());
+        meals_mensa_tierklinik.setCategory(meal.getCategory());
+        meals_mensa_tierklinik.setPrice(meal.getPrice());
+        meals_mensa_tierklinik.setServingDate(meal.getServingDate());
+        meals_mensa_tierklinik.setDescription(meal.getDescription());
+        meals_mensa_tierklinik.setRating(meal.getRating());
+        meals_mensa_tierklinik.setVotes(meal.getVotes());
+        meals_mensa_tierklinik.setStarsTotal(meal.getStarsTotal());
+        meals_mensa_tierklinik.setResponseCode(meal.getResponseCode());
+
+        Mensa_Tierklinik mensa_tierklinik = new Mensa_Tierklinik();
+        mensa_tierklinik.setId(mensa.getId());
+        mensa_tierklinik.setName(mensa.getName());
+        mensa_tierklinik.setApiUrl(mensa.getApiUrl());
+
+        meals_mensa_tierklinik.setMensa_tierklinik(mensa_tierklinik);
+
+        meals_mensa_tierklinikRepository.delete(meals_mensa_tierklinik);
+        log.warn("Meal deleted: " + meal.getName() + " from " + mensa.getName());
     }
 }
 

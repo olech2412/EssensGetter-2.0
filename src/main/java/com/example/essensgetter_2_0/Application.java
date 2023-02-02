@@ -2,6 +2,7 @@ package com.example.essensgetter_2_0;
 
 import com.example.essensgetter_2_0.Data.DataCaller;
 import com.example.essensgetter_2_0.Data.DataFormatter;
+import com.example.essensgetter_2_0.JPA.entities.MailUser;
 import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
 import com.example.essensgetter_2_0.JPA.services.MailUserService;
 import com.example.essensgetter_2_0.JPA.services.meals.*;
@@ -76,6 +77,17 @@ public class Application {
         mensa_serviceList.add(mensa_tierklinikService);
         mensa_serviceList.add(menseria_am_botanischen_gartenService);
 
+        MailUser mailUser = new MailUser();
+        mailUser.setEmail("olechristoph2412@gmail.com");
+        mailUser.setFirstname("Ole");
+        mailUser.setLastname("Christoph");
+        mailUser.setCafeteria_dittrichring(cafeteria_dittrichringService.getMensa());
+        mailUser.setEnabled(true);
+
+        mailUserService.saveMailUser(mailUser);
+        log.info("MailUser saved");
+        mailUserService.deleteMailUser(mailUser);
+
 
         for (Mensa_Service mensa_service : mensa_serviceList) {
             DataCaller dataCaller = new DataCaller(mensa_service.getMensa().getApiUrl());
@@ -102,7 +114,7 @@ public class Application {
                 } else {
                     for (Meal meals : meals_mensa_service.findAllMealsByServingDateGreaterThanEqual(LocalDate.now())) {
                         if (meals.getServingDate().equals(meal.getServingDate())) { // if a change in the menu is detected
-                            meals_mensa_service.delete(meals); // delete all meals from this day (because the menu has changed)
+                            meals_mensa_service.delete(meals, mensa_service.getMensa()); // delete all meals from this day (because the menu has changed)
                             //At this point, we dont know if the meal replaces another meal or if it is a new meal.
                             //So we delete all meals with the same serving date and save the new ones
                             log.info("Meal deleted because a change was detected: " + meals);
@@ -110,7 +122,7 @@ public class Application {
                     }
                     for (Meal meal1 : data) { // save all meals from this day (the new ones)
                         if (meal1.getServingDate().equals(meal.getServingDate())) {
-                            //meals_mensa_service.save(meal1); // save meal to database
+                            meals_mensa_service.save(meal1, mensa_service.getMensa()); // save meal to database
                             // Now we have all new meals in the database
                         }
                     }

@@ -5,6 +5,7 @@ import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Cafeteria_Dittrichr
 import com.example.essensgetter_2_0.JPA.entities.mensen.Cafeteria_Dittrichring;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
 import com.example.essensgetter_2_0.JPA.repository.meals.Meals_Cafeteria_DittrichringRepository;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
+@Log4j2
 public class Meals_Cafeteria_DittrichringService extends Meals_Mensa_Service {
 
     @Autowired
@@ -74,10 +76,31 @@ public class Meals_Cafeteria_DittrichringService extends Meals_Mensa_Service {
 
     /**
      * @param meal
+     * @param mensa
      */
     @Override
-    public void delete(Meal meal) {
-        meals_cafeteria_dittrichringRepository.delete((Meals_Cafeteria_Dittrichring) meal);
+    public void delete(Meal meal, Mensa mensa) {
+        Meals_Cafeteria_Dittrichring meals_cafeteria_dittrichring = new Meals_Cafeteria_Dittrichring();
+        meals_cafeteria_dittrichring.setId(meal.getId());
+        meals_cafeteria_dittrichring.setName(meal.getName());
+        meals_cafeteria_dittrichring.setCategory(meal.getCategory());
+        meals_cafeteria_dittrichring.setPrice(meal.getPrice());
+        meals_cafeteria_dittrichring.setServingDate(meal.getServingDate());
+        meals_cafeteria_dittrichring.setDescription(meal.getDescription());
+        meals_cafeteria_dittrichring.setRating(meal.getRating());
+        meals_cafeteria_dittrichring.setVotes(meal.getVotes());
+        meals_cafeteria_dittrichring.setStarsTotal(meal.getStarsTotal());
+        meals_cafeteria_dittrichring.setResponseCode(meal.getResponseCode());
+
+        Cafeteria_Dittrichring cafeteria_dittrichring = new Cafeteria_Dittrichring();
+        cafeteria_dittrichring.setId(mensa.getId());
+        cafeteria_dittrichring.setName(mensa.getName());
+        cafeteria_dittrichring.setApiUrl(mensa.getApiUrl());
+
+        meals_cafeteria_dittrichring.setCafeteria_dittrichring(cafeteria_dittrichring);
+
+        meals_cafeteria_dittrichringRepository.delete(meals_cafeteria_dittrichring);
+        log.warn("Meal deleted: " + meal.getName() + " from " + mensa.getName());
     }
 
 

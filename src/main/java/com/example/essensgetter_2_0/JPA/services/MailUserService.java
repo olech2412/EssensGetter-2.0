@@ -21,4 +21,12 @@ public class MailUserService {
     public Iterable<MailUser> findAllUsersThatAreEnabled() {
         return mailUserRepository.findUsersByEnabled(true);
     }
+
+    public void saveMailUser(MailUser mailUser) {
+        mailUserRepository.save(mailUser);
+    }
+
+    public void deleteMailUser(MailUser mailUser) {
+        mailUserRepository.delete(mailUser);
+    }
 }

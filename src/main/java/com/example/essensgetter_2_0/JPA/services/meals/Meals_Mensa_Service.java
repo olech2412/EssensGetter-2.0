@@ -21,6 +21,6 @@ public abstract class Meals_Mensa_Service extends Abstract_Service {
 
     public abstract void save(Meal meal, Mensa mensa);
 
-    public abstract void delete(Meal meal);
+    public abstract void delete(Meal meal, Mensa mensa);
 
 }

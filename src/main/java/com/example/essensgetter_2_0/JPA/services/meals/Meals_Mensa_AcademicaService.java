@@ -6,6 +6,7 @@ import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa_Academica;
 import com.example.essensgetter_2_0.JPA.repository.meals.Meals_Mensa_AcademicaRepository;
 import com.example.essensgetter_2_0.JPA.repository.mensen.Mensa_AcademicaRepository;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
+@Log4j2
 public class Meals_Mensa_AcademicaService extends Meals_Mensa_Service {
 
     @Autowired
@@ -76,10 +78,31 @@ public class Meals_Mensa_AcademicaService extends Meals_Mensa_Service {
 
     /**
      * @param meal
+     * @param mensa
      */
     @Override
-    public void delete(Meal meal) {
-        meals_mensa_academicaRepository.delete((Meals_Mensa_Academica) meal);
+    public void delete(Meal meal, Mensa mensa) {
+        Meals_Mensa_Academica meals_mensa_academica = new Meals_Mensa_Academica();
+        meals_mensa_academica.setId(meal.getId());
+        meals_mensa_academica.setName(meal.getName());
+        meals_mensa_academica.setCategory(meal.getCategory());
+        meals_mensa_academica.setPrice(meal.getPrice());
+        meals_mensa_academica.setServingDate(meal.getServingDate());
+        meals_mensa_academica.setDescription(meal.getDescription());
+        meals_mensa_academica.setRating(meal.getRating());
+        meals_mensa_academica.setVotes(meal.getVotes());
+        meals_mensa_academica.setStarsTotal(meal.getStarsTotal());
+        meals_mensa_academica.setResponseCode(meal.getResponseCode());
+
+        Mensa_Academica mensa_academica = new Mensa_Academica();
+        mensa_academica.setId(mensa.getId());
+        mensa_academica.setName(mensa.getName());
+        mensa_academica.setApiUrl(mensa.getApiUrl());
+
+        meals_mensa_academica.setMensa_academica(mensa_academica);
+
+        meals_mensa_academicaRepository.delete(meals_mensa_academica);
+        log.warn("Meal deleted: " + meal.getName() + " from " + mensa.getName());
     }
 
 

@@ -5,6 +5,7 @@ import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Mensa_Peterssteinwe
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa_Peterssteinweg;
 import com.example.essensgetter_2_0.JPA.repository.meals.Meals_Mensa_PeterssteinwegRepository;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
+@Log4j2
 public class Meals_Mensa_PeterssteinwegService extends Meals_Mensa_Service {
 
     @Autowired
@@ -73,10 +75,31 @@ public class Meals_Mensa_PeterssteinwegService extends Meals_Mensa_Service {
 
     /**
      * @param meal
+     * @param mensa
      */
     @Override
-    public void delete(Meal meal) {
-        meals_mensa_peterssteinwegRepository.delete((Meals_Mensa_Peterssteinweg) meal);
+    public void delete(Meal meal, Mensa mensa) {
+        Meals_Mensa_Peterssteinweg meals_mensa_peterssteinweg = new Meals_Mensa_Peterssteinweg();
+        meals_mensa_peterssteinweg.setId(meal.getId());
+        meals_mensa_peterssteinweg.setName(meal.getName());
+        meals_mensa_peterssteinweg.setCategory(meal.getCategory());
+        meals_mensa_peterssteinweg.setPrice(meal.getPrice());
+        meals_mensa_peterssteinweg.setServingDate(meal.getServingDate());
+        meals_mensa_peterssteinweg.setDescription(meal.getDescription());
+        meals_mensa_peterssteinweg.setRating(meal.getRating());
+        meals_mensa_peterssteinweg.setVotes(meal.getVotes());
+        meals_mensa_peterssteinweg.setStarsTotal(meal.getStarsTotal());
+        meals_mensa_peterssteinweg.setResponseCode(meal.getResponseCode());
+
+        Mensa_Peterssteinweg mensa_peterssteinweg = new Mensa_Peterssteinweg();
+        mensa_peterssteinweg.setId(mensa.getId());
+        mensa_peterssteinweg.setName(mensa.getName());
+        mensa_peterssteinweg.setApiUrl(mensa.getApiUrl());
+
+        meals_mensa_peterssteinweg.setMensa_peterssteinweg(mensa_peterssteinweg);
+
+        meals_mensa_peterssteinwegRepository.delete(meals_mensa_peterssteinweg);
+        log.warn("Meal deleted: " + meal.getName() + " from " + mensa.getName());
     }
 }
 

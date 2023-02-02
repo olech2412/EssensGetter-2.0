@@ -5,6 +5,7 @@ import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Mensa_am_Park;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa_am_Park;
 import com.example.essensgetter_2_0.JPA.repository.meals.Meals_Mensa_am_ParkRepository;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
+@Log4j2
 public class Meals_Mensa_am_ParkService extends Meals_Mensa_Service {
 
     @Autowired
@@ -73,10 +75,32 @@ public class Meals_Mensa_am_ParkService extends Meals_Mensa_Service {
 
     /**
      * @param meal
+     * @param mensa
      */
     @Override
-    public void delete(Meal meal) {
-        meals_mensa_am_parkRepository.delete((Meals_Mensa_am_Park) meal);
+    public void delete(Meal meal, Mensa mensa) {
+        Meals_Mensa_am_Park meals_mensa_am_park = new Meals_Mensa_am_Park();
+        meals_mensa_am_park.setId(meal.getId());
+        meals_mensa_am_park.setName(meal.getName());
+        meals_mensa_am_park.setCategory(meal.getCategory());
+        meals_mensa_am_park.setPrice(meal.getPrice());
+        meals_mensa_am_park.setServingDate(meal.getServingDate());
+        meals_mensa_am_park.setDescription(meal.getDescription());
+        meals_mensa_am_park.setRating(meal.getRating());
+        meals_mensa_am_park.setVotes(meal.getVotes());
+        meals_mensa_am_park.setStarsTotal(meal.getStarsTotal());
+        meals_mensa_am_park.setResponseCode(meal.getResponseCode());
+
+        Mensa_am_Park mensa_am_park = new Mensa_am_Park();
+        mensa_am_park.setId(mensa.getId());
+        mensa_am_park.setName(mensa.getName());
+        mensa_am_park.setApiUrl(mensa.getApiUrl());
+
+        meals_mensa_am_park.setMensa_am_park(mensa_am_park);
+
+        meals_mensa_am_parkRepository.delete(meals_mensa_am_park);
+        log.warn("Meal deleted: " + meal.getName() + " from " + mensa.getName());
     }
+
 }
 
