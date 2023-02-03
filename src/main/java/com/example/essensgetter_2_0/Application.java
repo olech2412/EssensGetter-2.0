@@ -85,7 +85,38 @@ public class Application {
 
 
         Mailer mailer = new Mailer();
-        mailer.sendSpeiseplan(mailUserService.findAllUsersThatAreEnabled(), meals_mensa_schoenauer_strService.findAllMealsByServingDate(LocalDate.now()));
+        LocalDate today = LocalDate.now();
+        for (MailUser mailUser : mailUserService.findAll()) {
+            if(mailUser.isEnabled()){
+                if (mailUser.getCafeteria_dittrichring() != null) {
+                    mailer.sendSpeiseplan(mailUser, meals_cafeteria_dittrichringService.findAllMealsByServingDate(today));
+                }
+                if (mailUser.getMensa_academica() != null) {
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_academicaService.findAllMealsByServingDate(today));
+                }
+                if (mailUser.getMensa_am_elsterbecken() != null) {
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_am_elsterbeckenService.findAllMealsByServingDate(today));
+                }
+                if (mailUser.getMensa_am_medizincampus() != null) {
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_am_medizincampusService.findAllMealsByServingDate(today));
+                }
+                if (mailUser.getMensa_am_park() != null) {
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_am_parkService.findAllMealsByServingDate(today));
+                }
+                if (mailUser.getMensa_peterssteinweg() != null) {
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_peterssteinwegService.findAllMealsByServingDate(today));
+                }
+                if (mailUser.getMensa_schoenauer_str() != null) {
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_schoenauer_strService.findAllMealsByServingDate(today));
+                }
+                if (mailUser.getMensa_tierklinik() != null) {
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_tierklinikService.findAllMealsByServingDate(today));
+                }
+                if (mailUser.getMenseria_am_botanischen_garten() != null) {
+                    mailer.sendSpeiseplan(mailUser, meals_menseria_am_botanischen_gartenServices.findAllMealsByServingDate(today));
+                }
+            }
+        }
 
     }
 

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Set;
+
 @Service
 @Transactional
 public class MailUserService {
@@ -28,5 +30,9 @@ public class MailUserService {
 
     public void deleteMailUser(MailUser mailUser) {
         mailUserRepository.delete(mailUser);
+    }
+
+    public Iterable<MailUser> findAll() {
+        return mailUserRepository.findAll();
     }
 }

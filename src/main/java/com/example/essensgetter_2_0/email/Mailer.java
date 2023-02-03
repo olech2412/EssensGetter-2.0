@@ -2,7 +2,6 @@ package com.example.essensgetter_2_0.email;
 
 import com.example.essensgetter_2_0.JPA.entities.MailUser;
 import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
-import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Schoenauer_Str;
 import lombok.extern.log4j.Log4j2;
 
 import javax.mail.*;
@@ -24,36 +23,34 @@ public class Mailer {
      *
      * @throws MessagingException
      */
-    public void sendSpeiseplan(Iterable<MailUser> emailTargets, List<Meals_Schoenauer_Str> menu) throws MessagingException, IOException {
+    public void sendSpeiseplan(MailUser emailTarget, List<? extends Meal> menu) throws MessagingException, IOException {
         Properties prop = new Properties();
         prop.put("mail.smtp.auth", false);
         prop.put("mail.smtp.host", "localhost");
         prop.put("mail.smtp.port", "25");
 
-        for (MailUser emailTarget : emailTargets) {
-            String deactivateUrl = "https://egr.olech2412.de/deactivate?code=" + emailTarget.getDeactivationCode().getCode();
-            Message message = new MimeMessage(Session.getInstance(prop));
-            message.setFrom(new InternetAddress("noreply_essensgetter@olech2412.de"));
-            message.setRecipients(
-                    Message.RecipientType.TO, InternetAddress.parse(emailTarget.getEmail()));
-            message.setSubject("Speiseplan " +
-                    LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " - " +
-                    "Schönauer Straße");
+        String deactivateUrl = "https://egr.olech2412.de/deactivate?code=" + emailTarget.getDeactivationCode().getCode();
+        Message message = new MimeMessage(Session.getInstance(prop));
+        message.setFrom(new InternetAddress("noreply_essensgetter@olech2412.de"));
+        message.setRecipients(
+                Message.RecipientType.TO, InternetAddress.parse(emailTarget.getEmail()));
+        message.setSubject("Speiseplan " +
+                LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " - " +
+                "Schönauer Straße");
 
-            String msg = createEmail(menu, emailTarget.getFirstname(), deactivateUrl);
+        String msg = createEmail(menu, emailTarget.getFirstname(), deactivateUrl);
 
-            MimeBodyPart mimeBodyPart = new MimeBodyPart();
-            mimeBodyPart.setContent(msg, "text/html; charset=utf-8");
-            Multipart multipart = new MimeMultipart();
-            multipart.addBodyPart(mimeBodyPart);
-            message.setContent(multipart);
-            Transport.send(message);
-            log.debug("Email sent to " + emailTarget.getEmail());
-        }
+        MimeBodyPart mimeBodyPart = new MimeBodyPart();
+        mimeBodyPart.setContent(msg, "text/html; charset=utf-8");
+        Multipart multipart = new MimeMultipart();
+        multipart.addBodyPart(mimeBodyPart);
+        message.setContent(multipart);
+        Transport.send(message);
+        log.debug("Email sent to " + emailTarget.getEmail());
 
     }
 
-    private String createEmail(List<Meals_Schoenauer_Str> menu, String firstName, String deactivateUrl) {
+    private String createEmail(List<? extends Meal> menu, String firstName, String deactivateUrl) {
         StringBuilder menuText = new StringBuilder();
 
         for (Meal meal : menu) {
