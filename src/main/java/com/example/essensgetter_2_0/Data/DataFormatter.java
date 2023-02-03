@@ -1,11 +1,11 @@
 package com.example.essensgetter_2_0.Data;
 
-import com.example.essensgetter_2_0.JPA.Meal;
-import com.example.essensgetter_2_0.JPA.service.MealService;
+import com.example.essensgetter_2_0.JPA.entities.meals.Generic_Meal;
+import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
 import lombok.extern.log4j.Log4j2;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,13 +17,13 @@ public class DataFormatter {
 
     public List<Meal> mealList = new ArrayList<>();
 
-    @Autowired
-    MealService mealService;
+    //@Autowired
+    //MealService mealService;
 
     public DataFormatter(Object jsonArray) {
         try {
             formatData((JSONArray) jsonArray);
-        }catch (ClassCastException classCastException){
+        } catch (ClassCastException classCastException) {
             log.error("Error while casting data: " + classCastException);
         }
     }
@@ -36,7 +36,7 @@ public class DataFormatter {
             JSONObject menu = jsonArray.getJSONObject(i);
             JSONArray meals = menu.getJSONArray("meals");
             for (int t = 0; t < meals.length(); t++) {
-                Meal dataMeal = new Meal();
+                Meal dataMeal = new Generic_Meal();
                 JSONObject meal = meals.getJSONObject(t);
                 dataMeal.setName(meal.getString("name"));
                 dataMeal.setPrice(formatPrices(meal.getJSONObject("prices")));
@@ -52,6 +52,7 @@ public class DataFormatter {
 
     /**
      * Formats the prices from the API to a String
+     *
      * @return String
      */
     private String formatPrices(JSONObject prices) {
@@ -79,13 +80,14 @@ public class DataFormatter {
 
     /**
      * Formats the notes from the API to a String
+     *
      * @return String
      */
     private String formatNotes(JSONArray notes) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < notes.length(); i++) {
             stringBuilder.append(notes.getString(i));
-            if(i+1 < notes.length()){
+            if (i + 1 < notes.length()) {
                 stringBuilder.append(", ");
             }
         }

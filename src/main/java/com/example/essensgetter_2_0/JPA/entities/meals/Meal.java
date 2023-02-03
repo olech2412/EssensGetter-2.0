@@ -1,25 +1,24 @@
-package com.example.essensgetter_2_0.JPA;
-
-import javax.persistence.*;
+package com.example.essensgetter_2_0.JPA.entities.meals;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Getter
 @Setter
-@Entity
 @EqualsAndHashCode
-@Table(name = "meals")
-public class Meal {
+@MappedSuperclass
+public abstract class Meal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @EqualsAndHashCode.Exclude
     @Column(name = "id", nullable = false)
-    private Long id;
-    private String name;
+    protected Long id;
+    protected String name;
     private String description;
     private String price;
     private String category;

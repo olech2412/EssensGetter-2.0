@@ -1,6 +1,6 @@
 package com.example.essensgetter_2_0.JPA.repository;
 
-import com.example.essensgetter_2_0.JPA.MailUser;
+import com.example.essensgetter_2_0.JPA.entities.MailUser;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,8 +15,10 @@ public interface MailUserRepository extends CrudRepository<MailUser, Long> {
     MailUser findByActivationCode_Code(String code);
 
     MailUser findByDeactivationCode_Code(String code);
+
     /**
      * Finds all enabled users
+     *
      * @param enabled
      * @return
      */

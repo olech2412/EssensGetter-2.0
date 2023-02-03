@@ -110,103 +110,102 @@ public class StaticEmailText {
             "</table>" +
             "<div class=\"space-y-2\">";
 
-public final static String foodText=
-                "<h5 class=\"h5\" style=\"padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 20px; line-height: 24px; margin: 0;\" align=\"left\">%s</h5>" +
-                "<p class=\"text-gray-700\" style=\"line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;\" align=\"left\">%s</p>" +
-                "<table class=\"s-3 w-full\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\" width=\"100%\">" +
-                "<tbody>" +
-                "<tr>" +
-                "<td style=\"line-height: 12px; font-size: 12px; width: 100%; height: 12px; margin: 0;\" align=\"left\" width=\"100%\" height=\"12\">" +
-                "&#160;" +
-                "</td>" +
-                "</tr>" +
-                "</tbody>" +
-                "</table>";
+    public final static String foodText =
+            "<h5 class=\"h5\" style=\"padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 20px; line-height: 24px; margin: 0;\" align=\"left\">%s</h5>" +
+                    "<p class=\"text-gray-700\" style=\"line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;\" align=\"left\">%s</p>" +
+                    "<table class=\"s-3 w-full\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\" width=\"100%\">" +
+                    "<tbody>" +
+                    "<tr>" +
+                    "<td style=\"line-height: 12px; font-size: 12px; width: 100%; height: 12px; margin: 0;\" align=\"left\" width=\"100%\" height=\"12\">" +
+                    "&#160;" +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>";
 
 
-
-public final static String foodPlanFooter =
+    public final static String foodPlanFooter =
             "</div>" +
-            "<div>" +
-            "<p class=\"text-gray-700\" style=\"line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;\" align=\"left\">%s</p>" +
-            "<p class=\"text-gray-700\" style=\"line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;\" align=\"left\">dein EssensGetter</p>" +
-            "</div>" +
-            "</div>" +
-            "<table class=\"s-5 w-full\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\" width=\"100%\">" +
-            "<tbody>" +
-            "<tr>" +
-            "<td style=\"line-height: 20px; font-size: 20px; width: 100%; height: 20px; margin: 0;\" align=\"left\" width=\"100%\" height=\"20\">" +
-            "&#160;" +
-            "</td>" +
-            "</tr>" +
-            "</tbody>" +
-            "</table>" +
-            "<table class=\"hr\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">" +
-            "<tbody>" +
-            "<tr>" +
-            "<td style=\"line-height: 24px; font-size: 16px; border-top-width: 1px; border-top-color: #e2e8f0; border-top-style: solid; height: 1px; width: 100%; margin: 0;\" align=\"left\">" +
-            "</td>" +
-            "</tr>" +
-            "</tbody>" +
-            "</table>" +
-            "<table class=\"s-5 w-full\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\" width=\"100%\">" +
-            "<tbody>" +
-            "<tr>" +
-            "<td style=\"line-height: 20px; font-size: 20px; width: 100%; height: 20px; margin: 0;\" align=\"left\" width=\"100%\" height=\"20\">" +
-            "&#160;" +
-            "</td>" +
-            "</tr>" +
-            "</tbody>" +
-            "</table>" +
-            "<div class=\"parent\">" +
-            "<div class=\"child\" style=\"float: center;\">" +
-            "<table class=\"btn btn-info\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-radius: 6px; border-collapse: separate !important;\">" +
-            "<tbody>" +
-            "<tr>" +
-            "<td style=\"line-height: 24px; font-size: 16px; border-radius: 6px; margin: 0;\" align=\"center\" bgcolor=\"#0d6efd\">" +
-            "<a href=\"%s\" target=\"_blank\" style=\"color: #ffffff; font-size: 16px; font-family: Helvetica, Arial, sans-serif; text-decoration: none; border-radius: 6px; line-height: 20px; display: block; font-weight: normal; white-space: nowrap; background-color: #0d6efd; padding: 8px 12px; border: 1px solid #0d6efd;\">Vom Newsletter abmelden</a>" +
-            "</td>" +
-            "</tr>" +
-            "</tbody>" +
-            "</table>" +
-            "</div>" +
-            "</div>" +
-            "</td>" +
-            "</tr>" +
-            "</tbody>" +
-            "</table>" +
-            "</td>" +
-            "</tr>" +
-            "</tbody>" +
-            "</table>" +
-            "<table class=\"s-10 w-full\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\" width=\"100%\">" +
-            "<tbody>" +
-            "<tr>" +
-            "<td style=\"line-height: 40px; font-size: 40px; width: 100%; height: 40px; margin: 0;\" align=\"left\" width=\"100%\" height=\"40\">" +
-            "&#160;" +
-            "</td>" +
-            "</tr>" +
-            "</tbody>" +
-            "</table>" +
-            "</td>" +
-            "</tr>" +
-            "</tbody>" +
-            "</table>" +
-            "<!--[if (gte mso 9)|(IE)]>" +
-            "</td>" +
-            "</tr>" +
-            "</tbody>" +
-            "</table>" +
-            "<![endif]-->" +
-            "</td>" +
-            "</tr>" +
-            "</tbody>" +
-            "</table>" +
-            "</td>" +
-            "</tr>" +
-            "</tbody>" +
-            "</table>" +
-            "</body>" +
-            "</html>";
+                    "<div>" +
+                    "<p class=\"text-gray-700\" style=\"line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;\" align=\"left\">%s</p>" +
+                    "<p class=\"text-gray-700\" style=\"line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;\" align=\"left\">dein EssensGetter</p>" +
+                    "</div>" +
+                    "</div>" +
+                    "<table class=\"s-5 w-full\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\" width=\"100%\">" +
+                    "<tbody>" +
+                    "<tr>" +
+                    "<td style=\"line-height: 20px; font-size: 20px; width: 100%; height: 20px; margin: 0;\" align=\"left\" width=\"100%\" height=\"20\">" +
+                    "&#160;" +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>" +
+                    "<table class=\"hr\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\">" +
+                    "<tbody>" +
+                    "<tr>" +
+                    "<td style=\"line-height: 24px; font-size: 16px; border-top-width: 1px; border-top-color: #e2e8f0; border-top-style: solid; height: 1px; width: 100%; margin: 0;\" align=\"left\">" +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>" +
+                    "<table class=\"s-5 w-full\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\" width=\"100%\">" +
+                    "<tbody>" +
+                    "<tr>" +
+                    "<td style=\"line-height: 20px; font-size: 20px; width: 100%; height: 20px; margin: 0;\" align=\"left\" width=\"100%\" height=\"20\">" +
+                    "&#160;" +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>" +
+                    "<div class=\"parent\">" +
+                    "<div class=\"child\" style=\"float: center;\">" +
+                    "<table class=\"btn btn-info\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-radius: 6px; border-collapse: separate !important;\">" +
+                    "<tbody>" +
+                    "<tr>" +
+                    "<td style=\"line-height: 24px; font-size: 16px; border-radius: 6px; margin: 0;\" align=\"center\" bgcolor=\"#0d6efd\">" +
+                    "<a href=\"%s\" target=\"_blank\" style=\"color: #ffffff; font-size: 16px; font-family: Helvetica, Arial, sans-serif; text-decoration: none; border-radius: 6px; line-height: 20px; display: block; font-weight: normal; white-space: nowrap; background-color: #0d6efd; padding: 8px 12px; border: 1px solid #0d6efd;\">Vom Newsletter abmelden</a>" +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>" +
+                    "</div>" +
+                    "</div>" +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>" +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>" +
+                    "<table class=\"s-10 w-full\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\" width=\"100%\">" +
+                    "<tbody>" +
+                    "<tr>" +
+                    "<td style=\"line-height: 40px; font-size: 40px; width: 100%; height: 40px; margin: 0;\" align=\"left\" width=\"100%\" height=\"40\">" +
+                    "&#160;" +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>" +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>" +
+                    "<!--[if (gte mso 9)|(IE)]>" +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>" +
+                    "<![endif]-->" +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>" +
+                    "</td>" +
+                    "</tr>" +
+                    "</tbody>" +
+                    "</table>" +
+                    "</body>" +
+                    "</html>";
 
 }

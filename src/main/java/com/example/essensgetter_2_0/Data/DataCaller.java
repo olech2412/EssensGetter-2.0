@@ -2,23 +2,25 @@ package com.example.essensgetter_2_0.Data;
 
 import lombok.extern.log4j.Log4j2;
 import org.json.JSONArray;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.time.LocalDate;
 
 @Log4j2
 public class DataCaller {
 
-    private final String url = "https://openmensa.org/api/v2/canteens/69/meals"; // URL to the API 69 is the ID of the canteen
+    private String url = ""; // URL to the API 69 is the ID of the canteen
 
-    public DataCaller() {
+    public DataCaller(String url) {
+        this.url = url;
     }
 
     /**
      * Calls the API and returns the data as a JSONObject
+     *
      * @return jsonObject
      * @throws IOException
      */
@@ -33,7 +35,7 @@ public class DataCaller {
 
         JSONArray jsonArray = null;
 
-        if(con.getResponseCode() == 200){
+        if (con.getResponseCode() == 200) {
             log.info("Connection to API successful");
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(con.getInputStream()));
@@ -44,11 +46,10 @@ public class DataCaller {
             }
             in.close();
             jsonArray = new JSONArray(content.toString());
-        }else{
+        } else {
             log.error("Connection to API failed with response code: " + con.getResponseCode());
         }
 
         return jsonArray;
     }
-
 }
