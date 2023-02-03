@@ -89,31 +89,31 @@ public class Application {
         for (MailUser mailUser : mailUserService.findAll()) {
             if(mailUser.isEnabled()){
                 if (mailUser.getCafeteria_dittrichring() != null) {
-                    mailer.sendSpeiseplan(mailUser, meals_cafeteria_dittrichringService.findAllMealsByServingDate(today));
+                    mailer.sendSpeiseplan(mailUser, meals_cafeteria_dittrichringService.findAllMealsByServingDate(today), cafeteria_dittrichringService.getMensa());
                 }
                 if (mailUser.getMensa_academica() != null) {
-                    mailer.sendSpeiseplan(mailUser, meals_mensa_academicaService.findAllMealsByServingDate(today));
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_academicaService.findAllMealsByServingDate(today), mensa_academicaService.getMensa());
                 }
                 if (mailUser.getMensa_am_elsterbecken() != null) {
-                    mailer.sendSpeiseplan(mailUser, meals_mensa_am_elsterbeckenService.findAllMealsByServingDate(today));
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_am_elsterbeckenService.findAllMealsByServingDate(today), mensa_am_elsterbeckenService.getMensa());
                 }
                 if (mailUser.getMensa_am_medizincampus() != null) {
-                    mailer.sendSpeiseplan(mailUser, meals_mensa_am_medizincampusService.findAllMealsByServingDate(today));
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_am_medizincampusService.findAllMealsByServingDate(today), mensa_am_medizincampusService.getMensa());
                 }
                 if (mailUser.getMensa_am_park() != null) {
-                    mailer.sendSpeiseplan(mailUser, meals_mensa_am_parkService.findAllMealsByServingDate(today));
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_am_parkService.findAllMealsByServingDate(today), mensa_am_parkService.getMensa());
                 }
                 if (mailUser.getMensa_peterssteinweg() != null) {
-                    mailer.sendSpeiseplan(mailUser, meals_mensa_peterssteinwegService.findAllMealsByServingDate(today));
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_peterssteinwegService.findAllMealsByServingDate(today), mensa_peterssteinwegService.getMensa());
                 }
                 if (mailUser.getMensa_schoenauer_str() != null) {
-                    mailer.sendSpeiseplan(mailUser, meals_mensa_schoenauer_strService.findAllMealsByServingDate(today));
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_schoenauer_strService.findAllMealsByServingDate(today), mensa_schoenauer_strService.getMensa());
                 }
                 if (mailUser.getMensa_tierklinik() != null) {
-                    mailer.sendSpeiseplan(mailUser, meals_mensa_tierklinikService.findAllMealsByServingDate(today));
+                    mailer.sendSpeiseplan(mailUser, meals_mensa_tierklinikService.findAllMealsByServingDate(today), mensa_tierklinikService.getMensa());
                 }
                 if (mailUser.getMenseria_am_botanischen_garten() != null) {
-                    mailer.sendSpeiseplan(mailUser, meals_menseria_am_botanischen_gartenServices.findAllMealsByServingDate(today));
+                    mailer.sendSpeiseplan(mailUser, meals_menseria_am_botanischen_gartenServices.findAllMealsByServingDate(today), menseria_am_botanischen_gartenService.getMensa());
                 }
             }
         }
