@@ -1,17 +1,33 @@
 # EssensGetter 2.0
 
-Dies ist ein privates Studentenprojekt und keine kommerzielle Anwendung. Es kann kein stabilen Betrieb gewährleistet werden.
+This is a private student project and not a commercial application. Stable operation cannot be guaranteed.
 
-EssensGetter 2.0 ist ein Programmierprojekt, das auf SpringBoot, Java, MariaDB, Maven und Hibernate setzt. Es kommuniziert mit der API von OpenMensa und speichert die erhaltenen Daten in eine MariaDB Datenbank. Dadurch stehen die Daten dann für die EssensGetter API zur Verfügung. Anschließend versendet das Programm eine E-Mail an alle autorisierten Nutzer, die sich über <EGR> registriert haben.
+EssensGetter 2.0 is a programming project that relies on SpringBoot, Java, MariaDB, Maven and Hibernate. It communicates with the OpenMensa API and saves the received data in a MariaDB database. This makes the data available for the EssensGetter API. The program then sends an email to all authorized users who have registered via .
 
 ## Installation
 
-1. Laden Sie das Projekt von GitHub herunter.
-2. Stellen Sie sicher, dass Sie Java 11, Maven, MariaDB und Hibernate installiert haben.
-3. Erstellen Sie eine Datenbank namens "essensgetter" in MariaDB und ändern Sie die entsprechenden Zugangsdaten in der `application.properties`-Datei.
-4. Navigieren Sie in der Kommandozeile in das Verzeichnis des Projekts.
-5. Führen Sie den Befehl `mvn clean install` aus, um die Abhängigkeiten zu installieren.
-6. Starten Sie das Programm mit dem Befehl `mvn spring-boot:run`.
+### Download the package
+1. Download the Releasex.x.x.rar from the latest release on GitHub.
+2. Transfer the archive to your server e.g. with WinSCP
+3. Unpack the archive
+3.1
+```bash
+# Ubuntu/Debian
+sudo apt-get install unrar
+unrar x Releasex.x.x.rar
+
+# CentOS/RHEL
+sudo yum install unrar
+unrar x Releasex.x.x.rar
+```
+
+### Setting up the environment
+
+2. Make sure you have Java 11, Maven, MariaDB and Hibernate installed.
+3. Create a database named "essensgetter" in MariaDB and change the corresponding credentials in the `application.properties` file.
+4. Navigate to the project directory in the command line.
+5. Run the `mvn clean install` command to install the dependencies.
+6. Start the program with the command `mvn spring-boot:run`.
 
 ## Verwendung
 
