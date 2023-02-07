@@ -4,7 +4,7 @@ This is a private student project and not a commercial application. Stable opera
 
 EssensGetter 2.0 is a programming project that relies on SpringBoot, Java, MariaDB, Maven and Hibernate. It communicates with the OpenMensa API and saves the received data in a MariaDB database. This makes the data available for the EssensGetter API. The program then sends an email to all authorized users who have registered via.
 
-## Verwendung
+## Usage
 
 The program runs in the background and automatically communicates with the OpenMensa API to get the data and store it in the database. Authorized users will automatically receive an email with the updated menus.
 
