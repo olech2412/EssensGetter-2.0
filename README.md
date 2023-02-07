@@ -8,7 +8,7 @@ EssensGetter 2.0 is a programming project that relies on SpringBoot, Java, Maria
 
 The program runs in the background and automatically communicates with the OpenMensa API to get the data and store it in the database. Authorized users will automatically receive an email with the updated menus.
 
-## Das concept
+## The concept
 ![EssensGetter SoftwareArchitektur drawio (1)](https://user-images.githubusercontent.com/76694468/212769942-63c4dd74-2664-4111-9736-429c27f669c5.png)
 
 
