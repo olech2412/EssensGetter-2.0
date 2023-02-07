@@ -33,11 +33,37 @@ sudo apt-get install openjdk-11-jdk
 java -version
 ```
 
-4. Make sure you have Java 11, Maven, MariaDB and Hibernate installed.
-5. Create a database named "essensgetter" in MariaDB and change the corresponding credentials in the `application.properties` file.
-6. Navigate to the project directory in the command line.
-7. Run the `mvn clean install` command to install the dependencies.
-8. Start the program with the command `mvn spring-boot:run`.
+#### Install MariaDB
+1. Add the MariaDB Repositorys to install the latest version
+```bash
+sudo apt-get install software-properties-common
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirrors.accretive-networks.net/mariadb/repo/10.5/ubuntu bionic main'
+```
+
+2. Update your packages and start the installation
+```bash
+sudo apt-get update
+sudo apt-get install mariadb-server
+
+# Check if everything works fine
+sudo systemctl status mariadb
+# You should see something like 'active (running)' if not see the MariaDB documentation
+```
+
+3. MariaDB secure installation
+```bash
+sudo mysql_secure_installation
+
+# Do the configuration-steps
+```
+
+#### Setup MariaDB
+
+6. Create a database named "essensgetter" in MariaDB and change the corresponding credentials in the `application.properties` file.
+7. Navigate to the project directory in the command line.
+8. Run the `mvn clean install` command to install the dependencies.
+9. Start the program with the command `mvn spring-boot:run`.
 
 ## Verwendung
 
