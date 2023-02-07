@@ -15,19 +15,29 @@ EssensGetter 2.0 is a programming project that relies on SpringBoot, Java, Maria
 # Ubuntu/Debian
 sudo apt-get install unrar
 unrar x Releasex.x.x.rar
-
-# CentOS/RHEL
-sudo yum install unrar
-unrar x Releasex.x.x.rar
 ```
 
 ### Setting up the environment
 
-2. Make sure you have Java 11, Maven, MariaDB and Hibernate installed.
-3. Create a database named "essensgetter" in MariaDB and change the corresponding credentials in the `application.properties` file.
-4. Navigate to the project directory in the command line.
-5. Run the `mvn clean install` command to install the dependencies.
-6. Start the program with the command `mvn spring-boot:run`.
+#### Install Java
+1. Check if Java is already installed
+```bash
+java -version
+```
+2. If not update your packages and start the installation
+```bash
+sudo apt-get update
+sudo apt-get install openjdk-11-jdk
+
+# Check if everything works fine
+java -version
+```
+
+4. Make sure you have Java 11, Maven, MariaDB and Hibernate installed.
+5. Create a database named "essensgetter" in MariaDB and change the corresponding credentials in the `application.properties` file.
+6. Navigate to the project directory in the command line.
+7. Run the `mvn clean install` command to install the dependencies.
+8. Start the program with the command `mvn spring-boot:run`.
 
 ## Verwendung
 
