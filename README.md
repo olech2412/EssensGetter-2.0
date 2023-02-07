@@ -55,7 +55,10 @@ sudo systemctl status mariadb
 ```bash
 sudo mysql_secure_installation
 
-# Do the configuration-steps
+# Do the configuration-steps (for more Information visit the MariaDB documentation
+# set password for the root user
+# remove anonymous user
+# deactivate remote access for root
 ```
 
 #### Setup MariaDB
