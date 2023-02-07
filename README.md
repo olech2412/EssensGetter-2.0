@@ -83,8 +83,8 @@ FLUSH PRIVILEGES;
 
 ##### Prepare some data for the database
 1. Start the program in your IDE
-  1.1 Hibernate creates all tables with all references for us
-  1.2 Dont worry if this throws an error
+  * 1.1 Hibernate creates all tables with all references for us
+  * 1.2 Dont worry if this throws an error
 2. Insert the default activationcode - every subscriber has this code if he is enabled
 ```sql
 INSERT INTO `activation_codes` (`id`, `code`) VALUES (1, '387UxMzB12');
@@ -112,8 +112,8 @@ INSERT INTO `api_access` (`id`, `calls`, `can_read`, `can_write`, `description`,
 1. Navigate to the project directory in the command line
 2. Run the `mvn clean install` command to install the dependencies.
 3. In order to use the program with all its functionalities, you need a mail server that you can reach. If not take a look at step 4
-  3.1 Edit the email server settings in `src/main/java/com/example/essensgetter_2_0/email/Mailer.java`
-  3.2 Start the program with the command `mvn spring-boot:run`.
+  * 3.1 Edit the email server settings in `src/main/java/com/example/essensgetter_2_0/email/Mailer.java`
+  * 3.2 Start the program with the command `mvn spring-boot:run`.
 4. If you don't have a mail server and just want to collect data you can do that by running the following command:
 ```bash
 mvn spring-boot:run dontSendEmail
