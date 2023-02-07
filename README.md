@@ -133,12 +133,12 @@ mvn spring-boot:run dontSendEmail
 */30 * * * * java -jar /opt/essensGetter2.0/EssensGetter_2_0-0.0.1-SNAPSHOT.jar dontSendEmail > /dev/null
 ```
 
-## Zugehöriges Grafana Dashboard
+## Grafana Dashboard
 As a small side project I'm trying to pull interesting statistics from the collected data. For this I have set up the following Grafana dashboard, which sends various queries to the database, which on the one hand allows the software construct to be monitored well (API access, number of pending activations, etc.), but there are also opportunities to draw conclusions about the food offer.
 ![Screenshot 2023-01-18 145523](https://user-images.githubusercontent.com/76694468/213191027-28390bcf-e5a5-4ed3-b321-e19dc6508378.png)
 
 
-## Hinweis
+## Notice
 
 Please note that this is a private student project and the program is not available to the public. The operation of the program cannot be guaranteed and the program may not be used for commercial purposes.
 
