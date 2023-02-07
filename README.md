@@ -7,14 +7,9 @@ EssensGetter 2.0 is a programming project that relies on SpringBoot, Java, Maria
 ## Installation
 
 ### Download the package
-1. Download the Releasex.x.x.rar from the latest release on GitHub.
-2. Transfer the archive to your server e.g. with WinSCP
-3. Unpack the archive
-3.1
+1. Download the program from the latest release on GitHub.
 ```bash
-# Ubuntu/Debian
-sudo apt-get install unrar
-unrar x Releasex.x.x.rar
+git clone https://github.com/olech2412/EssensGetter-2.0.git
 ```
 
 ### Setting up the environment
@@ -62,6 +57,20 @@ sudo mysql_secure_installation
 ```
 
 #### Setup MariaDB
+** The following steps are based on the default installation and can be different to your setup. Checkout the application.properties file 'src/main/resources/application.properties' for your properties **
+1. Create the database
+```sql
+CREATE DATABASE essensGetter;
+```
+2. Create the user and give him all rights to interact with the database
+```sql
+CREATE USER 'egrAdmin'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON essensGetter.* TO 'egrAdmin'@'localhost';
+FLUSH PRIVILEGES;
+```
+3. You are done! MariaDB was set up correctly
+
+##### Prepare
 
 6. Create a database named "essensgetter" in MariaDB and change the corresponding credentials in the `application.properties` file.
 7. Navigate to the project directory in the command line.
