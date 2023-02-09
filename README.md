@@ -130,7 +130,7 @@ mvn spring-boot:run dontSendEmail
 # Execute th dontSendEmail program every 30 minutes to provide the latest data to the API
 
 05 9 * * 1-5 java -jar /opt/essensGetter2.0/EssensGetter_2_0-0.0.1-SNAPSHOT.jar
-*/30 * * * * java -jar /opt/essensGetter2.0/EssensGetter_2_0-0.0.1-SNAPSHOT.jar dontSendEmail > /dev/null
+*/30 * * * * java -jar /opt/essensGetter2.0/EssensGetter_2_0-0.0.1-SNAPSHOT.jar dontSendEmail > essensGetterNotSendingMail.log
 ```
 
 ## Grafana Dashboard
