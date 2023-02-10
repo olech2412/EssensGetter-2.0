@@ -24,9 +24,13 @@ public abstract class Meal {
     private String category;
     private LocalDate servingDate;
 
+    @EqualsAndHashCode.Exclude
     private Integer responseCode;
+    @EqualsAndHashCode.Exclude
     private Double rating = 0.0;
+    @EqualsAndHashCode.Exclude
     private Integer votes = 0;
+    @EqualsAndHashCode.Exclude
     private Integer starsTotal = 0;
 
     public Meal() {
