@@ -89,7 +89,7 @@ public class Application {
 
         for (Mensa_Service mensa_service : mensa_serviceList) {
             XMLParser xmlParser = new XMLParser();
-            xmlParser.parse(mensa_service.getMensa().getApiUrl());
+            xmlParser.parse("106");
             checkTheData(xmlParser.mealList, mensa_service, mensa_meals_serviceHashMap);
             /**
              DataCaller dataCaller = new DataCaller(mensa_service.getMensa().getApiUrl());

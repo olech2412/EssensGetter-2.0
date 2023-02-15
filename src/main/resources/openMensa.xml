@@ -16,35 +16,7 @@
         Dabei kann ein Essen, bzw. Komponente, auch mehrere Zusatzstoffe und Inhaltsstoffe enthalten.
         11. Preise: 0:Studenten, 1:Bedienstete, 2:Gaeste
     </notice>
-    <group type="1" location="106" productiondate="2023-02-17" sort="10">
-        <name>Fischgericht</name>
-        <internalname>Essen E</internalname>
-        <prices size="3">
-            <price consumerID="0">3.35</price>
-            <price consumerID="1">5.20</price>
-            <price consumerID="2">7.20</price>
-        </prices>
-        <taggings>
-            <tagging taggingID="6" type="additives">geschwärzt</tagging>
-            <tagging taggingID="3" type="additives">Antioxidationsmittel</tagging>
-            <tagging taggingID="16" type="allergens">Fisch</tagging>
-            <tagging taggingID="19" type="allergens">Milch/ Milchzucker</tagging>
-            <tagging taggingID="21" type="allergens">Sellerie</tagging>
-            <tagging taggingID="56" type="ingredients">Fisch</tagging>
-        </taggings>
-        <components size="3">
-            <component elementid="0" sort="1">
-                <name1>Seelachsfilet mit Tomaten &amp; Oliven überbacken</name1>
-            </component>
-            <component elementid="1" sort="2">
-                <name1>Tomatensoße Mediterran</name1>
-            </component>
-            <component elementid="2" sort="3">
-                <name1>Thymian-Kartoffeln</name1>
-            </component>
-        </components>
-    </group>
-    <group type="1" location="106" productiondate="2023-02-17" sort="8">
+    <group type="1" location="106" productiondate="2023-02-15" sort="8">
         <name>Fleischgericht</name>
         <internalname>Essen D</internalname>
         <prices size="3">
@@ -53,45 +25,49 @@
             <price consumerID="2">6.70</price>
         </prices>
         <taggings>
-            <tagging taggingID="54" type="ingredients">Geflügel</tagging>
+            <tagging taggingID="15" type="allergens">Eier</tagging>
+            <tagging taggingID="13" type="allergens">glutenhaltiges Getreide</tagging>
             <tagging taggingID="19" type="allergens">Milch/ Milchzucker</tagging>
+            <tagging taggingID="81" type="allergens">Weizen</tagging>
+            <tagging taggingID="51" type="ingredients">Schwein</tagging>
+            <tagging taggingID="52" type="ingredients">Rind</tagging>
         </taggings>
         <components size="4">
             <component elementid="0" sort="1">
-                <name1>Thailändisches Hähnchenbrustfilet</name1>
+                <name1>Frikadelle gebacken</name1>
             </component>
             <component elementid="1" sort="2">
-                <name1>Limetten-Dip</name1>
+                <name1>Bohnengemüse</name1>
             </component>
             <component elementid="2" sort="3">
-                <name1>Brokkoli</name1>
+                <name1>Böhmische Knödel</name1>
             </component>
-            <component elementid="3" sort="4">
-                <name1>Süßkartoffel Pommes</name1>
+            <component elementid="3" sort="5">
+                <name1>Gnocchi</name1>
             </component>
         </components>
     </group>
-    <group type="2" location="106" productiondate="2023-02-17" sort="77">
+    <group type="2" location="106" productiondate="2023-02-15" sort="76">
         <name>Gemüsebeilage</name>
-        <internalname>Gemüsebeilage Premium</internalname>
+        <internalname>Gemüsebeilage</internalname>
         <prices size="3">
-            <price consumerID="0">0.75</price>
-            <price consumerID="1">1.15</price>
-            <price consumerID="2">1.50</price>
+            <price consumerID="0">0.55</price>
+            <price consumerID="1">0.95</price>
+            <price consumerID="2">1.30</price>
         </prices>
         <taggings>
             <tagging taggingID="58" type="ingredients">Veganes Gericht</tagging>
         </taggings>
         <components size="2">
             <component elementid="0" sort="1">
-                <name1>Brokkoli</name1>
+                <name1>Bohnengemüse</name1>
             </component>
             <component elementid="1" sort="1">
-                <name1>Blumenkohl-Brokkoli-Romanesco Gemüse</name1>
+                <name1>Rainbow Carrots</name1>
             </component>
         </components>
     </group>
-    <group type="2" location="106" productiondate="2023-02-17" sort="79">
+    <group type="2" location="106" productiondate="2023-02-15" sort="79">
         <name>Sättigungsbeilage</name>
         <internalname>Sättigungsbeilage Premium</internalname>
         <prices size="3">
@@ -100,55 +76,50 @@
             <price consumerID="2">1.50</price>
         </prices>
         <taggings>
-            <tagging taggingID="58" type="ingredients">Veganes Gericht</tagging>
             <tagging taggingID="13" type="allergens">glutenhaltiges Getreide</tagging>
+            <tagging taggingID="15" type="allergens">Eier</tagging>
+            <tagging taggingID="19" type="allergens">Milch/ Milchzucker</tagging>
             <tagging taggingID="81" type="allergens">Weizen</tagging>
+            <tagging taggingID="22" type="allergens">Senf</tagging>
+            <tagging taggingID="50" type="ingredients">Vegetarisches Gericht</tagging>
+            <tagging taggingID="9" type="additives">Süßungsmitteln</tagging>
         </taggings>
         <components size="3">
             <component elementid="0" sort="1">
-                <name1>Süßkartoffel Pommes</name1>
+                <name1>Böhmische Knödel</name1>
             </component>
             <component elementid="1" sort="1">
-                <name1>Thymian-Kartoffeln</name1>
-            </component>
-            <component elementid="2" sort="1">
-                <name1>China Mie Nudeln</name1>
-            </component>
-        </components>
-    </group>
-    <group type="1" location="106" productiondate="2023-02-17" sort="80">
-        <name>Veganes Gericht</name>
-        <internalname>Vegan</internalname>
-        <prices size="3">
-            <price consumerID="0">2.40</price>
-            <price consumerID="1">4.00</price>
-            <price consumerID="2">5.50</price>
-        </prices>
-        <taggings>
-            <tagging taggingID="13" type="allergens">glutenhaltiges Getreide</tagging>
-            <tagging taggingID="81" type="allergens">Weizen</tagging>
-            <tagging taggingID="17" type="allergens">Erdnüsse</tagging>
-            <tagging taggingID="18" type="allergens">Soja</tagging>
-            <tagging taggingID="23" type="allergens">Sesam</tagging>
-            <tagging taggingID="58" type="ingredients">Veganes Gericht</tagging>
-            <tagging taggingID="2" type="additives">Konservierungsstoff</tagging>
-        </taggings>
-        <components size="4">
-            <component elementid="0" sort="1">
-                <name1>Falafel</name1>
-            </component>
-            <component elementid="1" sort="2">
-                <name1>Chili-Erdnusssoße mit Sojacreme</name1>
+                <name1>Basilikum-Gnocchi</name1>
             </component>
             <component elementid="2" sort="3">
-                <name1>Blumenkohl-Brokkoli-Romanesco Gemüse</name1>
-            </component>
-            <component elementid="3" sort="4">
-                <name1>China Mie Nudeln mit Sesam</name1>
+                <name1>Pommes frites</name1>
             </component>
         </components>
     </group>
-    <group type="2" location="106" productiondate="2023-02-17" sort="85">
+    <group type="1" location="106" productiondate="2023-02-15" sort="80">
+        <name>Veganes Gericht</name>
+        <internalname>Vegan Premium</internalname>
+        <prices size="3">
+            <price consumerID="0">3.50</price>
+            <price consumerID="1">5.30</price>
+            <price consumerID="2">7.30</price>
+        </prices>
+        <taggings>
+            <tagging taggingID="2" type="additives">Konservierungsstoff</tagging>
+            <tagging taggingID="13" type="allergens">glutenhaltiges Getreide</tagging>
+            <tagging taggingID="21" type="allergens">Sellerie</tagging>
+            <tagging taggingID="22" type="allergens">Senf</tagging>
+            <tagging taggingID="23" type="allergens">Sesam</tagging>
+            <tagging taggingID="81" type="allergens">Weizen</tagging>
+            <tagging taggingID="58" type="ingredients">Veganes Gericht</tagging>
+        </taggings>
+        <components size="1">
+            <component elementid="0" sort="1">
+                <name1>Nasi Goreng mit Seitan</name1>
+            </component>
+        </components>
+    </group>
+    <group type="2" location="106" productiondate="2023-02-15" sort="85">
         <name>Pastateller</name>
         <internalname>Pastateller</internalname>
         <prices size="3">
@@ -158,39 +129,91 @@
         </prices>
         <taggings>
             <tagging taggingID="13" type="allergens">glutenhaltiges Getreide</tagging>
-            <tagging taggingID="21" type="allergens">Sellerie</tagging>
+            <tagging taggingID="20" type="allergens">Schalenfrüchte/ Nüsse</tagging>
+            <tagging taggingID="74" type="allergens">Cashewnüsse</tagging>
             <tagging taggingID="81" type="allergens">Weizen</tagging>
-            <tagging taggingID="18" type="allergens">Soja</tagging>
+            <tagging taggingID="21" type="allergens">Sellerie</tagging>
+            <tagging taggingID="22" type="allergens">Senf</tagging>
+            <tagging taggingID="84" type="allergens">Hafer</tagging>
+            <tagging taggingID="15" type="allergens">Eier</tagging>
             <tagging taggingID="19" type="allergens">Milch/ Milchzucker</tagging>
-            <tagging taggingID="52" type="ingredients">Rind</tagging>
             <tagging taggingID="58" type="ingredients">Veganes Gericht</tagging>
             <tagging taggingID="60" type="ingredients">Klimateller</tagging>
-            <tagging taggingID="50" type="ingredients">Vegetarisches Gericht</tagging>
+            <tagging taggingID="51" type="ingredients">Schwein</tagging>
+            <tagging taggingID="52" type="ingredients">Rind</tagging>
             <tagging taggingID="2" type="additives">Konservierungsstoff</tagging>
+            <tagging taggingID="3" type="additives">Antioxidationsmittel</tagging>
+            <tagging taggingID="8" type="additives">Phosphat</tagging>
             <tagging taggingID="1" type="additives">Farbstoff</tagging>
         </taggings>
-        <components size="6">
+        <components size="7">
             <component elementid="0" sort="1">
-                <name1>Bolognese vom Rind</name1>
+                <name1>Tomatensoße mit Cashewkernen</name1>
             </component>
             <component elementid="1" sort="1">
-                <name1>Vegane Carbonara mit Tofu</name1>
+                <name1>Wurstgulasch</name1>
             </component>
             <component elementid="2" sort="1">
-                <name1>Tomatensoße mit Käse &amp; Sahne</name1>
+                <name1>Tomatensoße mit Hafercreme und Gemüse</name1>
             </component>
-            <component elementid="3" sort="5">
-                <name1>Pizzaschmelz, vegan</name1>
+            <component elementid="3" sort="1">
+                <name1>Hackfleischsoße Venezia mit Schinken,Champignons &amp; Paprika</name1>
             </component>
-            <component elementid="4" sort="6">
-                <name1>Spirelli</name1>
+            <component elementid="4" sort="4">
+                <name1>Nudeln</name1>
             </component>
-            <component elementid="5" sort="7">
+            <component elementid="5" sort="5">
                 <name1>Geriebener Gouda</name1>
+            </component>
+            <component elementid="6" sort="6">
+                <name1>Pizzaschmelz, vegan</name1>
             </component>
         </components>
     </group>
-    <group type="2" location="106" productiondate="2023-02-17" sort="99">
+    <group type="2" location="106" productiondate="2023-02-15" sort="87">
+        <name>Pizza</name>
+        <internalname>Pizza Premium</internalname>
+        <prices size="3">
+            <price consumerID="0">2.50</price>
+            <price consumerID="1">3.80</price>
+            <price consumerID="2">4.40</price>
+        </prices>
+        <taggings>
+            <tagging taggingID="13" type="allergens">glutenhaltiges Getreide</tagging>
+            <tagging taggingID="15" type="allergens">Eier</tagging>
+            <tagging taggingID="19" type="allergens">Milch/ Milchzucker</tagging>
+            <tagging taggingID="81" type="allergens">Weizen</tagging>
+            <tagging taggingID="84" type="allergens">Hafer</tagging>
+            <tagging taggingID="50" type="ingredients">Vegetarisches Gericht</tagging>
+            <tagging taggingID="51" type="ingredients">Schwein</tagging>
+            <tagging taggingID="54" type="ingredients">Geflügel</tagging>
+            <tagging taggingID="58" type="ingredients">Veganes Gericht</tagging>
+            <tagging taggingID="60" type="ingredients">Klimateller</tagging>
+            <tagging taggingID="2" type="additives">Konservierungsstoff</tagging>
+            <tagging taggingID="3" type="additives">Antioxidationsmittel</tagging>
+            <tagging taggingID="8" type="additives">Phosphat</tagging>
+            <tagging taggingID="6" type="additives">geschwärzt</tagging>
+            <tagging taggingID="1" type="additives">Farbstoff</tagging>
+        </taggings>
+        <components size="5">
+            <component elementid="0" sort="1">
+                <name1>Pizza "Grüne-Wiese" (Spinat &amp; Ei)</name1>
+            </component>
+            <component elementid="1" sort="1">
+                <name1>Pizza "Spaghetti Carbonara" mit Schinkenspeck &amp; Gouda</name1>
+            </component>
+            <component elementid="2" sort="1">
+                <name1>Pizza Pulled Chicken mit Kirschtomate &amp; Mozzarella</name1>
+            </component>
+            <component elementid="3" sort="1">
+                <name1>Pizza Mediterran (Oliven &amp; Gemüse) &amp; Gouda</name1>
+            </component>
+            <component elementid="4" sort="1">
+                <name1>Pizza Champignon mit veganem Pizzaschmelz</name1>
+            </component>
+        </components>
+    </group>
+    <group type="2" location="106" productiondate="2023-02-15" sort="99">
         <name>Smoothie</name>
         <internalname>Aktions-Dessert (Mensa)</internalname>
         <prices size="3">
@@ -200,63 +223,31 @@
         </prices>
         <taggings>
             <tagging taggingID="58" type="ingredients">Veganes Gericht</tagging>
+            <tagging taggingID="3" type="additives">Antioxidationsmittel</tagging>
             <tagging taggingID="19" type="allergens">Milch/ Milchzucker</tagging>
         </taggings>
-        <components size="4">
+        <components size="6">
             <component elementid="0" sort="1">
-                <name1>Erdbeer-Banane Smoothie</name1>
+                <name1>Erdbeer Apfel Minze Smoothie</name1>
             </component>
-            <component elementid="1" sort="2">
-                <name1>Beeren-Joghurtmilch</name1>
+            <component elementid="1" sort="1">
+                <name1>Pfirsich Grapefruit Smoothie</name1>
             </component>
-            <component elementid="2" sort="3">
-                <name1>Erdbeer-Ananas-Minz Smoothie</name1>
+            <component elementid="2" sort="2">
+                <name1>Möhre Ingwer Orange Smoothie</name1>
             </component>
-            <component elementid="3" sort="4">
-                <name1>Johannisbeer-Banane-Litschi Smoothie</name1>
+            <component elementid="3" sort="3">
+                <name1>Rucola Mango Ingwer Smoothie</name1>
+            </component>
+            <component elementid="4" sort="4">
+                <name1>Vanille Bananen Milch</name1>
+            </component>
+            <component elementid="5" sort="5">
+                <name1>Erdbeer Himbeer Smoothie</name1>
             </component>
         </components>
     </group>
-    <group type="1" location="106" productiondate="2023-02-17" sort="90">
-        <name>Salat</name>
-        <internalname>Salatteller/ klein/ 150g</internalname>
-        <prices size="3">
-            <price consumerID="0">1.60</price>
-            <price consumerID="1">2.45</price>
-            <price consumerID="2">3.45</price>
-        </prices>
-        <taggings>
-            <tagging taggingID="2" type="additives">Konservierungsstoff</tagging>
-            <tagging taggingID="22" type="allergens">Senf</tagging>
-            <tagging taggingID="58" type="ingredients">Veganes Gericht</tagging>
-        </taggings>
-        <components size="2">
-            <component elementid="0" sort="1">
-                <name1>Kartoffelsalat</name1>
-            </component>
-            <component elementid="1" sort="2">
-                <name1>Knackiger Gartensalat</name1>
-            </component>
-        </components>
-    </group>
-    <group type="1" location="106" productiondate="2023-02-17" sort="91">
-        <name>Salat</name>
-        <internalname>Salatteller/ mittel/ 300g</internalname>
-        <prices size="3">
-            <price consumerID="0">2.20</price>
-            <price consumerID="1">3.65</price>
-            <price consumerID="2">4.85</price>
-        </prices>
-        <taggings>
-            <tagging taggingID="58" type="ingredients">Veganes Gericht</tagging>
-        </taggings>
-        <components size="1">
-            <component elementid="0" sort="1">
-                <name1>Bunter Kartoffelsalat</name1>
-            </component>
-        </components>
-    </group>
-    <group type="1" location="106" productiondate="2023-02-17" sort="99">
+    <group type="1" location="106" productiondate="2023-02-15" sort="99">
         <name>Dessert</name>
         <internalname>Dessert Premium</internalname>
         <prices size="3">
@@ -265,22 +256,33 @@
             <price consumerID="2">1.70</price>
         </prices>
         <taggings>
-            <tagging taggingID="3" type="additives">Antioxidationsmittel</tagging>
-            <tagging taggingID="13" type="allergens">glutenhaltiges Getreide</tagging>
-            <tagging taggingID="84" type="allergens">Hafer</tagging>
             <tagging taggingID="19" type="allergens">Milch/ Milchzucker</tagging>
+            <tagging taggingID="18" type="allergens">Soja</tagging>
+            <tagging taggingID="13" type="allergens">glutenhaltiges Getreide</tagging>
+            <tagging taggingID="15" type="allergens">Eier</tagging>
+            <tagging taggingID="20" type="allergens">Schalenfrüchte/ Nüsse</tagging>
+            <tagging taggingID="71" type="allergens">Mandeln</tagging>
+            <tagging taggingID="81" type="allergens">Weizen</tagging>
+            <tagging taggingID="50" type="ingredients">Vegetarisches Gericht</tagging>
             <tagging taggingID="58" type="ingredients">Veganes Gericht</tagging>
+            <tagging taggingID="3" type="additives">Antioxidationsmittel</tagging>
         </taggings>
-        <components size="2">
+        <components size="4">
             <component elementid="0" sort="1">
-                <name1>Apfelmus mit veganer Vanillesoße</name1>
+                <name1>Schokoladenpudding mit Vanillesoße</name1>
             </component>
-            <component elementid="1" sort="2">
-                <name1>Mousse au Chocolate</name1>
+            <component elementid="1" sort="1">
+                <name1>Kokosmilch-Chia Dessert</name1>
+            </component>
+            <component elementid="2" sort="1">
+                <name1>Panna Cotta Pudding mit roter Grütze</name1>
+            </component>
+            <component elementid="3" sort="2">
+                <name1>Tiramisu mit Mandelsirup</name1>
             </component>
         </components>
     </group>
-    <group type="1" location="106" productiondate="2023-02-17" sort="99">
+    <group type="1" location="106" productiondate="2023-02-15" sort="99">
         <name>Dessert</name>
         <internalname>Dessert</internalname>
         <prices size="3">
@@ -289,22 +291,17 @@
             <price consumerID="2">1.40</price>
         </prices>
         <taggings>
-            <tagging taggingID="1" type="additives">Farbstoff</tagging>
             <tagging taggingID="3" type="additives">Antioxidationsmittel</tagging>
             <tagging taggingID="13" type="allergens">glutenhaltiges Getreide</tagging>
             <tagging taggingID="19" type="allergens">Milch/ Milchzucker</tagging>
             <tagging taggingID="81" type="allergens">Weizen</tagging>
-            <tagging taggingID="50" type="ingredients">Vegetarisches Gericht</tagging>
         </taggings>
-        <components size="3">
-            <component elementid="0" sort="1">
-                <name1>Rote Grütze mit Vanillesoße</name1>
+        <components size="2">
+            <component elementid="0" sort="2">
+                <name1>Grießbrei mit Apfelmus</name1>
             </component>
-            <component elementid="1" sort="2">
+            <component elementid="1" sort="3">
                 <name1>Apfelmus mit Vanillesoße</name1>
-            </component>
-            <component elementid="2" sort="3">
-                <name1>Milchreis mit Apfelmus</name1>
             </component>
         </components>
     </group>

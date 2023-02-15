@@ -17,6 +17,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Log4j2
@@ -56,21 +57,75 @@ public class XMLParser {
      * @param groupNode
      * @return
      */
-    private static String formatAllergens(Element groupNode) {
-        NodeList allergens = groupNode.getElementsByTagName("tagging");
-        List<Node> allergensList = new ArrayList<>();
-        for (int i = 0; i < allergens.getLength(); i++) {
-            allergensList.add(allergens.item(i));
-        }
-        StringBuilder allergensBuilder = new StringBuilder();
-        for (int i = 0; i < allergensList.size(); i++) {
-            allergensBuilder.append(allergensList.get(i).getTextContent());
-            if (i + 1 != allergens.getLength()) {
-                allergensBuilder.append(", ");
-            }
+    private static HashMap<String, String> formatAdditionalInformation(Element groupNode) {
+        NodeList addInfo = groupNode.getElementsByTagName("tagging");
+        List<Node> addInfoList = new ArrayList<>();
+        for (int i = 0; i < addInfo.getLength(); i++) {
+            addInfoList.add(addInfo.item(i));
         }
 
-        return allergensBuilder.toString();
+        HashMap<String, String> addInfoMap = new HashMap<>();
+        addInfoMap.put("allergens", "");
+        addInfoMap.put("ingredients", "");
+        addInfoMap.put("additives", "");
+
+        List<String> allergens = new ArrayList<>();
+        for (Node node : addInfoList) {
+            if (node.getAttributes().getNamedItem("type") != null && (node.getAttributes().getNamedItem("type")).getTextContent().equals("allergens")) {
+                allergens.add(node.getTextContent());
+            }
+        }
+        if (!allergens.isEmpty()){
+            StringBuilder allergenBuilder = new StringBuilder();
+            for (String allergen: allergens) {
+                if(allergens.indexOf(allergen) + 1 != allergens.size()){
+                    allergenBuilder.append(allergen + ", ");
+                }else{
+                    allergenBuilder.append(allergen);
+                }
+            }
+            addInfoMap.put("allergens", allergenBuilder.toString());
+        }
+
+
+        List<String> ingredients = new ArrayList<>();
+        for (Node node : addInfoList) {
+            if (node.getAttributes().getNamedItem("type") != null && (node.getAttributes().getNamedItem("type")).getTextContent().equals("ingredients")) {
+                ingredients.add(node.getTextContent());
+            }
+        }
+        if (!ingredients.isEmpty()){
+            StringBuilder ingredientBuilder = new StringBuilder();
+            for (String ingredient: ingredients) {
+                if(ingredients.indexOf(ingredient) + 1 != ingredients.size()){
+                    ingredientBuilder.append(ingredient + ", ");
+                }else{
+                    ingredientBuilder.append(ingredient);
+                }
+            }
+            addInfoMap.put("ingredients", ingredientBuilder.toString());
+        }
+
+
+        List<String> additives = new ArrayList<>();
+        for (Node node : addInfoList) {
+            if (node.getAttributes().getNamedItem("type") != null && (node.getAttributes().getNamedItem("type")).getTextContent().equals("additives")) {
+                additives.add(node.getTextContent());
+            }
+        }
+        if (!additives.isEmpty()){
+            StringBuilder additiveBuilder = new StringBuilder();
+            for (String additive: additives) {
+                if(additives.indexOf(additive) + 1 != additives.size()){
+                    additiveBuilder.append(additive + ", ");
+                }else{
+                    additiveBuilder.append(additive);
+                }
+            }
+            addInfoMap.put("additives", additiveBuilder.toString());
+        }
+
+        return addInfoMap;
     }
 
     /**
@@ -127,7 +182,9 @@ public class XMLParser {
             Meal meal = new Generic_Meal();
             meal.setCategory(element.getElementsByTagName("name").item(0).getTextContent());
             meal.setPrice(formatPrices(element));
-            meal.setAllergens(formatAllergens(element));
+            meal.setAllergens(formatAdditionalInformation(element).get("allergens"));
+            meal.setAdditives(formatAdditionalInformation(element).get("additives"));
+            meal.setIngredients(formatAdditionalInformation(element).get("ingredients"));
             meal.setComponents(formatComponents(element));
             meal.setServingDate(LocalDate.parse(element.getAttribute("productiondate")));
             meal.setName(((Element) groupNode).getElementsByTagName("name1").item(0).getTextContent());
