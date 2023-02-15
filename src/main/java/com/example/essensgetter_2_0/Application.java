@@ -1,7 +1,5 @@
 package com.example.essensgetter_2_0;
 
-import com.example.essensgetter_2_0.Data.DataCaller;
-import com.example.essensgetter_2_0.Data.DataFormatter;
 import com.example.essensgetter_2_0.Data.XMLParser;
 import com.example.essensgetter_2_0.JPA.entities.MailUser;
 import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
@@ -34,7 +32,7 @@ public class Application {
     public static void main(String[] args) throws IOException, MessagingException, ParserConfigurationException, SAXException {
         ConfigurableApplicationContext configurableApplicationContext = SpringApplication.run(Application.class, args);
 
-        if(Arrays.stream(args).collect(Collectors.toList()).contains("dontSendEmail")){
+        if (Arrays.stream(args).collect(Collectors.toList()).contains("dontSendEmail")) {
             log.debug("dontSendEmail is true");
             dontSendEmail = true;
         }
@@ -92,18 +90,17 @@ public class Application {
         for (Mensa_Service mensa_service : mensa_serviceList) {
             XMLParser xmlParser = new XMLParser();
             xmlParser.parse(mensa_service.getMensa().getApiUrl());
-            checkTheData(XMLParser.mealList, mensa_service, mensa_meals_serviceHashMap);
+            checkTheData(xmlParser.mealList, mensa_service, mensa_meals_serviceHashMap);
             /**
-            DataCaller dataCaller = new DataCaller(mensa_service.getMensa().getApiUrl());
-            DataFormatter dataFormatter = new DataFormatter(dataCaller.callData());
-            checkTheData(dataFormatter.mealList, mensa_service, mensa_meals_serviceHashMap);
+             DataCaller dataCaller = new DataCaller(mensa_service.getMensa().getApiUrl());
+             DataFormatter dataFormatter = new DataFormatter(dataCaller.callData());
+             checkTheData(dataFormatter.mealList, mensa_service, mensa_meals_serviceHashMap);
              */
         }
 
-        if(dontSendEmail){ // if dontSendEmail is true, no email will be sent | for cronjob that provides the data to the API
+        if (dontSendEmail) { // if dontSendEmail is true, no email will be sent | for cronjob that provides the data to the API
             log.info("EssensGetter don't send emails to subscribers");
-            return;
-        }else {
+        } else {
             sendEmails(meals_mensa_schoenauer_strService, meals_cafeteria_dittrichringService, meals_mensa_academicaService, meals_mensa_am_elsterbeckenService, meals_mensa_am_medizincampusService, meals_mensa_am_parkService, meals_mensa_peterssteinwegService, meals_mensa_tierklinikService, meals_menseria_am_botanischen_gartenServices, mensa_schoenauer_strService, cafeteria_dittrichringService, mensa_academicaService, mensa_am_elsterbeckenService, mensa_am_medizincampusService, mensa_am_parkService, mensa_peterssteinwegService, mensa_tierklinikService, menseria_am_botanischen_gartenService, mailUserService);
         }
 
@@ -112,6 +109,7 @@ public class Application {
     /**
      * Send emails to all users who are enabled
      * If the user has subscribed to several Mensas, the program will send one email for each Mensa
+     *
      * @param meals_mensa_schoenauer_strService
      * @param meals_cafeteria_dittrichringService
      * @param meals_mensa_academicaService
@@ -134,7 +132,25 @@ public class Application {
      * @throws MessagingException
      * @throws IOException
      */
-    private static void sendEmails(Meals_Mensa_Schoenauer_StrService meals_mensa_schoenauer_strService, Meals_Cafeteria_DittrichringService meals_cafeteria_dittrichringService, Meals_Mensa_AcademicaService meals_mensa_academicaService, Meals_Mensa_am_ElsterbeckenService meals_mensa_am_elsterbeckenService, Meals_Mensa_am_MedizincampusService meals_mensa_am_medizincampusService, Meals_Mensa_am_ParkService meals_mensa_am_parkService, Meals_Mensa_PeterssteinwegService meals_mensa_peterssteinwegService, Meals_Mensa_TierklinikService meals_mensa_tierklinikService, Meals_Menseria_am_Botanischen_GartenServices meals_menseria_am_botanischen_gartenServices, Mensa_Schoenauer_StrService mensa_schoenauer_strService, Cafeteria_DittrichringService cafeteria_dittrichringService, Mensa_AcademicaService mensa_academicaService, Mensa_am_ElsterbeckenService mensa_am_elsterbeckenService, Mensa_am_MedizincampusService mensa_am_medizincampusService, Mensa_am_ParkService mensa_am_parkService, Mensa_PeterssteinwegService mensa_peterssteinwegService, Mensa_TierklinikService mensa_tierklinikService, Menseria_am_Botanischen_GartenService menseria_am_botanischen_gartenService, MailUserService mailUserService) throws MessagingException, IOException {
+    private static void sendEmails(Meals_Mensa_Schoenauer_StrService meals_mensa_schoenauer_strService,
+                                   Meals_Cafeteria_DittrichringService meals_cafeteria_dittrichringService,
+                                   Meals_Mensa_AcademicaService meals_mensa_academicaService,
+                                   Meals_Mensa_am_ElsterbeckenService meals_mensa_am_elsterbeckenService,
+                                   Meals_Mensa_am_MedizincampusService meals_mensa_am_medizincampusService,
+                                   Meals_Mensa_am_ParkService meals_mensa_am_parkService,
+                                   Meals_Mensa_PeterssteinwegService meals_mensa_peterssteinwegService,
+                                   Meals_Mensa_TierklinikService meals_mensa_tierklinikService,
+                                   Meals_Menseria_am_Botanischen_GartenServices meals_menseria_am_botanischen_gartenServices,
+                                   Mensa_Schoenauer_StrService mensa_schoenauer_strService,
+                                   Cafeteria_DittrichringService cafeteria_dittrichringService,
+                                   Mensa_AcademicaService mensa_academicaService,
+                                   Mensa_am_ElsterbeckenService mensa_am_elsterbeckenService,
+                                   Mensa_am_MedizincampusService mensa_am_medizincampusService,
+                                   Mensa_am_ParkService mensa_am_parkService,
+                                   Mensa_PeterssteinwegService mensa_peterssteinwegService,
+                                   Mensa_TierklinikService mensa_tierklinikService,
+                                   Menseria_am_Botanischen_GartenService menseria_am_botanischen_gartenService,
+                                   MailUserService mailUserService) throws MessagingException, IOException {
         Mailer mailer = new Mailer();
         LocalDate today = LocalDate.now();
         for (MailUser mailUser : mailUserService.findAll()) {
