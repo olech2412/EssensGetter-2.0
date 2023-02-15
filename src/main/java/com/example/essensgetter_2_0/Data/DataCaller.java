@@ -10,6 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 @Log4j2
+@Deprecated
 public class DataCaller {
 
     private String url = ""; // URL to the API 69 is the ID of the canteen

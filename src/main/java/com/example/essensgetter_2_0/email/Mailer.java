@@ -57,7 +57,7 @@ public class Mailer {
         for (Meal meal : menu) {
             String menuString = StaticEmailText.foodText;
             menuString = menuString.replaceFirst("%s", meal.getCategory());
-            menuString = menuString.replaceFirst("%s", meal.getName() + " (" + meal.getDescription() + " )" + " - " + meal.getPrice());
+            menuString = menuString.replaceFirst("%s", meal.getName() + " (" + meal.getComponents() + " )" + " - " + meal.getPrice());
             menuText.append(menuString);
         }
 

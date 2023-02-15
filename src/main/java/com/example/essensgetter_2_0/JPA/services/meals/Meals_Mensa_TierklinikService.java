@@ -57,11 +57,11 @@ public class Meals_Mensa_TierklinikService extends Meals_Mensa_Service {
         meals_mensa_tierklinik.setCategory(meal.getCategory());
         meals_mensa_tierklinik.setPrice(meal.getPrice());
         meals_mensa_tierklinik.setServingDate(meal.getServingDate());
-        meals_mensa_tierklinik.setDescription(meal.getDescription());
+        meals_mensa_tierklinik.setComponents(meal.getComponents());
+        meals_mensa_tierklinik.setAllergens(meal.getAllergens());
         meals_mensa_tierklinik.setRating(meal.getRating());
         meals_mensa_tierklinik.setVotes(meal.getVotes());
         meals_mensa_tierklinik.setStarsTotal(meal.getStarsTotal());
-        meals_mensa_tierklinik.setResponseCode(meal.getResponseCode());
 
         Mensa_Tierklinik mensa_tierklinik = new Mensa_Tierklinik();
         mensa_tierklinik.setId(mensa.getId());
@@ -85,11 +85,11 @@ public class Meals_Mensa_TierklinikService extends Meals_Mensa_Service {
         meals_mensa_tierklinik.setCategory(meal.getCategory());
         meals_mensa_tierklinik.setPrice(meal.getPrice());
         meals_mensa_tierklinik.setServingDate(meal.getServingDate());
-        meals_mensa_tierklinik.setDescription(meal.getDescription());
+        meals_mensa_tierklinik.setComponents(meal.getComponents());
+        meals_mensa_tierklinik.setAllergens(meal.getAllergens());
         meals_mensa_tierklinik.setRating(meal.getRating());
         meals_mensa_tierklinik.setVotes(meal.getVotes());
         meals_mensa_tierklinik.setStarsTotal(meal.getStarsTotal());
-        meals_mensa_tierklinik.setResponseCode(meal.getResponseCode());
 
         Mensa_Tierklinik mensa_tierklinik = new Mensa_Tierklinik();
         mensa_tierklinik.setId(mensa.getId());

@@ -13,6 +13,7 @@ import java.util.List;
 
 
 @Log4j2
+@Deprecated
 public class DataFormatter {
 
     public List<Meal> mealList = new ArrayList<>();
@@ -41,9 +42,9 @@ public class DataFormatter {
                 dataMeal.setName(meal.getString("name"));
                 dataMeal.setPrice(formatPrices(meal.getJSONObject("prices")));
                 dataMeal.setCategory(meal.getString("category"));
-                dataMeal.setDescription(formatNotes(meal.getJSONArray("notes")));
+                dataMeal.setComponents(formatNotes(meal.getJSONArray("notes")));
                 dataMeal.setServingDate(LocalDate.parse(menu.getString("date")));
-                dataMeal.setResponseCode(200);
+                //dataMeal.setResponseCode(200);
                 mealList.add(dataMeal);
                 log.info("Meal added to list: " + dataMeal);
             }

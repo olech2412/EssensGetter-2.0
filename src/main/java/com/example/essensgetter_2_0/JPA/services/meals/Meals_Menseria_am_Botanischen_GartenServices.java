@@ -57,11 +57,11 @@ public class Meals_Menseria_am_Botanischen_GartenServices extends Meals_Mensa_Se
         meals_menseria_am_botanischen_garten.setCategory(meal.getCategory());
         meals_menseria_am_botanischen_garten.setPrice(meal.getPrice());
         meals_menseria_am_botanischen_garten.setServingDate(meal.getServingDate());
-        meals_menseria_am_botanischen_garten.setDescription(meal.getDescription());
+        meals_menseria_am_botanischen_garten.setComponents(meal.getComponents());
+        meals_menseria_am_botanischen_garten.setAllergens(meal.getAllergens());
         meals_menseria_am_botanischen_garten.setRating(meal.getRating());
         meals_menseria_am_botanischen_garten.setVotes(meal.getVotes());
         meals_menseria_am_botanischen_garten.setStarsTotal(meal.getStarsTotal());
-        meals_menseria_am_botanischen_garten.setResponseCode(meal.getResponseCode());
 
         Menseria_am_Botanischen_Garten menseria_am_botanischen_garten = new Menseria_am_Botanischen_Garten();
         menseria_am_botanischen_garten.setId(mensa.getId());
@@ -85,11 +85,11 @@ public class Meals_Menseria_am_Botanischen_GartenServices extends Meals_Mensa_Se
         meals_menseria_am_botanischen_garten.setCategory(meal.getCategory());
         meals_menseria_am_botanischen_garten.setPrice(meal.getPrice());
         meals_menseria_am_botanischen_garten.setServingDate(meal.getServingDate());
-        meals_menseria_am_botanischen_garten.setDescription(meal.getDescription());
+        meals_menseria_am_botanischen_garten.setComponents(meal.getComponents());
+        meals_menseria_am_botanischen_garten.setAllergens(meal.getAllergens());
         meals_menseria_am_botanischen_garten.setRating(meal.getRating());
         meals_menseria_am_botanischen_garten.setVotes(meal.getVotes());
         meals_menseria_am_botanischen_garten.setStarsTotal(meal.getStarsTotal());
-        meals_menseria_am_botanischen_garten.setResponseCode(meal.getResponseCode());
 
         Menseria_am_Botanischen_Garten menseria_am_botanischen_garten = new Menseria_am_Botanischen_Garten();
         menseria_am_botanischen_garten.setId(mensa.getId());

@@ -2,6 +2,7 @@ package com.example.essensgetter_2_0;
 
 import com.example.essensgetter_2_0.Data.DataCaller;
 import com.example.essensgetter_2_0.Data.DataFormatter;
+import com.example.essensgetter_2_0.Data.XMLParser;
 import com.example.essensgetter_2_0.JPA.entities.MailUser;
 import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
 import com.example.essensgetter_2_0.JPA.services.MailUserService;
@@ -12,8 +13,10 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.xml.sax.SAXException;
 
 import javax.mail.MessagingException;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -28,7 +31,7 @@ public class Application {
 
     private static boolean dontSendEmail = false;
 
-    public static void main(String[] args) throws IOException, MessagingException {
+    public static void main(String[] args) throws IOException, MessagingException, ParserConfigurationException, SAXException {
         ConfigurableApplicationContext configurableApplicationContext = SpringApplication.run(Application.class, args);
 
         if(Arrays.stream(args).collect(Collectors.toList()).contains("dontSendEmail")){
@@ -87,9 +90,14 @@ public class Application {
         mensa_serviceList.add(menseria_am_botanischen_gartenService);
 
         for (Mensa_Service mensa_service : mensa_serviceList) {
+            XMLParser xmlParser = new XMLParser();
+            xmlParser.parse(mensa_service.getMensa().getApiUrl());
+            checkTheData(XMLParser.mealList, mensa_service, mensa_meals_serviceHashMap);
+            /**
             DataCaller dataCaller = new DataCaller(mensa_service.getMensa().getApiUrl());
             DataFormatter dataFormatter = new DataFormatter(dataCaller.callData());
             checkTheData(dataFormatter.mealList, mensa_service, mensa_meals_serviceHashMap);
+             */
         }
 
         if(dontSendEmail){ // if dontSendEmail is true, no email will be sent | for cronjob that provides the data to the API

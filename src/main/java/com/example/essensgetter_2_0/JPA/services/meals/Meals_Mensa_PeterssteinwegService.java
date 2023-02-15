@@ -57,11 +57,11 @@ public class Meals_Mensa_PeterssteinwegService extends Meals_Mensa_Service {
         meals_mensa_peterssteinweg.setCategory(meal.getCategory());
         meals_mensa_peterssteinweg.setPrice(meal.getPrice());
         meals_mensa_peterssteinweg.setServingDate(meal.getServingDate());
-        meals_mensa_peterssteinweg.setDescription(meal.getDescription());
+        meals_mensa_peterssteinweg.setComponents(meal.getComponents());
+        meals_mensa_peterssteinweg.setAllergens(meal.getAllergens());
         meals_mensa_peterssteinweg.setRating(meal.getRating());
         meals_mensa_peterssteinweg.setVotes(meal.getVotes());
         meals_mensa_peterssteinweg.setStarsTotal(meal.getStarsTotal());
-        meals_mensa_peterssteinweg.setResponseCode(meal.getResponseCode());
 
         Mensa_Peterssteinweg mensa_peterssteinweg = new Mensa_Peterssteinweg();
         mensa_peterssteinweg.setId(mensa.getId());
@@ -85,11 +85,11 @@ public class Meals_Mensa_PeterssteinwegService extends Meals_Mensa_Service {
         meals_mensa_peterssteinweg.setCategory(meal.getCategory());
         meals_mensa_peterssteinweg.setPrice(meal.getPrice());
         meals_mensa_peterssteinweg.setServingDate(meal.getServingDate());
-        meals_mensa_peterssteinweg.setDescription(meal.getDescription());
+        meals_mensa_peterssteinweg.setComponents(meal.getComponents());
+        meals_mensa_peterssteinweg.setAllergens(meal.getAllergens());
         meals_mensa_peterssteinweg.setRating(meal.getRating());
         meals_mensa_peterssteinweg.setVotes(meal.getVotes());
         meals_mensa_peterssteinweg.setStarsTotal(meal.getStarsTotal());
-        meals_mensa_peterssteinweg.setResponseCode(meal.getResponseCode());
 
         Mensa_Peterssteinweg mensa_peterssteinweg = new Mensa_Peterssteinweg();
         mensa_peterssteinweg.setId(mensa.getId());

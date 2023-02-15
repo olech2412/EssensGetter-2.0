@@ -56,11 +56,11 @@ public class Meals_Mensa_Schoenauer_StrService extends Meals_Mensa_Service {
         meals_schoenauer_str.setCategory(meal.getCategory());
         meals_schoenauer_str.setPrice(meal.getPrice());
         meals_schoenauer_str.setServingDate(meal.getServingDate());
-        meals_schoenauer_str.setDescription(meal.getDescription());
+        meals_schoenauer_str.setComponents(meal.getComponents());
+        meals_schoenauer_str.setAllergens(meal.getAllergens());
         meals_schoenauer_str.setRating(meal.getRating());
         meals_schoenauer_str.setVotes(meal.getVotes());
         meals_schoenauer_str.setStarsTotal(meal.getStarsTotal());
-        meals_schoenauer_str.setResponseCode(meal.getResponseCode());
 
         Mensa_Schoenauer_Str mensa_schoenauer_str = new Mensa_Schoenauer_Str();
         mensa_schoenauer_str.setId(mensa.getId());
@@ -84,11 +84,11 @@ public class Meals_Mensa_Schoenauer_StrService extends Meals_Mensa_Service {
         meals_schoenauer_str.setCategory(meal.getCategory());
         meals_schoenauer_str.setPrice(meal.getPrice());
         meals_schoenauer_str.setServingDate(meal.getServingDate());
-        meals_schoenauer_str.setDescription(meal.getDescription());
+        meals_schoenauer_str.setComponents(meal.getComponents());
+        meals_schoenauer_str.setAllergens(meal.getAllergens());
         meals_schoenauer_str.setRating(meal.getRating());
         meals_schoenauer_str.setVotes(meal.getVotes());
         meals_schoenauer_str.setStarsTotal(meal.getStarsTotal());
-        meals_schoenauer_str.setResponseCode(meal.getResponseCode());
 
         Mensa_Schoenauer_Str mensa_schoenauer_str = new Mensa_Schoenauer_Str();
         mensa_schoenauer_str.setId(mensa.getId());

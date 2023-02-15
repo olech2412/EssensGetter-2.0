@@ -58,11 +58,11 @@ public class Meals_Mensa_am_ElsterbeckenService extends Meals_Mensa_Service {
         meals_mensa_am_elsterbecken.setCategory(meal.getCategory());
         meals_mensa_am_elsterbecken.setPrice(meal.getPrice());
         meals_mensa_am_elsterbecken.setServingDate(meal.getServingDate());
-        meals_mensa_am_elsterbecken.setDescription(meal.getDescription());
+        meals_mensa_am_elsterbecken.setComponents(meal.getComponents());
+        meals_mensa_am_elsterbecken.setAllergens(meal.getAllergens());
         meals_mensa_am_elsterbecken.setRating(meal.getRating());
         meals_mensa_am_elsterbecken.setVotes(meal.getVotes());
         meals_mensa_am_elsterbecken.setStarsTotal(meal.getStarsTotal());
-        meals_mensa_am_elsterbecken.setResponseCode(meal.getResponseCode());
 
         Mensa_am_Elsterbecken mensa_am_elsterbecken = new Mensa_am_Elsterbecken();
         mensa_am_elsterbecken.setId(mensa.getId());
@@ -86,11 +86,11 @@ public class Meals_Mensa_am_ElsterbeckenService extends Meals_Mensa_Service {
         meals_mensa_am_elsterbecken.setCategory(meal.getCategory());
         meals_mensa_am_elsterbecken.setPrice(meal.getPrice());
         meals_mensa_am_elsterbecken.setServingDate(meal.getServingDate());
-        meals_mensa_am_elsterbecken.setDescription(meal.getDescription());
+        meals_mensa_am_elsterbecken.setComponents(meal.getComponents());
+        meals_mensa_am_elsterbecken.setAllergens(meal.getAllergens());
         meals_mensa_am_elsterbecken.setRating(meal.getRating());
         meals_mensa_am_elsterbecken.setVotes(meal.getVotes());
         meals_mensa_am_elsterbecken.setStarsTotal(meal.getStarsTotal());
-        meals_mensa_am_elsterbecken.setResponseCode(meal.getResponseCode());
 
         Mensa_am_Elsterbecken mensa_am_elsterbecken = new Mensa_am_Elsterbecken();
         mensa_am_elsterbecken.setId(mensa.getId());

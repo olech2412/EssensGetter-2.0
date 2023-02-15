@@ -58,11 +58,11 @@ public class Meals_Cafeteria_DittrichringService extends Meals_Mensa_Service {
         meals_cafeteria_dittrichring.setCategory(meal.getCategory());
         meals_cafeteria_dittrichring.setPrice(meal.getPrice());
         meals_cafeteria_dittrichring.setServingDate(meal.getServingDate());
-        meals_cafeteria_dittrichring.setDescription(meal.getDescription());
+        meals_cafeteria_dittrichring.setComponents(meal.getComponents());
+        meals_cafeteria_dittrichring.setAllergens(meal.getAllergens());
         meals_cafeteria_dittrichring.setRating(meal.getRating());
         meals_cafeteria_dittrichring.setVotes(meal.getVotes());
         meals_cafeteria_dittrichring.setStarsTotal(meal.getStarsTotal());
-        meals_cafeteria_dittrichring.setResponseCode(meal.getResponseCode());
 
         Cafeteria_Dittrichring cafeteria_dittrichring = new Cafeteria_Dittrichring();
         cafeteria_dittrichring.setId(mensa.getId());
@@ -86,11 +86,11 @@ public class Meals_Cafeteria_DittrichringService extends Meals_Mensa_Service {
         meals_cafeteria_dittrichring.setCategory(meal.getCategory());
         meals_cafeteria_dittrichring.setPrice(meal.getPrice());
         meals_cafeteria_dittrichring.setServingDate(meal.getServingDate());
-        meals_cafeteria_dittrichring.setDescription(meal.getDescription());
+        meals_cafeteria_dittrichring.setComponents(meal.getComponents());
+        meals_cafeteria_dittrichring.setAllergens(meal.getAllergens());
         meals_cafeteria_dittrichring.setRating(meal.getRating());
         meals_cafeteria_dittrichring.setVotes(meal.getVotes());
         meals_cafeteria_dittrichring.setStarsTotal(meal.getStarsTotal());
-        meals_cafeteria_dittrichring.setResponseCode(meal.getResponseCode());
 
         Cafeteria_Dittrichring cafeteria_dittrichring = new Cafeteria_Dittrichring();
         cafeteria_dittrichring.setId(mensa.getId());

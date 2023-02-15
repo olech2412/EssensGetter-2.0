@@ -57,11 +57,12 @@ public class Meals_Mensa_am_ParkService extends Meals_Mensa_Service {
         meals_mensa_am_park.setCategory(meal.getCategory());
         meals_mensa_am_park.setPrice(meal.getPrice());
         meals_mensa_am_park.setServingDate(meal.getServingDate());
-        meals_mensa_am_park.setDescription(meal.getDescription());
+        meals_mensa_am_park.setComponents(meal.getComponents());
+        meals_mensa_am_park.setAllergens(meal.getAllergens());
         meals_mensa_am_park.setRating(meal.getRating());
         meals_mensa_am_park.setVotes(meal.getVotes());
         meals_mensa_am_park.setStarsTotal(meal.getStarsTotal());
-        meals_mensa_am_park.setResponseCode(meal.getResponseCode());
+
 
         Mensa_am_Park mensa_am_park = new Mensa_am_Park();
         mensa_am_park.setId(mensa.getId());
@@ -85,11 +86,11 @@ public class Meals_Mensa_am_ParkService extends Meals_Mensa_Service {
         meals_mensa_am_park.setCategory(meal.getCategory());
         meals_mensa_am_park.setPrice(meal.getPrice());
         meals_mensa_am_park.setServingDate(meal.getServingDate());
-        meals_mensa_am_park.setDescription(meal.getDescription());
+        meals_mensa_am_park.setComponents(meal.getComponents());
+        meals_mensa_am_park.setAllergens(meal.getAllergens());
         meals_mensa_am_park.setRating(meal.getRating());
         meals_mensa_am_park.setVotes(meal.getVotes());
         meals_mensa_am_park.setStarsTotal(meal.getStarsTotal());
-        meals_mensa_am_park.setResponseCode(meal.getResponseCode());
 
         Mensa_am_Park mensa_am_park = new Mensa_am_Park();
         mensa_am_park.setId(mensa.getId());

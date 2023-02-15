@@ -57,11 +57,11 @@ public class Meals_Mensa_am_MedizincampusService extends Meals_Mensa_Service {
         meals_mensa_am_medizincampus.setCategory(meal.getCategory());
         meals_mensa_am_medizincampus.setPrice(meal.getPrice());
         meals_mensa_am_medizincampus.setServingDate(meal.getServingDate());
-        meals_mensa_am_medizincampus.setDescription(meal.getDescription());
+        meals_mensa_am_medizincampus.setComponents(meal.getComponents());
+        meals_mensa_am_medizincampus.setAllergens(meal.getAllergens());
         meals_mensa_am_medizincampus.setRating(meal.getRating());
         meals_mensa_am_medizincampus.setVotes(meal.getVotes());
         meals_mensa_am_medizincampus.setStarsTotal(meal.getStarsTotal());
-        meals_mensa_am_medizincampus.setResponseCode(meal.getResponseCode());
 
         Mensa_am_Medizincampus mensa_am_medizincampus = new Mensa_am_Medizincampus();
         mensa_am_medizincampus.setId(mensa.getId());
@@ -85,11 +85,11 @@ public class Meals_Mensa_am_MedizincampusService extends Meals_Mensa_Service {
         meals_mensa_am_medizincampus.setCategory(meal.getCategory());
         meals_mensa_am_medizincampus.setPrice(meal.getPrice());
         meals_mensa_am_medizincampus.setServingDate(meal.getServingDate());
-        meals_mensa_am_medizincampus.setDescription(meal.getDescription());
+        meals_mensa_am_medizincampus.setComponents(meal.getComponents());
+        meals_mensa_am_medizincampus.setAllergens(meal.getAllergens());
         meals_mensa_am_medizincampus.setRating(meal.getRating());
         meals_mensa_am_medizincampus.setVotes(meal.getVotes());
         meals_mensa_am_medizincampus.setStarsTotal(meal.getStarsTotal());
-        meals_mensa_am_medizincampus.setResponseCode(meal.getResponseCode());
 
         Mensa_am_Medizincampus mensa_am_medizincampus = new Mensa_am_Medizincampus();
         mensa_am_medizincampus.setId(mensa.getId());

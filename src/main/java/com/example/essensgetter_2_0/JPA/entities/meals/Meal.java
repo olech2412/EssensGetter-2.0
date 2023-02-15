@@ -19,13 +19,11 @@ public abstract class Meal {
     @Column(name = "id", nullable = false)
     protected Long id;
     protected String name;
-    private String description;
+    private String components;
+    private String allergens;
     private String price;
     private String category;
     private LocalDate servingDate;
-
-    @EqualsAndHashCode.Exclude
-    private Integer responseCode;
     @EqualsAndHashCode.Exclude
     private Double rating = 0.0;
     @EqualsAndHashCode.Exclude
@@ -36,9 +34,10 @@ public abstract class Meal {
     public Meal() {
     }
 
-    public Meal(String name, String description, String price, String category, LocalDate servingDate) {
+    public Meal(String name, String components, String price, String category, LocalDate servingDate, String allergens) {
         this.name = name;
-        this.description = description;
+        this.components = components;
+        this.allergens = allergens;
         this.price = price;
         this.category = category;
         this.servingDate = servingDate;
@@ -49,6 +48,8 @@ public abstract class Meal {
 
     @Override
     public String toString() {
-        return "Meal: " + "name=" + name + ", description=" + description + ", price=" + price + ", category=" + category + ", servingDate=" + servingDate + ", rating=" + rating + ", votes=" + votes + ", starsTotal=" + starsTotal + ", votes=" + votes;
+        return "Meal: " + "name=" + name + ", description=" + components + ", allergens=" + allergens + ", price=" +
+                price + ", category=" + category + ", servingDate=" + servingDate + ", rating=" + rating +
+                ", votes=" + votes + ", starsTotal=" + starsTotal + ", votes=" + votes;
     }
 }

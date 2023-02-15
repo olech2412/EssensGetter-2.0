@@ -60,11 +60,11 @@ public class Meals_Mensa_AcademicaService extends Meals_Mensa_Service {
         meals_mensa_academica.setCategory(meal.getCategory());
         meals_mensa_academica.setPrice(meal.getPrice());
         meals_mensa_academica.setServingDate(meal.getServingDate());
-        meals_mensa_academica.setDescription(meal.getDescription());
+        meals_mensa_academica.setComponents(meal.getComponents());
+        meals_mensa_academica.setAllergens(meal.getAllergens());
         meals_mensa_academica.setRating(meal.getRating());
         meals_mensa_academica.setVotes(meal.getVotes());
         meals_mensa_academica.setStarsTotal(meal.getStarsTotal());
-        meals_mensa_academica.setResponseCode(meal.getResponseCode());
 
         Mensa_Academica mensa_academica = new Mensa_Academica();
         mensa_academica.setId(mensa.getId());
@@ -88,11 +88,11 @@ public class Meals_Mensa_AcademicaService extends Meals_Mensa_Service {
         meals_mensa_academica.setCategory(meal.getCategory());
         meals_mensa_academica.setPrice(meal.getPrice());
         meals_mensa_academica.setServingDate(meal.getServingDate());
-        meals_mensa_academica.setDescription(meal.getDescription());
+        meals_mensa_academica.setComponents(meal.getComponents());
+        meals_mensa_academica.setAllergens(meal.getAllergens());
         meals_mensa_academica.setRating(meal.getRating());
         meals_mensa_academica.setVotes(meal.getVotes());
         meals_mensa_academica.setStarsTotal(meal.getStarsTotal());
-        meals_mensa_academica.setResponseCode(meal.getResponseCode());
 
         Mensa_Academica mensa_academica = new Mensa_Academica();
         mensa_academica.setId(mensa.getId());
