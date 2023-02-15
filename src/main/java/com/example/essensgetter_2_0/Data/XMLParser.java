@@ -51,8 +51,7 @@ public class XMLParser {
     }
 
     /**
-     * Format allergens that they are separated by ", "
-     * Should be equal to OpenMensa format
+     * Format additional information to a HashMap
      *
      * @param groupNode
      * @return
