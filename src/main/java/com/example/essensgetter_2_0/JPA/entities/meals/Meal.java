@@ -21,6 +21,8 @@ public abstract class Meal {
     protected String name;
     private String components;
     private String allergens;
+    private String ingredients;
+    private String additives;
     private String price;
     private String category;
     private LocalDate servingDate;
@@ -34,10 +36,12 @@ public abstract class Meal {
     public Meal() {
     }
 
-    public Meal(String name, String components, String price, String category, LocalDate servingDate, String allergens) {
+    public Meal(String name, String components, String price, String category, LocalDate servingDate, String allergens, String ingredients, String additives) {
         this.name = name;
         this.components = components;
         this.allergens = allergens;
+        this.ingredients = ingredients;
+        this.additives = additives;
         this.price = price;
         this.category = category;
         this.servingDate = servingDate;
@@ -48,7 +52,8 @@ public abstract class Meal {
 
     @Override
     public String toString() {
-        return "Meal: " + "name=" + name + ", description=" + components + ", allergens=" + allergens + ", price=" +
+        return "Meal: " + "name=" + name + ", description=" + components + ", allergens=" + allergens +
+                ", ingredients=" + ingredients + ", additives=" + additives + ", price=" +
                 price + ", category=" + category + ", servingDate=" + servingDate + ", rating=" + rating +
                 ", votes=" + votes + ", starsTotal=" + starsTotal + ", votes=" + votes;
     }
