@@ -2,7 +2,7 @@ package com.example.essensgetter_2_0.email;
 
 public class StaticEmailText {
 
-    public final static String foodPlanText = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">" +
+    public final static String FOOD_PLAN_TEXT = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">" +
             "<html>" +
             "<head>" +
             "<!-- Compiled with Bootstrap Email version: 1.3.1 --><meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">" +
@@ -110,21 +110,23 @@ public class StaticEmailText {
             "</table>" +
             "<div class=\"space-y-2\">";
 
-    public final static String foodText =
-            "<h5 class=\"h5\" style=\"padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 20px; line-height: 24px; margin: 0;\" align=\"left\">%s</h5>" +
-                    "<p class=\"text-gray-700\" style=\"line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;\" align=\"left\">%s</p>" +
-                    "<table class=\"s-3 w-full\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\" width=\"100%\">" +
-                    "<tbody>" +
-                    "<tr>" +
-                    "<td style=\"line-height: 12px; font-size: 12px; width: 100%; height: 12px; margin: 0;\" align=\"left\" width=\"100%\" height=\"12\">" +
-                    "&#160;" +
-                    "</td>" +
-                    "</tr>" +
-                    "</tbody>" +
-                    "</table>";
+    public final static String FOOD_CATEGORY =
+            "<h5 class=\"h5\" style=\"padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 20px; line-height: 24px; margin: 0;\" align=\"left\">%s</h5>";
+
+    public final static String FOOD_TEXT =
+            "<p class=\"text-gray-700\" style=\"line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;\" align=\"left\">%s</p>" +
+            "<table class=\"s-3 w-full\" role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 100%;\" width=\"100%\">" +
+            "<tbody>" +
+            "<tr>" +
+            "<td style=\"line-height: 12px; font-size: 12px; width: 100%; height: 12px; margin: 0;\" align=\"left\" width=\"100%\" height=\"12\">" +
+            "&#160;" +
+            "</td>" +
+            "</tr>" +
+            "</tbody>" +
+            "</table>";
 
 
-    public final static String foodPlanFooter =
+    public final static String FOOD_PLAN_FOOTER =
             "</div>" +
                     "<div>" +
                     "<p class=\"text-gray-700\" style=\"line-height: 24px; font-size: 16px; color: #4a5568; width: 100%; margin: 0;\" align=\"left\">%s</p>" +

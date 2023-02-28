@@ -54,14 +54,51 @@ public class Mailer {
     private String createEmail(List<? extends Meal> menu, String firstName, String deactivateUrl, Mensa mensa) {
         StringBuilder menuText = new StringBuilder();
 
-        for (Meal meal : menu) {
-            String menuString = StaticEmailText.foodText;
-            menuString = menuString.replaceFirst("%s", meal.getCategory());
-            menuString = menuString.replaceFirst("%s", meal.getName() + " (" + meal.getDescription() + " )" + " - " + meal.getPrice());
-            menuText.append(menuString);
+        if(!menu.isEmpty()) {
+
+            List<List<Meal>> sublists = new ArrayList<>();
+            for (int i = 0; i <= menu.size(); i++) {
+                i = 0;
+                Meal meal = menu.get(i);
+                List<Meal> sublist = new ArrayList<>();
+                for (int x = 0; x < menu.size(); x++) {
+                    if (meal.getCategory().equals(menu.get(x).getCategory())) {
+                        sublist.add(menu.get(x));
+                    }
+                }
+                for (Meal meal2 : sublist) {
+                    menu.remove(meal2);
+                }
+                sublists.add(sublist);
+            }
+
+            for (List<Meal> meals : sublists) {
+                String menuString = StaticEmailText.FOOD_TEXT;
+                String categoryString = StaticEmailText.FOOD_CATEGORY;
+                if (meals.size() == 1) {
+                    categoryString = categoryString.replaceFirst("%s", meals.get(0).getCategory());
+                    menuString = menuString.replaceFirst("%s", meals.get(0).getName() +
+                            " (" + meals.get(0).getDescription() + " )" + " - " + meals.get(0).getPrice());
+                } else {
+                    categoryString = categoryString.replaceFirst("%s", meals.get(0).getCategory());
+                    StringBuilder mealBuilder = new StringBuilder();
+                    for (Meal meal : meals) {
+                        String groupMeal = menuString.replaceFirst("%s", meal.getName() +
+                                " (" + meal.getDescription() + " )" + " - " + meal.getPrice());
+                        mealBuilder.append(groupMeal + "\n");
+                    }
+                    menuString = mealBuilder.toString();
+                }
+
+                menuText.append(categoryString + menuString);
+            }
+        } else {
+            log.warn("No meals found for Mensa: " + mensa.getName() + " --> send empty mail to: " + firstName);
+            menuText.append(StaticEmailText.FOOD_TEXT.replaceFirst("%s", "Wir haben für deine Mensa " +
+                    "heute leider keine Gerichte für dich gefunden :("));
         }
 
-        String header = StaticEmailText.foodPlanText;
+        String header = StaticEmailText.FOOD_PLAN_TEXT;
         header = header.replaceFirst("%s", "Speiseplan " +
                 LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " - " +
                 mensa.getName());
@@ -70,7 +107,7 @@ public class Mailer {
         header = header.replaceFirst("%s", firstName);
         header = header.replaceFirst("%s", "nachfolgend findest du den Speiseplan für heute.");
 
-        String footer = StaticEmailText.foodPlanFooter;
+        String footer = StaticEmailText.FOOD_PLAN_FOOTER;
         footer = footer.replaceFirst("%s", getRandomGreetingsText());
         footer = footer.replaceFirst("%s", deactivateUrl);
 
