@@ -146,7 +146,7 @@ public class Application {
                                    Mensa_TierklinikService mensa_tierklinikService,
                                    Menseria_am_Botanischen_GartenService menseria_am_botanischen_gartenService,
                                    MailUserService mailUserService) throws MessagingException, IOException {
-        /**
+
         Mailer mailer = new Mailer();
         LocalDate today = LocalDate.now();
         for (MailUser mailUser : mailUserService.findAll()) {
@@ -188,7 +188,7 @@ public class Application {
                     log.info("Email sent to " + mailUser.getEmail() + " for menseria_am_botanischen_garten");
                 }
             }
-        }*/
+        }
     }
 
     private static void checkTheData(List<Meal> data, Mensa_Service mensa_service, HashMap<Mensa_Service, Meals_Mensa_Service> mensa_meals_serviceHashMap) {
