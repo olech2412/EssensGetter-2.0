@@ -2,6 +2,7 @@ package com.example.essensgetter_2_0.JPA.services.meals;
 
 
 import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
+import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Schoenauer_Str;
 import com.example.essensgetter_2_0.JPA.entities.mensen.Mensa;
 import com.example.essensgetter_2_0.JPA.services.Abstract_Service;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,7 @@ public abstract class Meals_Mensa_Service extends Abstract_Service {
     public abstract void save(Meal meal, Mensa mensa);
 
     public abstract void delete(Meal meal, Mensa mensa);
+
+    public abstract List<? extends Meal> findMealsFromMensaByNameAndServingDateBeforeOrderByServingDateDesc(String name, LocalDate servingDate);
 
 }

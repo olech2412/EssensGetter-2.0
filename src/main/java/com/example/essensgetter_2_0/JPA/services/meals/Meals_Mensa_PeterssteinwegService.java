@@ -101,5 +101,10 @@ public class Meals_Mensa_PeterssteinwegService extends Meals_Mensa_Service {
         meals_mensa_peterssteinwegRepository.delete(meals_mensa_peterssteinweg);
         log.warn("Meal deleted: " + meal.getName() + " from " + mensa.getName());
     }
+
+    @Override
+    public List<? extends Meal> findMealsFromMensaByNameAndServingDateBeforeOrderByServingDateDesc(String name, LocalDate servingDate) {
+        return meals_mensa_peterssteinwegRepository.findMeals_Mensa_PeterssteinwegByNameAndServingDateBeforeOrderByServingDateDesc(name, servingDate);
+    }
 }
 

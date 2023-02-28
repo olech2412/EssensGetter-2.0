@@ -1,6 +1,7 @@
 package com.example.essensgetter_2_0.JPA.repository.meals;
 
 import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Mensa_Peterssteinweg;
+import com.example.essensgetter_2_0.JPA.entities.meals.Meals_Mensa_am_Park;
 import org.springframework.data.repository.CrudRepository;
 
 import java.time.LocalDate;
@@ -12,4 +13,5 @@ public interface Meals_Mensa_PeterssteinwegRepository extends CrudRepository<Mea
 
     List<Meals_Mensa_Peterssteinweg> findAllMealsByServingDate(LocalDate servingDate);
 
+    List<Meals_Mensa_Peterssteinweg> findMeals_Mensa_PeterssteinwegByNameAndServingDateBeforeOrderByServingDateDesc(String name, LocalDate servingDate);
 }

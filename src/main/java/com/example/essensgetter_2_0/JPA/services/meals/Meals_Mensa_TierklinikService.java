@@ -101,5 +101,10 @@ public class Meals_Mensa_TierklinikService extends Meals_Mensa_Service {
         meals_mensa_tierklinikRepository.delete(meals_mensa_tierklinik);
         log.warn("Meal deleted: " + meal.getName() + " from " + mensa.getName());
     }
+
+    @Override
+    public List<? extends Meal> findMealsFromMensaByNameAndServingDateBeforeOrderByServingDateDesc(String name, LocalDate servingDate) {
+        return meals_mensa_tierklinikRepository.findMeals_Mensa_TierklinikByNameAndServingDateBeforeOrderByServingDateDesc(name, servingDate);
+    }
 }
 

@@ -103,6 +103,11 @@ public class Meals_Cafeteria_DittrichringService extends Meals_Mensa_Service {
         log.warn("Meal deleted: " + meal.getName() + " from " + mensa.getName());
     }
 
+    @Override
+    public List<? extends Meal> findMealsFromMensaByNameAndServingDateBeforeOrderByServingDateDesc(String name, LocalDate servingDate) {
+        return meals_cafeteria_dittrichringRepository.findMeals_Cafeteria_DittrichringByNameAndServingDateBeforeOrderByServingDateDesc(name, servingDate);
+    }
+
 
 }
 

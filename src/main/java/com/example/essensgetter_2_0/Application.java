@@ -3,6 +3,7 @@ package com.example.essensgetter_2_0;
 import com.example.essensgetter_2_0.Data.DataCaller;
 import com.example.essensgetter_2_0.Data.DataFormatter;
 import com.example.essensgetter_2_0.JPA.entities.MailUser;
+import com.example.essensgetter_2_0.JPA.entities.meals.Generic_Meal;
 import com.example.essensgetter_2_0.JPA.entities.meals.Meal;
 import com.example.essensgetter_2_0.JPA.services.MailUserService;
 import com.example.essensgetter_2_0.JPA.services.meals.*;
@@ -126,7 +127,26 @@ public class Application {
      * @throws MessagingException
      * @throws IOException
      */
-    private static void sendEmails(Meals_Mensa_Schoenauer_StrService meals_mensa_schoenauer_strService, Meals_Cafeteria_DittrichringService meals_cafeteria_dittrichringService, Meals_Mensa_AcademicaService meals_mensa_academicaService, Meals_Mensa_am_ElsterbeckenService meals_mensa_am_elsterbeckenService, Meals_Mensa_am_MedizincampusService meals_mensa_am_medizincampusService, Meals_Mensa_am_ParkService meals_mensa_am_parkService, Meals_Mensa_PeterssteinwegService meals_mensa_peterssteinwegService, Meals_Mensa_TierklinikService meals_mensa_tierklinikService, Meals_Menseria_am_Botanischen_GartenServices meals_menseria_am_botanischen_gartenServices, Mensa_Schoenauer_StrService mensa_schoenauer_strService, Cafeteria_DittrichringService cafeteria_dittrichringService, Mensa_AcademicaService mensa_academicaService, Mensa_am_ElsterbeckenService mensa_am_elsterbeckenService, Mensa_am_MedizincampusService mensa_am_medizincampusService, Mensa_am_ParkService mensa_am_parkService, Mensa_PeterssteinwegService mensa_peterssteinwegService, Mensa_TierklinikService mensa_tierklinikService, Menseria_am_Botanischen_GartenService menseria_am_botanischen_gartenService, MailUserService mailUserService) throws MessagingException, IOException {
+    private static void sendEmails(Meals_Mensa_Schoenauer_StrService meals_mensa_schoenauer_strService,
+                                   Meals_Cafeteria_DittrichringService meals_cafeteria_dittrichringService,
+                                   Meals_Mensa_AcademicaService meals_mensa_academicaService,
+                                   Meals_Mensa_am_ElsterbeckenService meals_mensa_am_elsterbeckenService,
+                                   Meals_Mensa_am_MedizincampusService meals_mensa_am_medizincampusService,
+                                   Meals_Mensa_am_ParkService meals_mensa_am_parkService,
+                                   Meals_Mensa_PeterssteinwegService meals_mensa_peterssteinwegService,
+                                   Meals_Mensa_TierklinikService meals_mensa_tierklinikService,
+                                   Meals_Menseria_am_Botanischen_GartenServices meals_menseria_am_botanischen_gartenServices,
+                                   Mensa_Schoenauer_StrService mensa_schoenauer_strService,
+                                   Cafeteria_DittrichringService cafeteria_dittrichringService,
+                                   Mensa_AcademicaService mensa_academicaService,
+                                   Mensa_am_ElsterbeckenService mensa_am_elsterbeckenService,
+                                   Mensa_am_MedizincampusService mensa_am_medizincampusService,
+                                   Mensa_am_ParkService mensa_am_parkService,
+                                   Mensa_PeterssteinwegService mensa_peterssteinwegService,
+                                   Mensa_TierklinikService mensa_tierklinikService,
+                                   Menseria_am_Botanischen_GartenService menseria_am_botanischen_gartenService,
+                                   MailUserService mailUserService) throws MessagingException, IOException {
+        /**
         Mailer mailer = new Mailer();
         LocalDate today = LocalDate.now();
         for (MailUser mailUser : mailUserService.findAll()) {
@@ -168,7 +188,7 @@ public class Application {
                     log.info("Email sent to " + mailUser.getEmail() + " for menseria_am_botanischen_garten");
                 }
             }
-        }
+        }*/
     }
 
     private static void checkTheData(List<Meal> data, Mensa_Service mensa_service, HashMap<Mensa_Service, Meals_Mensa_Service> mensa_meals_serviceHashMap) {
@@ -178,7 +198,7 @@ public class Application {
                 if (meals_mensa_service.findAllMealsByServingDate(meal.getServingDate()).isEmpty()) { // if there are no meals in the database with the same serving date
                     for (Meal meal1 : data) { // add all meals with the same serving date to the database
                         if (meal1.getServingDate().equals(meal.getServingDate())) {
-                            meals_mensa_service.save(meal1, mensa_service.getMensa());
+                            meals_mensa_service.save(takeOldVotes(meals_mensa_service, meal1), mensa_service.getMensa());
                         }
                     }
                 } else {
@@ -192,14 +212,34 @@ public class Application {
                     }
                     for (Meal meal1 : data) { // save all meals from this day (the new ones)
                         if (meal1.getServingDate().equals(meal.getServingDate())) {
-                            meals_mensa_service.save(meal1, mensa_service.getMensa()); // save meal to database
+                            meals_mensa_service.save(takeOldVotes(meals_mensa_service, meal1), mensa_service.getMensa()); // save meal to database
                             // Now we have all new meals in the database
                         }
                     }
                 }
 
             }
+
         }
+    }
+
+    /**
+     * Ask the database if this meal was already served. If this is the case, take the rating data from the old one
+     * and assign it to the new one
+     * @param meals_mensa_service
+     * @param meal
+     * @return
+     */
+    private static Meal takeOldVotes(Meals_Mensa_Service meals_mensa_service, Meal meal) {
+        List<? extends Meal> meals = meals_mensa_service.findMealsFromMensaByNameAndServingDateBeforeOrderByServingDateDesc(meal.getName(), LocalDate.now());
+        if(!meals.isEmpty()){
+            log.info("Found equal meal from old data");
+            meal.setRating(meals.get(0).getRating());
+            meal.setVotes(meals.get(0).getVotes());
+            meal.setStarsTotal(meals.get(0).getStarsTotal());
+        }
+
+        return meal;
     }
 
 

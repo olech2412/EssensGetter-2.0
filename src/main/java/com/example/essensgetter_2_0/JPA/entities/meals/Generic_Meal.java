@@ -1,5 +1,8 @@
 package com.example.essensgetter_2_0.JPA.entities.meals;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * Used to create a generic meal that provides the same functionality as a meal but can be instantiated
  * Used to format meals generically

@@ -101,5 +101,10 @@ public class Meals_Mensa_am_MedizincampusService extends Meals_Mensa_Service {
         meals_mensa_am_medizincampusRepository.delete(meals_mensa_am_medizincampus);
         log.warn("Meal deleted: " + meal.getName() + " from " + mensa.getName());
     }
+
+    @Override
+    public List<? extends Meal> findMealsFromMensaByNameAndServingDateBeforeOrderByServingDateDesc(String name, LocalDate servingDate) {
+        return meals_mensa_am_medizincampusRepository.findMeals_Mensa_am_MedizincampusByNameAndServingDateBeforeOrderByServingDateDesc(name, servingDate);
+    }
 }
 

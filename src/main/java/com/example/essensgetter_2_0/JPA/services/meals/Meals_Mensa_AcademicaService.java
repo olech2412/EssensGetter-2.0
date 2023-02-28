@@ -105,6 +105,11 @@ public class Meals_Mensa_AcademicaService extends Meals_Mensa_Service {
         log.warn("Meal deleted: " + meal.getName() + " from " + mensa.getName());
     }
 
+    @Override
+    public List<? extends Meal> findMealsFromMensaByNameAndServingDateBeforeOrderByServingDateDesc(String name, LocalDate servingDate) {
+        return meals_mensa_academicaRepository.findMeals_Mensa_AcademicaByNameAndServingDateBeforeOrderByServingDateDesc(name, servingDate);
+    }
+
 
 }
 
