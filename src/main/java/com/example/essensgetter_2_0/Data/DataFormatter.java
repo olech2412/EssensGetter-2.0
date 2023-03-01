@@ -13,6 +13,7 @@ import java.util.List;
 
 
 @Log4j2
+@Deprecated
 public class DataFormatter {
 
     public List<Meal> mealList = new ArrayList<>();
